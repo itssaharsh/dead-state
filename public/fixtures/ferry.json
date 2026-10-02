@@ -82,7 +82,7 @@
   },
   "kind": "single",
   "baked": {
-    "at": "2026-10-02T22:27:18.427Z",
+    "at": "2026-10-02T22:54:04.036Z",
     "narrative": {
       "ok": true,
       "status": "terminates",
@@ -111,6 +111,6 @@
       "truncated": false,
       "detail": "No reachable state blocks any goal. 4 states explored."
     },
-    "ms": 0
+    "ms": 1
   }
 }

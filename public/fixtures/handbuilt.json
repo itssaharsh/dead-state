@@ -82,7 +82,7 @@
     ]
   },
   "baked": {
-    "at": "2026-10-02T22:29:26.076Z",
+    "at": "2026-10-02T22:54:04.050Z",
     "narrative": {
       "ok": true,
       "status": "terminates",
@@ -122,26 +122,11 @@
       "detail": "No completion path exists in the extracted model. 3 reachable world states explored."
     },
     "softlock": {
-      "ok": false,
-      "status": "softlockable",
-      "traps": [
-        {
-          "goal": "g_sunstone",
-          "goalLabel": "Return the Sunstone to the Archivist",
-          "by": "speak_oren",
-          "byLabel": "Speak to Oren at the Quay",
-          "path": [
-            "speak_oren"
-          ],
-          "blocked": [
-            "has_sunstone"
-          ]
-        }
-      ],
-      "states": 2,
-      "truncated": false,
-      "detail": "1 goal(s) can be permanently blocked by ordinary play. 2 states explored."
+      "ok": true,
+      "status": "not-applicable",
+      "traps": [],
+      "detail": "Not applicable: there is no completion path to lose. Check 2 already failed."
     },
-    "ms": 8
+    "ms": 2
   }
 }

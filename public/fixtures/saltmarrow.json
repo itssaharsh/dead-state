@@ -309,8 +309,7 @@
     ]
   },
   "baked": {
-    "at": "2026-10-02T22:27:18.339Z",
-    "ms": 5712,
+    "at": "2026-10-02T22:54:04.062Z",
     "narrative": {
       "ok": true,
       "status": "terminates",
@@ -377,6 +376,7 @@
       "states": 33020,
       "truncated": false,
       "detail": "2 goal(s) can be permanently blocked by ordinary play. 33020 states explored."
-    }
+    },
+    "ms": 6662
   }
 }

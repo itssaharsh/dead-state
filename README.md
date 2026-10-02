@@ -57,7 +57,7 @@ and it is the one that creates the softlock. The single-producer case is still c
 and `fixtures/handbuilt.json` exercises it — **that fixture is hand-written and labelled
 as such**, because we did not want to pass off an authored failure as a discovered one.
 
-**4. Seeded corpus.** 12 cases with known-correct verdicts:
+**4. Seeded corpus.** 11 cases with known-correct verdicts:
 
 ```
 caught 6/6 broken · 0 missed · 0 false positives on 5 good cases

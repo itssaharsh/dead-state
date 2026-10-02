@@ -214,7 +214,13 @@ export function softlockCheck(model, { maxStates = 40000 } = {}) {
   const order = Object.keys(model.facts || {}).sort();
   const acts = model.actions || [];
   if (order.length > 26 || acts.length > 40)
-    return { ok: true, status: 'skipped', detail: 'Content exceeds the search bound; softlock check skipped.' };
+    return { ok: true, status: 'skipped', traps: [], detail: 'Content exceeds the search bound; softlock check skipped.' };
+  /* If there is no completion path from the start, there is nothing to lose, and every
+     first move would trivially look like a trap. Softlock is only a meaningful question
+     once check 2 has found a path. */
+  const base = worldFactCheck(model);
+  if (!base.ok) return { ok: true, status: 'not-applicable', traps: [],
+    detail: 'Not applicable: there is no completion path to lose. Check 2 already failed.' };
 
   const start = Object.fromEntries(order.map(k => [k, Boolean(model.facts[k])]));
   const sk = (f, fired) => keyOf(f, order) + '|' + fired.join('');

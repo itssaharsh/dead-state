@@ -102,7 +102,7 @@
   },
   "kind": "single",
   "baked": {
-    "at": "2026-10-02T22:27:18.434Z",
+    "at": "2026-10-02T22:54:10.725Z",
     "narrative": {
       "ok": true,
       "status": "terminates",
@@ -132,6 +132,6 @@
       "truncated": false,
       "detail": "No reachable state blocks any goal. 7 states explored."
     },
-    "ms": 0
+    "ms": 1
   }
 }

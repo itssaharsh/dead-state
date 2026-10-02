@@ -100,4 +100,4 @@ Honest list, so there are no surprises in Q&A:
   The README says this before a reviewer can discover it.
 - **The search is sound over the extracted model, not over the prose.** Stated on the page.
 - **`fixtures/handbuilt.json` is hand-written**, labelled in the UI and in its provenance field.
-- **The corpus is small** (12 cases). Stated as such.
+- **The corpus is small** (11 cases, written by the author). Stated as such.

@@ -29,7 +29,7 @@ browser, escalating from what already exists to what does not:
 
 | Check | Result |
 |---|---|
-| Seeded corpus (12 cases) | **6/6 broken caught · 0 missed · 0 false positives on 5 good** · 6/6 broken cases pass a narrative-graph check |
+| Hand-written regression corpus (11 cases) | **6/6 broken caught · 0 missed · 0 false positives on 5 good** · 6/6 broken cases pass a narrative-graph check |
 | Playwright + axe, 4 routes × 4 widths × 2 motion states | **32 screenshots, 0 axe violations** (`wcag2a/2aa/21a/21aa/22aa`) |
 | Live demo flow, 3 consecutive runs with reset | **3/3 pass**, 0 console errors, live re-run confirmed each time |
 | Live `/api/extract` | HTTP 200, typed by `gemini-3.8-flash` in 26s, correctly extracted a destructive effect (`!mara_present`) from "the ferrywoman is driven off" |
@@ -65,7 +65,7 @@ browser, escalating from what already exists to what does not:
 - The mechanism family is **published** (G-KMS 2026, STORY2GAME 2025). The contribution is
   cross-quest order sensitivity as a pipeline gate. Stated in the README before a reviewer finds it.
 - The search is sound over the **extracted** model, not the prose. Stated on the page.
-- Corpus is 12 cases. Softlock search is capped and reports `inconclusive` rather than `pass`.
+- Corpus is 11 cases. Softlock search is capped and reports `inconclusive` rather than `pass`.
 - Boolean facts only; 26 facts / 40 actions per batch.
 - Live extraction takes ~26s on `gemini-3.8-flash`. A Cerebras or Groq key would cut this to ~2s.
 
