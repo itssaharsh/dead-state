@@ -1,0 +1,134 @@
+{
+  "slug": "cistern",
+  "title": "The Thirst of Dustglen",
+  "prose": "1. Find Master Marlo Vance in the ruins of the Redstone Canyons.\nThe wells of Dustglen have run bone-dry, leaving the villagers desperate. Only the eccentric Ironwright engineer, Marlo Vance, knows how to unseal the ancient aqueducts.\n\n2. Recover the Obsidian Key from the Sunken Vault's guardian.\nMarlo agrees to help but reveals the cistern's intake valve is locked by an ancient mechanism. A rogue stone sentinel in the nearby ravines holds the key needed to turn the gears.\n\n3. Deliver the Brass Regulator to the Sunken Vault of Eld and repair the main valve.\nWith the key secured, Marlo provides a custom-forged Brass Regulator to replace the rusted components. You must descend into the dark, dusty depths of the vault to install it.\n\n4. Defend the cistern's release lever from attracted desert scavengers while the pressure builds.\nAs the ancient gears grind to life, the scent of fresh water draws aggressive dune-stalkers from the surrounding wastes. Hold them off until the life-giving torrent floods back into Dustglen's reservoirs.",
+  "generated": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:17:04.650Z",
+    "brief": "a four-step quest line about restoring water to a drought-struck village, involving a sealed cistern and a guild engineer"
+  },
+  "typed": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:17:04.650Z",
+    "ms": 15903
+  },
+  "model": {
+    "facts": {
+      "alive_marlo_vance": true,
+      "met_marlo_vance": false,
+      "alive_stone_sentinel": true,
+      "has_obsidian_key": false,
+      "valve_repaired": false,
+      "dune_stalkers_defeated": false,
+      "dustglen_water_restored": false
+    },
+    "actions": [
+      {
+        "id": "find_marlo_vance",
+        "label": "Find Master Marlo Vance",
+        "step": 1,
+        "quote": "Find Master Marlo Vance in the ruins of the Redstone Canyons.",
+        "pre": {
+          "alive_marlo_vance": true,
+          "met_marlo_vance": false
+        },
+        "post": {
+          "met_marlo_vance": true
+        }
+      },
+      {
+        "id": "recover_obsidian_key",
+        "label": "Recover the Obsidian Key",
+        "step": 2,
+        "quote": "Recover the Obsidian Key from the Sunken Vault's guardian.",
+        "pre": {
+          "met_marlo_vance": true,
+          "alive_stone_sentinel": true
+        },
+        "post": {
+          "alive_stone_sentinel": false,
+          "has_obsidian_key": true
+        }
+      },
+      {
+        "id": "repair_main_valve",
+        "label": "Deliver the Brass Regulator and repair the main valve",
+        "step": 3,
+        "quote": "Deliver the Brass Regulator to the Sunken Vault of Eld and repair the main valve.",
+        "pre": {
+          "has_obsidian_key": true,
+          "alive_marlo_vance": true,
+          "valve_repaired": false
+        },
+        "post": {
+          "has_obsidian_key": false,
+          "valve_repaired": true
+        }
+      },
+      {
+        "id": "defend_release_lever",
+        "label": "Defend the cistern's release lever",
+        "step": 4,
+        "quote": "Defend the cistern's release lever from attracted desert scavengers while the pressure builds.",
+        "pre": {
+          "valve_repaired": true,
+          "dune_stalkers_defeated": false
+        },
+        "post": {
+          "dune_stalkers_defeated": true,
+          "dustglen_water_restored": true
+        }
+      }
+    ],
+    "goals": [
+      {
+        "id": "restore_water",
+        "label": "Restore water to Dustglen",
+        "needs": {
+          "dustglen_water_restored": true
+        }
+      }
+    ]
+  },
+  "verdict": {
+    "narrative": true,
+    "world": true,
+    "disagree": false
+  },
+  "kind": "single",
+  "baked": {
+    "at": "2026-10-02T22:27:18.421Z",
+    "narrative": {
+      "ok": true,
+      "status": "terminates",
+      "steps": 4,
+      "deadEnds": 0,
+      "unreachable": 0,
+      "terminals": 1,
+      "detail": "4 steps, 0 dead ends, all branches terminate."
+    },
+    "world": {
+      "ok": true,
+      "status": "completable",
+      "order": [
+        "find_marlo_vance",
+        "recover_obsidian_key",
+        "repair_main_valve",
+        "defend_release_lever"
+      ],
+      "states": 5,
+      "detail": "A completion order exists. 5 reachable world states explored."
+    },
+    "softlock": {
+      "ok": true,
+      "status": "safe-in-every-order",
+      "traps": [],
+      "states": 5,
+      "truncated": false,
+      "detail": "No reachable state blocks any goal. 5 states explored."
+    },
+    "ms": 3
+  }
+}

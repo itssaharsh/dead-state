@@ -1,0 +1,137 @@
+{
+  "slug": "siege",
+  "title": "The Thawing of Ironcrag",
+  "prose": "1. Seek out Morvath the Cinder-Hand in the Weeping Ravine.\nSlip through the imperial trenches under cover of fog to deliver the alchemical fire to Morvath beneath the ruined watermill. The exiled engineer knows every flaw in General Vane's siege line, but requires volatile draughts to silence the forward batteries.\n\n2. Ambush the Red Oxen Supply Train at Dead Man’s Sump.\nVane’s host relies on winter grain and black powder hauled through the narrow defile along the riverbank. Cut down the caravan guards and burn the carts to starve the enemy camp before the morning bell.\n\n3. Coordinate the sortie with Gate Captain Kaelen at the Lion’s Teeth.\nCreep through the drainage sally-port into the besieged fortress to bring word to Gate Captain Kaelen. The weary officer refuses to commit his starving garrison to an open charge until you provide proof of the enemy's ruined supply line.\n\n4. Lead the breakout and topple the grand trebuchet, 'World-Ender'.\nWith Kaelen’s heavy cavalry pouring out through the opened iron gate, spearhead the counterattack into the heart of the siege park. Slaying the siege crew and collapsing the scaffolding of the great siege engine will break Vane's resolve and shatter the blockade.",
+  "generated": {
+    "provider": "gemini",
+    "model": "gemini-3.8-flash",
+    "at": "2026-10-02T22:18:13.904Z",
+    "brief": "a four-step quest line about breaking a siege, involving a saboteur, a supply train and a gate captain"
+  },
+  "typed": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:18:13.904Z",
+    "ms": 13562
+  },
+  "model": {
+    "facts": {
+      "alive_morvath": true,
+      "has_alchemical_fire": true,
+      "morvath_helped": false,
+      "batteries_silenced": false,
+      "supply_train_intact": true,
+      "enemy_camp_starved": false,
+      "alive_kaelen": true,
+      "sortie_coordinated": false,
+      "world_ender_toppled": false,
+      "blockade_shattered": false
+    },
+    "actions": [
+      {
+        "id": "deliver_fire_to_morvath",
+        "label": "Deliver alchemical fire to Morvath",
+        "step": 1,
+        "quote": "Slip through the imperial trenches under cover of fog to deliver the alchemical fire to Morvath beneath the ruined watermill.",
+        "pre": {
+          "alive_morvath": true,
+          "has_alchemical_fire": true
+        },
+        "post": {
+          "has_alchemical_fire": false,
+          "morvath_helped": true,
+          "batteries_silenced": true
+        }
+      },
+      {
+        "id": "ambush_supply_train",
+        "label": "Ambush the Red Oxen Supply Train",
+        "step": 2,
+        "quote": "Cut down the caravan guards and burn the carts to starve the enemy camp before the morning bell.",
+        "pre": {
+          "supply_train_intact": true
+        },
+        "post": {
+          "supply_train_intact": false,
+          "enemy_camp_starved": true
+        }
+      },
+      {
+        "id": "coordinate_sortie",
+        "label": "Coordinate sortie with Gate Captain Kaelen",
+        "step": 3,
+        "quote": "The weary officer refuses to commit his starving garrison to an open charge until you provide proof of the enemy's ruined supply line.",
+        "pre": {
+          "alive_kaelen": true,
+          "enemy_camp_starved": true
+        },
+        "post": {
+          "sortie_coordinated": true
+        }
+      },
+      {
+        "id": "lead_breakout",
+        "label": "Lead the breakout and topple World-Ender",
+        "step": 4,
+        "quote": "With Kaelen’s heavy cavalry pouring out through the opened iron gate, spearhead the counterattack into the heart of the siege park. Slaying the siege crew and collapsing the scaffolding of the great siege engine will break Vane's resolve and shatter the blockade.",
+        "pre": {
+          "sortie_coordinated": true,
+          "alive_kaelen": true,
+          "batteries_silenced": true
+        },
+        "post": {
+          "world_ender_toppled": true,
+          "blockade_shattered": true
+        }
+      }
+    ],
+    "goals": [
+      {
+        "id": "shatter_blockade",
+        "label": "Shatter the blockade",
+        "needs": {
+          "blockade_shattered": true
+        }
+      }
+    ]
+  },
+  "verdict": {
+    "narrative": true,
+    "world": true,
+    "disagree": false
+  },
+  "kind": "single",
+  "baked": {
+    "at": "2026-10-02T22:27:18.434Z",
+    "narrative": {
+      "ok": true,
+      "status": "terminates",
+      "steps": 4,
+      "deadEnds": 0,
+      "unreachable": 0,
+      "terminals": 1,
+      "detail": "4 steps, 0 dead ends, all branches terminate."
+    },
+    "world": {
+      "ok": true,
+      "status": "completable",
+      "order": [
+        "deliver_fire_to_morvath",
+        "ambush_supply_train",
+        "coordinate_sortie",
+        "lead_breakout"
+      ],
+      "states": 7,
+      "detail": "A completion order exists. 7 reachable world states explored."
+    },
+    "softlock": {
+      "ok": true,
+      "status": "safe-in-every-order",
+      "traps": [],
+      "states": 7,
+      "truncated": false,
+      "detail": "No reachable state blocks any goal. 7 states explored."
+    },
+    "ms": 0
+  }
+}

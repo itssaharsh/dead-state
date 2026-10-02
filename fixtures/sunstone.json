@@ -1,0 +1,131 @@
+{
+  "slug": "sunstone",
+  "title": "The Ashes of Low Dock",
+  "prose": "1. Speak with Orin Croft at Croft's Wharfside Exchange.\nKaelen Morvath parted with his family's Sunburst Astrolabe to clear a tavern debt, directing you toward the salt-crusted curio stall along Fishmonger’s Pier. You arrive only to find the storefront splintered open, bearing the soot-blackened seal of the Harbor Guard.\n\n2. Track the merchant through the Low Wharf shanties.\nCaptain Hallowell's Iron Watch has begun a violent midnight purge across the lower slips, setting fire to unbonded warehouses and driving the contraband traders into the tides. A wounded dockworker gasps that Croft was dragged toward the Old Customs Yard with his brass lockboxes in tow.\n\n3. Infiltrate the Old Customs Yard and retrieve the Sunburst Astrolabe.\nThe militia has heaped the seized dockside inventory around a pyre beneath the gantry, intending to incinerate all unregistered goods before dawn. Amid the smoke and patrolling halberdiers, you must crack open the requisition crate containing Croft's finest acquisitions before the flames catch.\n\n4. Return the heirloom to Kaelen Morvath at the Drowned Anchor.\nWith the waterfront still sirens-deep in smoke and martial horns sounding the cordon, deliver the brass astrolabe to the desperate young scion before his outward-bound cog casts off.",
+  "generated": {
+    "provider": "gemini",
+    "model": "gemini-3.8-flash",
+    "at": "2026-10-02T22:16:41.358Z",
+    "brief": "a four-step quest line in a harbour town about recovering a pawned family heirloom, involving a dockside merchant and a militia purge"
+  },
+  "typed": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:16:41.358Z",
+    "ms": 15294
+  },
+  "model": {
+    "facts": {
+      "investigated_wharfside_exchange": false,
+      "alive_wounded_dockworker": true,
+      "tracked_merchant": false,
+      "has_sunburst_astrolabe": false,
+      "alive_kaelen_morvath": true,
+      "astrolabe_delivered": false
+    },
+    "actions": [
+      {
+        "id": "investigate_wharfside_exchange",
+        "label": "Speak with Orin Croft at Croft's Wharfside Exchange",
+        "step": 1,
+        "quote": "Speak with Orin Croft at Croft's Wharfside Exchange. Kaelen Morvath parted with his family's Sunburst Astrolabe to clear a tavern debt, directing you toward the salt-crusted curio stall along Fishmonger’s Pier. You arrive only to find the storefront splintered open, bearing the soot-blackened seal of the Harbor Guard.",
+        "pre": {
+          "investigated_wharfside_exchange": false
+        },
+        "post": {
+          "investigated_wharfside_exchange": true
+        }
+      },
+      {
+        "id": "track_merchant",
+        "label": "Track the merchant through the Low Wharf shanties",
+        "step": 2,
+        "quote": "Track the merchant through the Low Wharf shanties. Captain Hallowell's Iron Watch has begun a violent midnight purge across the lower slips, setting fire to unbonded warehouses and driving the contraband traders into the tides. A wounded dockworker gasps that Croft was dragged toward the Old Customs Yard with his brass lockboxes in tow.",
+        "pre": {
+          "investigated_wharfside_exchange": true,
+          "alive_wounded_dockworker": true,
+          "tracked_merchant": false
+        },
+        "post": {
+          "tracked_merchant": true
+        }
+      },
+      {
+        "id": "retrieve_astrolabe",
+        "label": "Infiltrate the Old Customs Yard and retrieve the Sunburst Astrolabe",
+        "step": 3,
+        "quote": "Infiltrate the Old Customs Yard and retrieve the Sunburst Astrolabe. The militia has heaped the seized dockside inventory around a pyre beneath the gantry, intending to incinerate all unregistered goods before dawn. Amid the smoke and patrolling halberdiers, you must crack open the requisition crate containing Croft's finest acquisitions before the flames catch.",
+        "pre": {
+          "tracked_merchant": true,
+          "has_sunburst_astrolabe": false
+        },
+        "post": {
+          "has_sunburst_astrolabe": true
+        }
+      },
+      {
+        "id": "return_heirloom",
+        "label": "Return the heirloom to Kaelen Morvath at the Drowned Anchor",
+        "step": 4,
+        "quote": "Return the heirloom to Kaelen Morvath at the Drowned Anchor. With the waterfront still sirens-deep in smoke and martial horns sounding the cordon, deliver the brass astrolabe to the desperate young scion before his outward-bound cog casts off.",
+        "pre": {
+          "has_sunburst_astrolabe": true,
+          "alive_kaelen_morvath": true,
+          "astrolabe_delivered": false
+        },
+        "post": {
+          "has_sunburst_astrolabe": false,
+          "astrolabe_delivered": true
+        }
+      }
+    ],
+    "goals": [
+      {
+        "id": "recover_and_return_astrolabe",
+        "label": "Recover and return the Sunburst Astrolabe to Kaelen Morvath",
+        "needs": {
+          "astrolabe_delivered": true
+        }
+      }
+    ]
+  },
+  "verdict": {
+    "narrative": true,
+    "world": true,
+    "disagree": false
+  },
+  "kind": "single",
+  "baked": {
+    "at": "2026-10-02T22:27:18.435Z",
+    "narrative": {
+      "ok": true,
+      "status": "terminates",
+      "steps": 4,
+      "deadEnds": 0,
+      "unreachable": 0,
+      "terminals": 1,
+      "detail": "4 steps, 0 dead ends, all branches terminate."
+    },
+    "world": {
+      "ok": true,
+      "status": "completable",
+      "order": [
+        "investigate_wharfside_exchange",
+        "track_merchant",
+        "retrieve_astrolabe",
+        "return_heirloom"
+      ],
+      "states": 5,
+      "detail": "A completion order exists. 5 reachable world states explored."
+    },
+    "softlock": {
+      "ok": true,
+      "status": "safe-in-every-order",
+      "traps": [],
+      "states": 5,
+      "truncated": false,
+      "detail": "No reachable state blocks any goal. 5 states explored."
+    },
+    "ms": 1
+  }
+}

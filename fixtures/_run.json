@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-02T22:18:35.606Z",
+  "briefs": 6,
+  "typed": 6,
+  "no_completion_path": 0,
+  "disagreements": 0,
+  "slugs": [
+    {
+      "slug": "sunstone",
+      "narrative": true,
+      "world": true,
+      "disagree": false
+    },
+    {
+      "slug": "cistern",
+      "narrative": true,
+      "world": true,
+      "disagree": false
+    },
+    {
+      "slug": "ferry",
+      "narrative": true,
+      "world": true,
+      "disagree": false
+    },
+    {
+      "slug": "relic",
+      "narrative": true,
+      "world": true,
+      "disagree": false
+    },
+    {
+      "slug": "siege",
+      "narrative": true,
+      "world": true,
+      "disagree": false
+    },
+    {
+      "slug": "plague",
+      "narrative": true,
+      "world": true,
+      "disagree": false
+    }
+  ]
+}

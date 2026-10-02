@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img"><title>Dead State</title>
+<rect width="48" height="48" fill="#121620"/>
+<g fill="none" stroke="#ECE7DD" stroke-width="5" stroke-linecap="round">
+  <path d="M19 17h-6a7 7 0 0 0 0 14h6"/>
+  <path d="M29 17h6a7 7 0 0 1 0 14h-6"/>
+</g>
+<path d="M21 13 27 35" stroke="#FF6A3D" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dead State — find quests a model wrote that cannot be finished</title>
+<meta name="description" content="Dead State types generated quest content into a precondition-effect model and searches for orderings of ordinary play that permanently block a quest.">
+<meta name="theme-color" content="#121620">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Rethink+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the checks</a>
+
+<header>
+  <span class="brand">
+    <svg width="22" height="22" viewBox="0 0 48 48" role="img" aria-label="Dead State"><title>Dead State</title>
+      <g fill="none" stroke="#ECE7DD" stroke-width="5" stroke-linecap="round">
+        <path d="M19 17h-6a7 7 0 0 0 0 14h6"/><path d="M29 17h6a7 7 0 0 1 0 14h-6"/></g>
+      <path d="M21 13 27 35" stroke="#FF6A3D" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+    <b>Dead State</b>
+  </span>
+
+  <div class="seg" role="group" aria-label="Content to check">
+    <button type="button" data-pick="saltmarrow" aria-pressed="true">Saltmarrow batch</button>
+    <button type="button" data-pick="sunstone" aria-pressed="false">One quest</button>
+    <button type="button" data-pick="handbuilt" aria-pressed="false">Hand-built case</button>
+    <button type="button" data-pick="paste" aria-pressed="false">Paste your own</button>
+  </div>
+
+  <button type="button" class="btn" id="run">Re-run checks</button>
+</header>
+
+<main id="main">
+  <!-- LEFT: the content, with the product's work drawn onto it -->
+  <section class="panel" aria-labelledby="content-h">
+    <div class="verdict-band" id="band">
+      <h2 id="content-h">Loading…</h2>
+      <p class="sub" id="band-sub"></p>
+      <p class="src" id="band-src"></p>
+    </div>
+    <div class="panel-hd" role="tablist" aria-label="Views of this content">
+      <button class="tab" role="tab" id="t-path" aria-selected="true" aria-controls="v-path">Trap path</button>
+      <button class="tab" role="tab" id="t-quests" aria-selected="false" aria-controls="v-quests" tabindex="-1">Quest content</button>
+      <button class="tab" role="tab" id="t-model" aria-selected="false" aria-controls="v-model" tabindex="-1">Extracted model</button>
+    </div>
+    <div class="body">
+      <div id="v-path" role="tabpanel" aria-labelledby="t-path"></div>
+      <div id="v-quests" role="tabpanel" aria-labelledby="t-quests" hidden></div>
+      <div id="v-model" role="tabpanel" aria-labelledby="t-model" hidden></div>
+    </div>
+  </section>
+
+  <!-- RIGHT: the three checks -->
+  <section class="panel" aria-labelledby="checks-h">
+    <div class="panel-hd"><h2 id="checks-h" style="font:600 13px/1 var(--ff-body);padding:12px 10px">Checks</h2></div>
+    <div class="body">
+      <div id="checks"></div>
+      <div class="why" id="why" hidden></div>
+      <p class="honest">The search is sound over the <em>extracted</em> model, not over the prose. The extracted model is one tab away so you can check the typing yourself.</p>
+      <div class="row">
+        <button type="button" class="btn-ghost" id="copy">Copy trace</button>
+        <button type="button" class="btn-ghost" id="show-model">Show extracted model</button>
+      </div>
+      <p class="telemetry" id="telemetry"></p>
+      <p class="telemetry" id="corpus"></p>
+      <p class="telemetry">Scope: boolean world facts only · up to 26 facts and 40 actions per batch.</p>
+    </div>
+  </section>
+</main>
+
+<div class="stick" id="stick" hidden><button type="button" class="btn" id="run2">Re-run checks</button></div>
+
+<footer>
+  <p><b>What is real:</b> the three checks run in your browser with no network. Extraction of pasted content runs server-side. The shipped samples are real generated content with the provider, model and timestamp recorded on each one. Nothing in the loop is stubbed.</p>
+  <p style="margin-top:8px">Alt+Shift+R resets · Alt+Shift+P replays the recorded run · <a href="/README.md">how it works</a></p>
+</footer>
+
+<p role="status" aria-live="polite" id="status" style="position:absolute;left:-9999px"></p>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

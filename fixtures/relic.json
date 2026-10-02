@@ -1,0 +1,170 @@
+{
+  "slug": "relic",
+  "title": "The Gilded Heresy",
+  "prose": "1. Meet Kaelen the Whisperer at the Drowned Rat Tavern in Oakhaven.\nKaelen has acquired a tarnished, sun-shaped icon rumored to be the lost Solari Monstrance, but he needs proof of its origin before selling it to his high-end clientele. He promises a cut of the profits if you can verify its authenticity without drawing the attention of the city watch.\n\n2. Bring the Solari Monstrance to Master Aldus in the Great Library of Vael.\nMaster Aldus, an eccentric expert on pre-schism religious artifacts, examines the relic's intricate engravings with trembling hands. He suspects it is genuine but notes that the unique consecration seal can only be verified using a specialized magnifying lens kept in the restricted archives.\n\n3. Recover the Lens of True Sight from the locked archives in the Library's basement.\nThe archives are heavily guarded, requiring you to slip past the watchful eyes of the library curators to secure the lens. Once retrieved, Aldus uses it to reveal a hidden, glowing glyph of the Sun God, confirming the relic's divine origin.\n\n4. Intercept Warden Theresa at the Cathedral of the Dawn to secure her silence.\nWord of the relic's reappearance has already reached the clergy, and Warden Theresa is actively searching the city's black markets for the thief. You must either bribe her with a portion of the future proceeds or convince her that the relic is a clever forgery to call off her inquisitors.\n\n5. Deliver the authenticated Solari Monstrance back to Kaelen at the Oakhaven docks.\nWith Warden Theresa's suspicions defused and Master Aldus's scholarly seal of approval in hand, Kaelen can now sell the artifact to a wealthy foreign collector. He hands over your promised share of gold, eager to rid himself of the beautiful, dangerous treasure.",
+  "generated": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:17:52.257Z",
+    "brief": "a five-step quest line about authenticating a stolen relic, involving a scholar, a fence and a temple warden"
+  },
+  "typed": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:17:52.258Z",
+    "ms": 16598
+  },
+  "model": {
+    "facts": {
+      "alive_kaelen": true,
+      "alive_master_aldus": true,
+      "alive_warden_theresa": true,
+      "met_kaelen": false,
+      "has_solari_monstrance": false,
+      "shown_monstrance_to_aldus": false,
+      "has_lens_of_true_sight": false,
+      "monstrance_authenticated": false,
+      "warden_theresa_silenced": false,
+      "quest_complete": false
+    },
+    "actions": [
+      {
+        "id": "meet_kaelen",
+        "label": "Meet Kaelen the Whisperer",
+        "step": 1,
+        "quote": "Meet Kaelen the Whisperer at the Drowned Rat Tavern in Oakhaven. Kaelen has acquired a tarnished, sun-shaped icon rumored to be the lost Solari Monstrance",
+        "pre": {
+          "alive_kaelen": true,
+          "met_kaelen": false
+        },
+        "post": {
+          "met_kaelen": true,
+          "has_solari_monstrance": true
+        }
+      },
+      {
+        "id": "show_monstrance_to_aldus",
+        "label": "Bring the Solari Monstrance to Master Aldus",
+        "step": 2,
+        "quote": "Bring the Solari Monstrance to Master Aldus in the Great Library of Vael.",
+        "pre": {
+          "alive_master_aldus": true,
+          "has_solari_monstrance": true,
+          "met_kaelen": true,
+          "shown_monstrance_to_aldus": false
+        },
+        "post": {
+          "shown_monstrance_to_aldus": true
+        }
+      },
+      {
+        "id": "recover_lens",
+        "label": "Recover the Lens of True Sight",
+        "step": 3,
+        "quote": "Recover the Lens of True Sight from the locked archives in the Library's basement.",
+        "pre": {
+          "shown_monstrance_to_aldus": true,
+          "has_lens_of_true_sight": false
+        },
+        "post": {
+          "has_lens_of_true_sight": true
+        }
+      },
+      {
+        "id": "verify_monstrance",
+        "label": "Verify the Monstrance's authenticity",
+        "step": 4,
+        "quote": "Once retrieved, Aldus uses it to reveal a hidden, glowing glyph of the Sun God, confirming the relic's divine origin.",
+        "pre": {
+          "alive_master_aldus": true,
+          "has_lens_of_true_sight": true,
+          "monstrance_authenticated": false
+        },
+        "post": {
+          "monstrance_authenticated": true,
+          "has_lens_of_true_sight": false
+        }
+      },
+      {
+        "id": "intercept_theresa",
+        "label": "Intercept Warden Theresa",
+        "step": 5,
+        "quote": "Intercept Warden Theresa at the Cathedral of the Dawn to secure her silence.",
+        "pre": {
+          "alive_warden_theresa": true,
+          "warden_theresa_silenced": false
+        },
+        "post": {
+          "warden_theresa_silenced": true
+        }
+      },
+      {
+        "id": "deliver_monstrance",
+        "label": "Deliver the authenticated Solari Monstrance to Kaelen",
+        "step": 6,
+        "quote": "Deliver the authenticated Solari Monstrance back to Kaelen at the Oakhaven docks.",
+        "pre": {
+          "alive_kaelen": true,
+          "monstrance_authenticated": true,
+          "warden_theresa_silenced": true,
+          "has_solari_monstrance": true,
+          "quest_complete": false
+        },
+        "post": {
+          "has_solari_monstrance": false,
+          "quest_complete": true
+        }
+      }
+    ],
+    "goals": [
+      {
+        "id": "complete_quest",
+        "label": "Complete the Solari Monstrance quest",
+        "needs": {
+          "quest_complete": true
+        }
+      }
+    ]
+  },
+  "verdict": {
+    "narrative": true,
+    "world": true,
+    "disagree": false
+  },
+  "kind": "single",
+  "baked": {
+    "at": "2026-10-02T22:27:18.430Z",
+    "narrative": {
+      "ok": true,
+      "status": "terminates",
+      "steps": 6,
+      "deadEnds": 0,
+      "unreachable": 0,
+      "terminals": 1,
+      "detail": "6 steps, 0 dead ends, all branches terminate."
+    },
+    "world": {
+      "ok": true,
+      "status": "completable",
+      "order": [
+        "meet_kaelen",
+        "show_monstrance_to_aldus",
+        "recover_lens",
+        "verify_monstrance",
+        "intercept_theresa",
+        "deliver_monstrance"
+      ],
+      "states": 11,
+      "detail": "A completion order exists. 11 reachable world states explored."
+    },
+    "softlock": {
+      "ok": true,
+      "status": "safe-in-every-order",
+      "traps": [],
+      "states": 11,
+      "truncated": false,
+      "detail": "No reachable state blocks any goal. 11 states explored."
+    },
+    "ms": 1
+  }
+}

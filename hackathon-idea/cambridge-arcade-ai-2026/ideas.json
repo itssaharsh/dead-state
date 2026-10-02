@@ -1,0 +1,1130 @@
+{
+  "run": {
+    "mode": "hackathon",
+    "context": "general",
+    "depth": "full",
+    "date": "2026-10-02",
+    "slug": "cambridge-arcade-ai-2026",
+    "request": "Pressure-test three ideas generated with a weaker model for the Cambridge x Arcade AI Hackathon (3-4 Oct 2026); verify or kill each, regenerate if they do not survive, and deliver a final recommendation.",
+    "scope": "games and game development (fixed by the event theme)",
+    "request_type": "pressure",
+    "ideas_requested": 1,
+    "discovery_method": "blind_subagent",
+    "problems_considered": 12,
+    "user_groups": [
+      "a creator on a UGC world platform at the instant they import a file or accept a generated mesh",
+      "a trust and safety moderator at a UGC world platform opening a report",
+      "a solo or small-studio developer at a storefront submission form",
+      "a world or avatar creator just before publishing",
+      "a developer shipping a live-generation feature into a shared persistent world",
+      "a developer shipping machine-generated quests and items before they enter the build"
+    ],
+    "context_seen": false,
+    "research_unavailable": false,
+    "seeds": {
+      "lenses": [
+        "painful workflows",
+        "money on a worse fix",
+        "bad incumbents",
+        "forced change",
+        "newly possible",
+        "boring back office of games",
+        "underserved small studios",
+        "AI-native with a human reviewer"
+      ],
+      "source_types": [
+        "GitHub REST and search API",
+        "Hacker News Algolia API",
+        "vendor and standards-body documentation",
+        "npm registry download stats",
+        "engine vendor documentation",
+        "platform policy pages",
+        "industry survey",
+        "academic survey",
+        "developer devlogs",
+        "hackathon project galleries"
+      ]
+    }
+  },
+  "personal": {
+    "explicit_request": "",
+    "facts_used": [],
+    "build_on": []
+  },
+  "defaults": [
+    "NPCs with persistent memory you can talk to in natural language",
+    "AI Game Master that narrates a party's shared session",
+    "type a sentence, get a playable level generator",
+    "text or image to 3D prop generator with a gallery UI",
+    "adaptive soundtrack that reacts to combat intensity",
+    "AI companion pet or sidekick that remembers you across sessions",
+    "AI coach that teaches you to play better by watching your match",
+    "multi-agent village or society simulation (a Smallville clone)",
+    "live-ops dashboard that explains your player metrics in English",
+    "chat with your game design doc or lore bible",
+    "an agent that plays your game to find bugs",
+    "procedural quest generator keyed to world state",
+    "voice commands to control an RTS or build in-world",
+    "AI balance-tuning dashboard that suggests nerfs",
+    "agentic Unity or Unreal copilot that writes gameplay code",
+    "text-to-world: describe a biome, get terrain and props",
+    "AI localisation pass for your game's strings",
+    "procedural infinite game that generates itself as you play",
+    "AI moderator for in-game chat",
+    "AI-generated marketing trailer or store page for your game"
+  ],
+  "research_gaps": [
+    "HIGHEST STAKES: the /submit form is shared by both tracks and renders 'Arcade Game Link *' as required ('The link to your published game on Arcade'). Captured with Arcade Track pre-selected and deliberately not interacted with, so whether a Game Tech submission must also supply an Arcade link is UNKNOWN. If it must, a Game Tech tool with no Arcade presence cannot submit. Confirm in Discord before building anything.",
+    "'Track fit' is 25% of the score and has no published definition anywhere on the event site; the track's own bullet list is the only available proxy.",
+    "Whether 'only Arcade AI' forbids external APIs or imported assets inside an Arcade game is not stated, and the event simultaneously gives every participant a Hyper3D membership, which cuts the other way.",
+    "No spend signal was found for either surviving idea, in games, at all. Upwork returned 403 and Reddit is blocked in every form, so this run contains no job post, no freelance gig and no agency rate for any of these fixes. The closest is an adjacent industry selling C2PA manifest embedding to photo studios, which was not opened.",
+    "Asset Passport's first-person evidence is concentrated in one platform's issue tracker (two issues, 93 comments). The platform operator and a staff member speak on the record there, which is better than one voice, but it is still one platform. The second platform and the two storefronts contribute facts about rules and enforcement, not accounts of pain.",
+    "Devpost was refused (HTTP 202 bot challenge on seven project-search URLs), so there are NO measured per-category saturation percentages for the Game Tech Track. Not estimated.",
+    "Tencent Cloud LLM availability, free credits and region restrictions for participants are unconfirmed; the event page promises participants no Tencent resources at all.",
+    "Unreal's absence of a PCG validation layer is established at index-page level (eight documented child topics, none validation), not leaf-page level; the PCG Overview leaf page and the 5.7/5.8 release notes were not retrieved.",
+    "EU AI Act Article 50 text was read from a civil-society host of the Regulation, not the Official Journal. The obligation's scope - whether it binds a hobbyist importer, a world platform as deployer, or only the provider of the generating system - is the single most load-bearing unresolved question for Asset Passport and was referred to the critic pass.",
+    "The widely reported 16 January 2026 date for Valve's AI-disclosure rewrite is press-reported; no Valve-authored dated announcement exists on the pages retrieved. The substance of the rewrite IS confirmed from Valve's live documentation.",
+    "EU enforcement practice is unverified: no regulator action was opened, so the actual cost of non-compliance is unknown.",
+    "C2PA's lack of a 3D track rests on an issue-tracker search used as a proxy for the spec's supported-format list, not the list itself."
+  ],
+  "stated": {
+    "idea": "Three ideas from a prior package: (1) Narrative Drift Guard, middleware holding a JSON world-fact ledger with character-scoped retrieval before each NPC model call and a contradiction check after it; (2) World Coherence Verifier, a service running structural (A*/BFS), LLM-semantic and rule-based balance checks over generated maps, dungeons and quests, returning a content health report; (3) Living World Multiplayer, a persistent-world browser multiplayer game on Arcade AI where each short session's action accumulates and an LLM generates the faction and world consequences.",
+    "verdict": "Idea 3 is dead: its novelty claim is false twice over (Travian, a persistent browser multiplayer strategy MMO with asynchronous short sessions and raidable NPC faction villages, shipped June 2004 and peaked at over 5 million players; and Mythora and Altworld shipped the LLM version in 2026, Altworld with the identical world-database-then-narrate architecture), the a16z AI/Virtual Worlds hackathon grand prize in July 2023 was already a persistent multiplayer world with Claude-generated narrative, the claimed player complaint is unsourced, and the one platform capability it depends on is undocumented. Idea 2 dies as specified because its primary structural layer is table stakes, not innovation, but the problem behind it survives and the mechanism was regenerated into the shown idea. Idea 1 survives as a problem and is intact as a mechanism, but its memory half is already shipped by Convai and NVIDIA ACE, the hackathon genre is saturated (147 Devpost projects match 'npc memory'), and its addressable user group is 5% of the 36% of game professionals who use generative AI; it is recorded as the shown idea's noted alternative rather than as a second survivor.",
+    "fired": [
+      "clone (idea 3)",
+      "nonexistent_problem (idea 3, the claimed complaint is unsourced and three populated alternatives already serve the want)",
+      "default_entry (idea 3, the AI-living-world framing duplicates shipped products and a prior grand prize)",
+      "wrapper (the LLM-semantic-only variant of idea 2, whose reduction sentence was a fair summary)",
+      "weekend_clone (idea 1, warning: one developer independently built all three of its mechanisms in about a week)"
+    ],
+    "competitors": [
+      {
+        "name": "Travian",
+        "url": "https://en.wikipedia.org/wiki/Travian"
+      },
+      {
+        "name": "Mythora",
+        "url": "https://www.producthunt.com/products/mythora"
+      },
+      {
+        "name": "Altworld.io",
+        "url": "https://www.hunted.space/product/altworld-io"
+      },
+      {
+        "name": "a16z AI/Virtual Worlds Hackathon grand prize",
+        "url": "https://metavert.io/videos/winning-the-ai-virtual-worlds-hackathon-ali-el-rhermoul-generative-ai-claude"
+      },
+      {
+        "name": "a16z-infra/ai-town",
+        "url": "https://github.com/a16z-infra/ai-town"
+      },
+      {
+        "name": "modl.ai",
+        "url": "https://modl.ai/"
+      },
+      {
+        "name": "StraySpark Unreal MCP Server",
+        "url": "https://www.strayspark.studio/blog/validate-ai-generated-content-unreal-engine-before-it-ships"
+      },
+      {
+        "name": "PCG Benchmark (FDG 2025)",
+        "url": "https://arxiv.org/abs/2503.21474"
+      },
+      {
+        "name": "Convai long-term memory",
+        "url": "https://docs.convai.com/api-docs/plugins-and-integrations/convai-unreal-engine-plugin/features/long-term-memory/how-long-term-memory-works"
+      },
+      {
+        "name": "NVIDIA ACE",
+        "url": "https://www.nvidia.com/en-us/geforce/news/nvidia-ace-autonomous-ai-companions-pubg-naraka-bladepoint/"
+      }
+    ]
+  },
+  "event": {
+    "name": "Cambridge x Arcade AI Hackathon",
+    "url": "https://about.tryarcade.com/hackathon",
+    "platform": "the event's own site (/hackathon, /submit, /judge); registration on Luma; comms on Discord. Not Devpost, Devfolio, itch.io or MLH.",
+    "window": "Sat 3 Oct 11:00 to Sun 4 Oct 14:00 Cambridge time, about 27 hours elapsed, with the venue shut 18:00 to morning",
+    "judging_format": "Async: '3+ independent reviews per project. Top 3 per track win.' Judges 'Watch the demo, open the project, then score six criteria from 1 to 5.' Separate onsite Winner Demo with live stream 15:30-17:00 Sunday.",
+    "sponsors": [
+      "Arcade AI",
+      "Tencent Cloud",
+      "TiMi Studio Group",
+      "Hyper3D"
+    ],
+    "criteria": [
+      {
+        "criterion": "Innovation & Originality",
+        "weight": "20%",
+        "quote": "20% Innovation & Originality",
+        "source": "https://about.tryarcade.com/hackathon",
+        "implication": "No definition is published, so the only defence is a mechanism a reviewer has not seen in the other projects they score. Prior art must be pre-empted on screen, because a reviewer who recognises a standard technique will mark it down and no other line compensates."
+      },
+      {
+        "criterion": "Execution & Functionality",
+        "weight": "25%",
+        "quote": "25% Execution & Functionality",
+        "source": "https://about.tryarcade.com/hackathon",
+        "implication": "The largest line, scored 1-5 from a video plus one opened link, so one point is 5% of the final score. A thing that visibly runs on the reviewer's own input beats a thing that is described."
+      },
+      {
+        "criterion": "AI × Gaming Relevance",
+        "weight": "15%",
+        "quote": "15% AI × Gaming Relevance",
+        "source": "https://about.tryarcade.com/hackathon",
+        "implication": "A separate line from Innovation, so the model has to be legible as the thing that makes the project work. A project whose demo is unchanged when the model is removed loses a line that nothing else can recover."
+      },
+      {
+        "criterion": "Track fit",
+        "weight": "25%",
+        "quote": "25% Track fit",
+        "source": "https://about.tryarcade.com/hackathon",
+        "implication": "Joint-largest line with no published definition, so the track's own bullet list is the de facto rubric. Landing squarely on a named bullet is trivially defensible; sitting between tracks hands a reviewer a reason to score 3 on a quarter of the score."
+      },
+      {
+        "criterion": "Potential & Impact",
+        "weight": "10%",
+        "quote": "10% Potential & Impact",
+        "source": "https://about.tryarcade.com/hackathon",
+        "implication": "The only forward-looking line, and the panel includes investors and a Tencent recruiting manager. One concrete sentence about who uses this next week is cheap to supply and is the only place in the rubric that rewards it."
+      },
+      {
+        "criterion": "Demo & Clarity",
+        "weight": "5%",
+        "quote": "5% Demo & Clarity",
+        "source": "https://about.tryarcade.com/hackathon",
+        "implication": "Worth least directly but it is the delivery channel for the other 95%, because the dashboard tells reviewers to watch the demo first. The event also publishes a 'Never judged' list naming 'English fluency', 'Slides' and 'Public speaking', so a deck and a polished narrator are worth zero and a captioned screen capture is fully compliant."
+      }
+    ]
+  },
+  "sponsor_verdicts": [
+    {
+      "sponsor": "Arcade AI",
+      "verdict": "does not fit either surviving idea as a dependency; it is the host platform and a possible submission requirement",
+      "why": "Arcade is a prompt-to-world consumer game platform with no public developer documentation of any kind - no docs site, no API reference, no changelog - and the strings 'persistent', 'save', 'database', 'state' and 'session' appear nowhere on its site. Both survivors are Game Tech pipeline tools rather than published games, so Arcade supplies none of their required capabilities, and Asset Passport deliberately uses a plain two-client web viewer rather than depending on an undocumented shared-state model. Arcade remains relevant for one reason only: the shared /submit form renders 'Arcade Game Link *' as required, so whether a Game Tech entry needs an Arcade presence is an unresolved submission question rather than a technical fit question. Separately worth noting as an opportunity rather than a fit: zero titles in the visible Arcade catalogue advertise an AI-native mechanic, so the Arcade Track's comparison set is conventional one-mechanic games."
+    },
+    {
+      "sponsor": "Tencent Cloud",
+      "verdict": "does not fit any surviving idea",
+      "why": "The event page promises participants no Tencent Cloud resources at all; its credits appear exclusively as prizes to the Game Tech top three, and no page opened states LLM API availability, free participant credits or region guidance. The international-versus-China account split makes it a poor critical-path dependency inside 27 hours. The prior package's plan to route inference through Tencent Cloud for both of its Game Tech ideas is unsupported and should be dropped."
+    },
+    {
+      "sponsor": "TiMi Studio Group",
+      "verdict": "does not fit any surviving idea",
+      "why": "TiMi is present as a partner, a judging bloc and a recruiting channel - all winners in both tracks receive a Tencent job interview - but not as a challenge sponsor with its own criteria or API. No TiMi-run hackathon, challenge text or winner archive was found. The prior package's repeated claim that TiMi has stated research priorities in persistent NPC memory, hybrid architectures and verification loops has no locatable source and is treated as fabricated."
+    },
+    {
+      "sponsor": "Hyper3D",
+      "verdict": "core for Asset Passport, meaningful for Dead State",
+      "why": "For Asset Passport, Rodin is the generating tool whose job response becomes the passport row, so the capture-at-source claim fails without a real generation API - core capability, replaceable vendor, and the demo's opening act is a real generation. For Dead State, Rodin generates the asset for a region only after that region has been proved completable, which makes mesh generation the visible reward for passing the gate. Both uses are asset-time rather than in-loop, which suits an API whose own client example enforces a 20-minute deadline and caps per-account concurrency, and both qualify under the only conditional prize criterion on the event page: 'Hyper3D prizes are available to eligible projects using Hyper3D', attached to the $1,152 subscription in the Game Tech first-place bundle."
+    }
+  ],
+  "killed": [
+    {
+      "name": "Asset Passport",
+      "stage": "critic",
+      "reason": "Killed by the critic pass on two checkable errors, both load-bearing. (1) The why-now was misattributed. Article 50(2) binds 'Providers of AI systems... generating synthetic audio, image, video or text content' - the generator vendor or model lab, not the hobbyist importing a mesh and not the world platform, which relative to someone else's generator is at most a deployer. Deployer duties under 50(4) cover deep fakes in image, audio or video; a generated sword is neither, and 3D is not in the enumerated list. And 50(4) carves games out explicitly: 'Where the content forms part of an evidently artistic, creative, satirical, fictional or analogous work or programme, the transparency obligations set out in this paragraph are limited to disclosure of the existence of such generated or manipulated content' - so the legally required artefact is a notice, not a per-asset signed row. (2) The central standards gap is false. KHR_xmp_json_ld's own README states its purpose is transmitting 'information (such as attribution, licensing, creation date)' and that it 'enables any XMP metadata namespace to be embedded in a glTF asset', including xmpMM, which is XMP's derivation and provenance vocabulary; and C2PA already supports external manifests - 'commonly embedded directly within the asset, though it can also be linked externally' - bound by 'standard cryptographic hashes, such as SHA2-256', with a digitalSourceType field that identifies when an action 'was performed by an AI/ML system'. The real residual gap is no agreed convention and no tamper-evidence, which a weekend project does not close. The ratified count was also wrong: 25 KHR_ plus 3 EXT_ is 28, not 27. Compounding: Sketchfab already mandates a self-declared CreatedWithAI tag, so the incumbent answer at the layer that could pay is a free checkbox - which is what the one evidenced stakeholder was actually asking for; byte-exact keying is defeated by any re-export or decimate pass and the geometry fingerprint was undefined; the population in its own evidence (people wiring external models to the platform) arrives with no receipt and routes to a classifier forbidden from writing labels, so the cooperative case was covered and the adversarial case punted; the demo climax caught a lie the demoer authored; and deleting both model jobs leaves the demo unchanged, which is fatal on a line named AI x Gaming Relevance. The critic's condition was kill unless the why-now could be replaced with something that is neither the AI Act nor the single forum thread. No replacement exists in the evidence gathered: itch.io, Steam and Sketchfab are all self-declaration regimes at the store-listing level, which is the wrong unit of analysis and creates no demand for per-asset signatures. No spend signal was found in games at all.",
+      "fingerprint": {
+        "domain": "user-generated world platforms and asset provenance",
+        "user": "a creator on a shared-world platform, at the instant they import a file or accept a generated mesh into a world other people will walk through",
+        "job": "attach a checkable origin to an object other people will see, without having to remember it later",
+        "mechanism": "the origin record is minted by the system at the moment of creation and bound to the exact bytes by hash and signature, instead of being asserted by the creator afterwards",
+        "mechanism_family": "verify",
+        "buyer_or_demo": "the platform operator would buy it; the demo is a two-client scene where a badge is minted, seen by a second client, then a hand-edited label is caught by the hash check"
+      }
+    },
+    {
+      "name": "Living World Multiplayer",
+      "stage": "competition",
+      "reason": "Clone with no wedge, on a false novelty claim. Travian is a 'persistent, browser-based, massively multiplayer, online real-time strategy game' released June 2004 that peaked at 'over 5 million players on over 300 game servers worldwide', in which players build persistent structures, attack and conquer other villages, and face NPC Natarian villages that 'randomly spawn all over the map, and will gradually develop' - every element of the fingerprint, 22 years old. Mythora shipped the browser LLM version in 2026 with cross-session NPC memory, factions shifting offline and player traces visible to others. Altworld states the identical architecture: 'Every action you type first updates a structured world database - factions, prices, rumors, relationships, locations - and only then is the story narrated from what actually changed.' The a16z AI/Virtual Worlds hackathon grand prize in July 2023 was already a persistent multiplayer world with Claude-generated storytelling. The claimed player complaint appears on no opened page. And the load-bearing platform capability is undocumented: the strings 'persistent', 'save', 'database', 'state' and 'session' appear nowhere on Arcade's site, which has no docs at all.",
+      "fingerprint": {
+        "user": "a player of browser multiplayer games wanting lasting consequence, in a 5-15 minute session",
+        "job": "feel that an action in a short session permanently changed a world other players will encounter",
+        "mechanism": "a shared persistent world-state record accumulating player actions across sessions with model-generated faction consequences instead of a scripted event tree"
+      }
+    },
+    {
+      "name": "World Coherence Verifier (as specified)",
+      "stage": "competition",
+      "reason": "Its primary layer is standard practice, so it cannot carry Innovation at 20%. The 2024 survey of procedural generation via generative AI names the technique as existing prior art and calls it effective: 'the use of gameplaying agents, commonly pathfinding algorithms or other hand-crafted AI, to determine playability. While these are effective, they come at a high computational cost' - the stated bottleneck is compute cost, not absence. The FDG 2025 PCG Benchmark already ships 'A* agent can solve the level' as graded infrastructure. GitHub returns 0 repositories for dungeon solvability checker and 10 (none above 5 stars) for procedural generation validation, because it is a flood fill every developer writes inline. Three separate Devpost games describe running a solver to check level solvability as one feature among many. The balance layer is heuristics the developer must author anyway. The problem behind it survives and the mechanism was regenerated as Dead State.",
+      "fingerprint": {
+        "user": "a developer shipping procedurally generated content, at the moment generated content is about to enter the build",
+        "job": "catch gameplay-breaking generated content before a player hits it without playing through it by hand",
+        "mechanism": "a battery of structural pathfinding checks, model-based semantic review and rule-based balance checks returning a pass-fail health report"
+      }
+    },
+    {
+      "name": "Semantic-only content reviewer",
+      "stage": "wrapper",
+      "reason": "The regeneration's first attempt, and it died on the reduction test. Having conceded that the structural layer is table stakes, the remaining product was 'hand the generated quest content to a model and get a list of problems back' - and that sentence is a fair summary of it. The model issued the verdict, so the output was an opinion about a quest rather than a property of it, nothing survived the model's removal, and there was no deterministic step to check the output against. Regenerated by inverting the roles: the model extracts a typed precondition-effect model from the content and a reachability search over that model issues the verdict with a counterexample trace.",
+      "fingerprint": {
+        "user": "a developer shipping machine-generated quest content, reviewing a generated batch",
+        "job": "find narrative and economy incoherence in generated game content",
+        "mechanism": "a model reads the content specification and reports which parts do not make sense"
+      }
+    },
+    {
+      "name": "Narrative Drift Guard",
+      "stage": "shortlist",
+      "reason": "Not dead, but cut in favour of the same verify step at a stronger moment, and recorded as Dead State's noted alternative. Against it: its memory half is already shipped, with Convai documenting long-term memory 'scoped to one player and one character' in both Unity and Unreal plugins and NVIDIA ACE shipping retrieval-based memory inside PUBG, inZOI and NARAKA: BLADEPOINT since January 2025, alongside mem0 at 66,484 stars and a model-level memory tool on all Claude 4+ models. The hackathon genre is saturated: 147 Devpost projects match 'npc memory', and Loomweaver opens on the same sentence about characters forgetting player choices. Its user group is the smallest measured in the GDC survey, at 5% of the 36%. One developer independently built all three of its mechanisms - a JSON world ledger, 'scoped context packets' and a 'trust gate' - in about a week. In its favour, and the reason it is noted rather than dismissed: NVIDIA's own article tells developers they 'must implement content filtering, lore constraints, and behavioral boundaries' themselves, which is an explicit 21-month-old hand-off of exactly this layer.",
+      "fingerprint": {
+        "user": "a developer building an LLM-driven narrative game, at the moment they wire an NPC to a model",
+        "job": "keep an AI NPC's statements consistent with what happened in the game and with established lore across sessions",
+        "mechanism": "a persistent structured world-fact ledger with character-scoped retrieval before the call and automated contradiction checking after it"
+      }
+    },
+    {
+      "name": "AI Onboarding Personalizer",
+      "stage": "wrapper",
+      "reason": "Carried over from the prior package's log and confirmed. The product disappears with the model: it is player behaviour in, a tutorial sequence out, with no record kept, no workflow owned and no deterministic step. The reduction sentence is a fair summary.",
+      "fingerprint": {
+        "user": "a player starting a new game",
+        "job": "get a tutorial matched to how they actually play",
+        "mechanism": "a model reads player behaviour and returns a tutorial sequence"
+      }
+    },
+    {
+      "name": "AI asset generator for game developers",
+      "stage": "wrapper",
+      "reason": "Pure wrapper, and additionally a default. The product is text in, asset out, with no pipeline around it. Note that Hyper3D Rodin already is this product, shipped, with add-ons for Blender, Unity, Unreal, Godot, Maya, 3DS Max, C4D, Omniverse and ComfyUI, so a submission in this shape competes with a sponsor's own product.",
+      "fingerprint": {
+        "user": "a game developer needing art",
+        "job": "produce a usable 3D asset or sprite without an artist",
+        "mechanism": "a model turns a text prompt or image into an asset"
+      }
+    },
+    {
+      "name": "Dynamic music generator",
+      "stage": "prior-art",
+      "reason": "Carried over from the prior package. A default and a recycled category with no research-backed wedge, and named by no track bullet. No specific user pain was documented beyond generic immersion.",
+      "fingerprint": {
+        "user": "a player in a game scene",
+        "job": "have the soundtrack match what is happening",
+        "mechanism": "a model generates music that reacts to game state"
+      }
+    },
+    {
+      "name": "Generic AI NPC chatbot",
+      "stage": "prior-art",
+      "reason": "A pre-registered default, killed on sight. Additionally, zero titles in the visible Arcade catalogue advertise an AI-native mechanic, so this would be judged against the platform's own conventional catalogue while competing with shipped middleware from Convai and NVIDIA.",
+      "fingerprint": {
+        "user": "a player talking to a game character",
+        "job": "have a conversation with an NPC that is not a dialogue tree",
+        "mechanism": "a model generates NPC dialogue in response to player text"
+      }
+    },
+    {
+      "name": "Prompt-to-level generator",
+      "stage": "prior-art",
+      "reason": "A pre-registered default, and it competes directly with the host platform: Arcade's own product is prompt-to-world ('Tell your companion what you want to make and watch the world take shape around you'), so a submission in this shape is a thinner version of the thing running the event.",
+      "fingerprint": {
+        "user": "a developer or player wanting a level quickly",
+        "job": "get a playable level from a description",
+        "mechanism": "a model turns a text prompt into level geometry"
+      }
+    },
+    {
+      "name": "AI moderator agent that reviews each reported asset and decides with a human approving",
+      "stage": "wrapper",
+      "reason": "Two declared wrapper shapes at once - an agentic version of existing software with no workflow advantage, and the watched 'AI agent with a human approval step' default. Reduction: 'the moderator gives a reported asset to a model and gets a verdict back' - FAIR: true. It never owns the part that matters, which is what makes an item enter the queue, and without that it industrialises exactly the harm the platform named by giving unevidenced reports a faster path to a decision. Without the model: thin, a report inbox. Regenerated as the mismatch queue whose entry condition is a recorded origin contradicting a declared one, so unevidenced reports cannot create work.",
+      "fingerprint": {
+        "user": "a trust and safety moderator opening a report",
+        "job": "decide whether a reported asset is AI-generated",
+        "mechanism": "a model reviews the reported asset and returns a verdict for a human to approve"
+      }
+    },
+    {
+      "name": "AI that inspects your world and suggests optimizations",
+      "stage": "wrapper",
+      "reason": "An AI dashboard with no workflow of its own. Reduction: 'the user gives a world to a model and gets optimization advice back' - FAIR: true, so advice is the model's output and therefore the product. It also fails on leverage: the platform budgets are published arithmetic and the simplification is a classical algorithm installed 44.57M times a month, so there is no step a model does that code cannot. Without the model: nothing. Regenerated as a pre-publish simulation that projects the cost at instance scale, names the specific cut, applies it and re-measures.",
+      "fingerprint": {
+        "user": "a world or avatar creator before publishing",
+        "job": "keep one heavy asset from degrading a shared instance for everyone",
+        "mechanism": "a model inspects the world and returns optimisation advice"
+      }
+    },
+    {
+      "name": "Catalogue retro-tagger that classifies listings and writes the tag back",
+      "stage": "wrapper",
+      "reason": "A wrapper around a model API. Reduction: 'the seller gives their listing images to a model and gets tags back' - FAIR: true. The only thing that would have saved it was the write-back to the storefront, and that was an unverified assumption - no evidence was found that the store exposes listing edits to third parties. Without the model: thin, a list of listings. Regenerated by inverting the direction: recover the receipts already sitting in the seller's own project files, cite a specific file and field for every proposed tag, and keep the decision plus its evidence as the record.",
+      "fingerprint": {
+        "user": "an asset-store seller facing a retro-tagging deadline",
+        "job": "tag an existing catalogue for generative-AI disclosure or lose discovery",
+        "mechanism": "a model classifies each listing and writes a disclosure tag back to the store"
+      }
+    },
+    {
+      "name": "Generated-mesh cleanup tool for 3D artists",
+      "stage": "prior-art",
+      "reason": "Killed at the prior-art probe as crowded. The relevant math is free and commoditized: meshoptimizer at 44,574,675 monthly downloads, @gltf-transform/core at 2,485,210 and gltf-validator at 653,789, plus Blender, InstaLOD and Simplygon. No opened source showed a step those skip.",
+      "fingerprint": {
+        "user": "a 3D or technical artist receiving a generated mesh",
+        "job": "make a generated mesh production-ready without hours of cleanup",
+        "mechanism": "automated retopology and cleanup of generated geometry"
+      }
+    },
+    {
+      "name": "Mod conflict resolver",
+      "stage": "prior-art",
+      "reason": "Killed as crowded and unvalidated. A GitHub issue search for 'mod conflict' returns 24,813 issues but the top eight by reactions all have 0 reactions and sit in unrelated small repositories - a long tail with no concentrated demand. LOOT, Vortex and MO2 already do conflict detection and load-order sorting, and no opened account of the cost was found.",
+      "fingerprint": {
+        "user": "a mod author receiving conflict reports from players",
+        "job": "stop fielding duplicate conflicts-with-X reports",
+        "mechanism": "automated detection and explanation of mod conflicts"
+      }
+    },
+    {
+      "name": "Localisation context tool",
+      "stage": "validation",
+      "reason": "Killed for no evidence. A probe of the Godot proposals tracker found 6 open localisation issues with reaction counts of 0, 5, 4, 1, 1 and 0 - no pain accounts within budget. Additionally, translation-only leverage is pre-killed by the wrapper filter unless a deterministic checker owns the output.",
+      "fingerprint": {
+        "user": "a localisation manager or LQA tester",
+        "job": "stop shipping truncation and placeholder bugs from context-free translation",
+        "mechanism": "show on-screen context alongside strings during translation"
+      }
+    },
+    {
+      "name": "Bug report reproduction-step recoverer",
+      "stage": "validation",
+      "reason": "Killed for no evidence. A Hacker News comment search for playtest bug reports returned five hits, four from 2008-2014 and none about the cost of re-deriving reproduction steps. Only the researcher's own reasoning would have supported it.",
+      "fingerprint": {
+        "user": "a QA tester triaging a player bug report",
+        "job": "avoid re-deriving reproduction steps a reporter did not supply",
+        "mechanism": "reconstruct reproduction steps from session telemetry"
+      }
+    },
+    {
+      "name": "Virtual-tabletop session prep assistant",
+      "stage": "validation",
+      "reason": "Killed for no evidence and the wrong watering hole. The Foundry VTT tracker has 1,646 open issues and the top six by reactions all have 0 reactions and are all engine or data-model bugs. No budget remained to find the right community.",
+      "fingerprint": {
+        "user": "a tabletop game master preparing a session",
+        "job": "cut hours of prep before a virtual-tabletop game",
+        "mechanism": "generate session material from a campaign outline"
+      }
+    }
+  ],
+  "ideas": [
+    {
+      "name": "Dead State",
+      "origin": "user",
+      "problem_status": "hypothesis",
+      "wedge_status": "untested",
+      "revisit": "",
+      "fingerprint": {
+        "domain": "game production pipelines for machine-generated content",
+        "user": "a developer shipping machine-generated quests, items and regions, at the moment a generated batch comes back and before it enters the build",
+        "job": "know whether a generated quest chain can actually be completed, and where it breaks, without playing it",
+        "mechanism": "a model types free-form generated content into a precondition-effect action model, then a reachability search over that model proves completability or returns the exact dead state, and the build is gated on the proof",
+        "mechanism_family": "verify",
+        "buyer_or_demo": "solo and small studios shipping generated quest content; demo moment is a quest chain that reads perfectly being proved impossible, with the dead state and the trace on screen"
+      },
+      "recycled": {
+        "category": "none",
+        "wedge": ""
+      },
+      "default_match": {
+        "matches": "none: the nearest pre-registered default is 'AI playtesting bot that plays a build to find bugs', which needs a running build and discovers failures by sampling play; this never runs the game and instead proves a property of the content itself, returning a counterexample rather than a bug report",
+        "why_different": ""
+      },
+      "claims": [
+        {
+          "type": "evidence",
+          "text": "36% of game workers use generative AI tools; of those, 10% use it for procedural generation and 5% for player-facing features",
+          "strength": "moderate",
+          "source": "https://www.gamedeveloper.com/business/one-third-of-game-workers-use-generative-ai-but-half-think-it-s-bad-for-the-industry",
+          "org": "Game Developer Conference",
+          "speaker": "Game Developer, reporting the GDC State of the Game Industry 2026 survey",
+          "about": "2,300+ surveyed game industry professionals and what they reported doing",
+          "how": "opened",
+          "date": "2026-02",
+          "segment": "same",
+          "source_type": "survey"
+        },
+        {
+          "type": "evidence",
+          "text": "52% of surveyed game professionals believe generative AI is having a negative impact on the industry",
+          "strength": "moderate",
+          "source": "https://www.gamedeveloper.com/business/one-third-of-game-workers-use-generative-ai-but-half-think-it-s-bad-for-the-industry",
+          "org": "Game Developer Conference",
+          "speaker": "Game Developer, reporting the GDC State of the Game Industry 2026 survey",
+          "about": "2,300+ surveyed game industry professionals",
+          "how": "opened",
+          "date": "2026-02",
+          "segment": "same",
+          "source_type": "survey"
+        },
+        {
+          "type": "fact",
+          "text": "A July 2026 survey of AI-native games names a generate-and-verify pipeline as a possible open direction, listing exactly these checks: 'does the required object exist? Can the player reach the location? Does the outcome contradict prior narrative or world state?'",
+          "source": "https://arxiv.org/html/2607.00527v2",
+          "org": "the authors of AI Native Games: A Survey and Roadmap",
+          "speaker": "Xu, Meng, Xu, Verbrugge, Lucas and Zhao",
+          "about": "the state of AI-native game research and a corpus of 53 AI-native artifacts",
+          "how": "opened",
+          "date": "2026-07"
+        },
+        {
+          "type": "fact",
+          "text": "The same survey states that 'Persistent memory, world-state tracking, and long-term consequence management remain fragile' and that 'Runtime generation is still difficult to control, especially when outputs must remain coherent with game state and rules'",
+          "source": "https://arxiv.org/html/2607.00527v2",
+          "org": "the authors of AI Native Games: A Survey and Roadmap",
+          "speaker": "Xu, Meng, Xu, Verbrugge, Lucas and Zhao",
+          "about": "open challenges in AI-native games",
+          "how": "opened",
+          "date": "2026-07"
+        },
+        {
+          "type": "fact",
+          "text": "The 2024 survey of procedural generation via generative AI names pathfinding-based playability checking as existing and effective: 'the use of gameplaying agents, commonly pathfinding algorithms or other hand-crafted AI, to determine playability. While these are effective, they come at a high computational cost'",
+          "source": "https://arxiv.org/html/2407.09013v1",
+          "org": "Tohoku University and co-authors",
+          "speaker": "Mao, Yu, Yamada and Zielewski",
+          "about": "established validation practice in procedural generation",
+          "how": "opened",
+          "date": "2024-07"
+        },
+        {
+          "type": "fact",
+          "text": "Unreal Engine's PCG documentation enumerates its entire topic set as eight child pages, none of which is validation, verification, linting or quality-gating; the closest is diagnostic, described as 'An overview of PCG runtime generation debugging tools'",
+          "source": "https://dev.epicgames.com/documentation/en-us/unreal-engine/procedural-content-generation-framework-in-unreal-engine",
+          "org": "Epic Games",
+          "speaker": "Epic Games documentation",
+          "about": "Unreal Engine 5.8's PCG framework",
+          "how": "opened",
+          "date": "2026-10"
+        },
+        {
+          "type": "fact",
+          "text": "Unreal's Data Validation plugin is per-asset and editor-time, with stated use cases 'Checking that assets meet name conventions', 'Enforcing space and performance budgets' and 'Catching non-cyclic dependencies', operating on a UObject pointer; the page does not mention PCG, generated output, gameplay logic or level completability",
+          "source": "https://dev.epicgames.com/documentation/en-us/unreal-engine/data-validation-in-unreal-engine",
+          "org": "Epic Games",
+          "speaker": "Epic Games documentation",
+          "about": "Unreal Engine 5.8's Data Validation plugin",
+          "how": "opened",
+          "date": "2026-10"
+        },
+        {
+          "type": "fact",
+          "text": "Unity's AI offering is editor-time: an in-editor assistant, an AI gateway, an MCP server, an official plugin and the CLI, with Sentis as the runtime inference host. Unity Muse is deprecated and the 'Unity AI' brand retired. The strings NPC, dialogue, memory, narrative, coherence and validat* occur zero times on the page",
+          "source": "https://unity.com/features/ai",
+          "org": "Unity Technologies",
+          "speaker": "Unity Technologies product page",
+          "about": "Unity's shipped AI feature set",
+          "how": "opened",
+          "date": "2026-10"
+        },
+        {
+          "type": "fact",
+          "text": "modl.ai's input is an uploaded game build which AI agents play, and its agent 'observes and interacts with the game purely through visuals'; it finds 'visual glitches, missing assets, performance issues, and gameplay logic bugs'",
+          "source": "https://modl.ai/",
+          "org": "modl.ai",
+          "speaker": "modl.ai product site",
+          "about": "modl.ai's own product",
+          "how": "opened",
+          "date": "2026-10"
+        },
+        {
+          "type": "fact",
+          "text": "A GitHub repository search for dungeon solvability checker returns 0 results, and one for procedural generation validation in games returns 10, none above 5 stars",
+          "source": "https://api.github.com/search/repositories?q=procedural+generation+validation+game",
+          "org": "GitHub",
+          "speaker": "GitHub search API",
+          "about": "public open-source repositories",
+          "how": "opened",
+          "date": "2026-10"
+        },
+        {
+          "type": "fact",
+          "text": "A third-party Unreal plugin priced from $129 already sells pre-ship validation of AI-generated content with a uniform issue report, covering 'Blueprint structure, widget layout, asset data, material setup, animation setup, PCG graph, import preflight'",
+          "source": "https://www.strayspark.studio/blog/validate-ai-generated-content-unreal-engine-before-it-ships",
+          "org": "StraySpark",
+          "speaker": "StraySpark blog",
+          "about": "its own product",
+          "how": "opened",
+          "date": "2026-09"
+        },
+        {
+          "type": "evidence",
+          "text": "COUNTER-EVIDENCE. A solo developer asked publicly whether his procedurally generated game is always solvable answered 'Practically always', stated 'The game doesn't explicitly guarantee beatable levels', and based this only on 'my experience so far' - describing neither a verifier nor the manual playthrough QA the problem statement attributes to him",
+          "strength": "moderate",
+          "source": "https://mvolution.itch.io/squire/devlog/901500/is-the-game-always-solvable",
+          "org": "mvolution (Dungeon Squire)",
+          "speaker": "mvolution, the game's developer",
+          "about": "his own game's generation and his own practice",
+          "how": "opened",
+          "date": "2026-10",
+          "segment": "same",
+          "source_type": "developer devlog"
+        },
+        {
+          "type": "fact",
+          "text": "The only conditional prize criterion on the event page is 'Hyper3D prizes are available to eligible projects using Hyper3D', attached to the $1,152 Hyper3D Business Subscription in the Game Tech first-place bundle",
+          "source": "https://about.tryarcade.com/hackathon",
+          "org": "Arcade AI",
+          "speaker": "the event organisers",
+          "about": "the event's own prize conditions",
+          "how": "opened",
+          "date": "2026-10"
+        },
+        {
+          "type": "fact",
+          "text": "Rodin's generation API is asynchronous and its official client example 'starts polling after 5 seconds, increases the delay to at most 30 seconds, enforces a 20-minute deadline', with a per-account concurrency cap that rejects submissions with API_PARALLELISM_LIMIT_REACHED",
+          "source": "https://docs.hyper3d.ai/en/get-started/quick-start",
+          "org": "Hyper3D (Deemos)",
+          "speaker": "Hyper3D documentation",
+          "about": "its own API's latency and limits",
+          "how": "opened",
+          "date": "2026-10"
+        },
+        {
+          "type": "assumption",
+          "text": "Typing free-form generated prose into a sound precondition-effect model is accurate enough at demo scale that false verdicts are rare; a wrong extraction produces a wrong proof, which is the mechanism's central risk"
+        },
+        {
+          "type": "assumption",
+          "text": "A reachability search over the extracted action model stays tractable for the quest and item graph sizes a small studio ships, without needing a real planner's optimisations"
+        },
+        {
+          "type": "assumption",
+          "text": "A Game Tech Track submission does not require a published Arcade game link, despite the shared submission form rendering that field as required"
+        },
+        {
+          "type": "hypothesis",
+          "text": "At least 3 of 10 developers who have shipped machine-generated quest or item content have shipped at least one quest that could not be completed, and found out from a player rather than from a tool"
+        },
+        {
+          "type": "fact",
+          "text": "G-KMS already publishes schema-governed LLM quest generation with reachability validation for an RPG: 'The LLM produces structured JSON representations that are subsequently normalized and validated to enforce schema compliance, state reachability, and consistency of world references. Valid outputs are retained as executable artifacts, whereas invalid outputs are repaired or discarded.' It models a quest as 'a directed acyclic graph composed of conditional transitions, choice nodes, and terminal states', measures 'path length, branching ratio, dead ends, and ending counts', and reports 'No generated quests contain dead ends or unreachable terminal states.' Critically, the words precondition, planner, PDDL and BFS do not appear anywhere in the paper: its reachability is over a dialogue and choice graph, not over a world-fact state space.",
+          "source": "https://www.mdpi.com/2079-8954/14/2/175",
+          "org": "Systems (MDPI), 14(2):175",
+          "speaker": "the paper's authors",
+          "about": "their own Game Knowledge Management System and its evaluation on a 2D Unity RPG benchmark",
+          "how": "opened",
+          "date": "2026"
+        },
+        {
+          "type": "fact",
+          "text": "STORY2GAME already publishes LLM-extracted preconditions and effects in a game context: 'The key to successful action generation is to use LLM-generated preconditions and effects of actions in the stories as guides for what aspects of the game state must be tracked and changed.' Its abstract claims no reachability verdict and no build gate.",
+          "source": "https://arxiv.org/abs/2505.03547",
+          "org": "Georgia Tech (Riedl et al.)",
+          "speaker": "Zhou, Basavatia, Siam, Chen and Riedl",
+          "about": "their own system for generating games from stories",
+          "how": "opened",
+          "date": "2025-05"
+        },
+        {
+          "type": "evidence",
+          "text": "The lore-to-planner idea is in the air and solo-buildable: a public pipeline runs 'Structured lore -> Retrieve similar examples (RAG) -> Build planning prompt -> Generate PDDL with a local LLM -> Validate with Fast Downward' with a reflection loop on validation failure. 0 stars, one M.Sc. student, not quest-oriented per its README.",
+          "strength": "weak",
+          "source": "https://github.com/PaoloPangallo/PDDL_LLM",
+          "org": "an individual M.Sc. project",
+          "speaker": "the repository's README",
+          "about": "its own pipeline",
+          "how": "opened",
+          "date": "2026-10",
+          "segment": "neighboring",
+          "source_type": "open-source repository"
+        }
+      ],
+      "evidence_summary": {
+        "strength": "moderate",
+        "why": "Shown as a hypothesis, and the card leads with its first test. One earlier claim is now withdrawn: the capability is not absent. G-KMS validates LLM quest output for state reachability and STORY2GAME extracts preconditions and effects from prose, both published, so the mechanism family exists. What survives is narrower: cross-quest world-fact dependency rather than narrative-graph reachability, and a generator-agnostic pipeline gate rather than a generator that repairs its own output. The absence that remains well sourced is at the product layer - every one of five AI game-QA vendors plays a finished build and none reads a content specification, and neither engine ships a solvability checker for generated gameplay content. What is NOT established is that developers feel this acutely: the population is about 3.6% of surveyed professionals and the one developer found answering this exact question in public reports no verifier and no pain.",
+        "counter": "The strongest objection is valid-by-construction, and G-KMS is an instance of it: schema-governed generation with normalization-based repair and an admission gate, which removes the need for a separate verifier for its own generator. Constraint, wave-function-collapse and reinforcement-learning generators do the same. The 2024 PCG survey calls existing pathfinding playability checks effective and names compute cost as the drawback, so the stated bottleneck is cost rather than absence - and adding model calls makes cost worse. A solo developer asked this exact question publicly reports no verification process and no felt pain. And an earlier supporting claim has been downgraded: a GitHub query returning zero results for a literal phrase is weak evidence, not a fact, as a solo lore-to-PDDL-to-planner pipeline demonstrates.",
+        "missing_voices": "Nobody at a studio large enough to have a release-engineering function; the GDC survey aggregates but does not let this segment speak. No non-English-language developers. No QA contractors, who are the people currently absorbing this work by hand. Reddit, where roguelike and procedural-generation developers actually congregate, was unreachable throughout, so the most relevant practitioner community is absent from every source here."
+      },
+      "competition_scan": {
+        "startup": "Every AI game-QA company found plays a finished build rather than reading a content specification: modl.ai (vision-based agents on an uploaded build), nunu.ai ($6M seed, customers named as Warner Bros., Scopely, Roboto Games), ManaMind ($1.5M pre-seed April 2026), Regression Games, and Razer's QA Companion AI announced at GDC 2026. This pipeline-stage distinction is the clearest white space found. The nearest commercial match is StraySpark's Unreal MCP Server from $129, dated 2026-09-12, which validates engine artifacts (Blueprints, materials, PCG graphs, import preflight) with a uniform issue report rather than gameplay logic.",
+        "oss": "No standalone verifier exists: GitHub returns 0 repositories for dungeon solvability checker and 10 (none above 5 stars) for procedural generation validation. The real open-source tooling is generators that bake validity in - gym-pcgrl at 134 stars and control-pcgrl at 47 stars embed playability as a reinforcement-learning reward term, and constraint and wave-function-collapse generators enforce it at generation time. That is the architectural rival: if content is valid by construction there is nothing to verify.",
+        "hackathon": "Solvability checking appears repeatedly as an internal one-line feature of hackathon games and never as the deliverable - three separate Devpost games describe running a solver or BFS to check level solvability among their features. No hackathon project found has content validation as its product. Devpost's project search was refused with a bot challenge on seven URLs, so this absence is scoped to the results that were reachable, and there are no category counts.",
+        "platform": "Neither engine ships a solvability checker for generated gameplay content. Unreal's Data Validation plugin is per-UObject, editor-and-CI-time asset validation scoped to naming conventions, performance budgets and dependencies, with no mention of PCG output, gameplay logic or completability - an extensible hook, not a solution. Unity's AI surface is editor-time plus Sentis as a runtime inference host, with Muse deprecated. Scoped honestly, correcting an earlier overclaim: absence from Unreal's PCG table of contents is weak evidence for absence of capability, since validation could live in automation, functional tests or custom validators. The defensible claim is that Epic ships no solvability checker for PCG graphs, not that Unreal cannot validate anything.",
+        "research": "The decisive class, and it is more crowded than first assessed. G-KMS (Systems 14(2):175, 2026) already validates LLM quest output for 'schema compliance, state reachability, and consistency of world references', models quests as a directed acyclic graph of conditional transitions, choice nodes and terminal states, and reports zero dead ends - but has no precondition-effect model, no planner, no PDDL and no BFS, so its reachability is over a narrative graph rather than a world-fact state space. STORY2GAME (2025-05, Riedl et al.) publishes the extraction half: 'LLM-generated preconditions and effects of actions in the stories as guides for what aspects of the game state must be tracked and changed.' A solo PDDL_LLM pipeline runs lore to PDDL to Fast Downward. The FDG 2025 PCG Benchmark implements A*-based solvability as graded pass-rates. A July 2026 survey of AI-native games names a generate-and-verify pipeline as an open direction, listing 'does the required object exist? Can the player reach the location? Does the outcome contradict prior narrative or world state?' - which is evidence the field finds it interesting and that nobody has shipped it, not evidence of pain. Net: the mechanism family is published; what is unclaimed is cross-quest world-fact dependency reachability as a generator-agnostic pipeline gate with a counterexample trace.",
+        "workaround": "Manual playthrough by a designer, hand-written inline validity rules, seed blacklisting, and - evidenced directly - simply accepting probabilistic validity, as the Dungeon Squire developer describes. The 2024 survey confirms agent-based playability checking is current practice at known compute cost."
+      },
+      "competitors": [
+        {
+          "name": "modl.ai",
+          "kind": "startup",
+          "url": "https://modl.ai/",
+          "difference": "modl.ai needs a playable build and plays it with vision-based agents after the build exists; Dead State reads the content before a build exists and never runs the game. modl.ai cannot report that a quest requires an item the loot table never produces without happening to play to it."
+        },
+        {
+          "name": "StraySpark Unreal MCP Server",
+          "kind": "startup",
+          "url": "https://www.strayspark.studio/blog/validate-ai-generated-content-unreal-engine-before-it-ships",
+          "difference": "Same mechanism family and the same pre-ship issue-report shape, but its object of validation is engine artifacts - Blueprint structure, materials, PCG graphs, import preflight. It checks whether assets are well formed; Dead State checks whether the game described by the content can be finished. It is also Unreal-only."
+        },
+        {
+          "name": "PCG Benchmark (FDG 2025)",
+          "kind": "research",
+          "url": "https://arxiv.org/abs/2503.21474",
+          "difference": "Already implements A*-based solvability and win/lose criteria as graded pass-rates, so Dead State cannot claim structural checking as novel. But it is a benchmark for comparing generators over fixed research problem domains, run by researchers; Dead State types arbitrary developer content into an action model and returns a located counterexample to a developer."
+        },
+        {
+          "name": "gym-pcgrl",
+          "kind": "oss",
+          "url": "https://github.com/amidos2006/gym-pcgrl",
+          "difference": "Embeds playability as a reward term inside the generator, so validity is produced rather than checked. This is the architectural rival rather than a competing product: where it applies, a post-hoc gate is unnecessary. Dead State targets the case it does not cover - content written as free-form prose by a general model, where no constraint was expressible at generation time."
+        },
+        {
+          "name": "AI Native Games: A Survey and Roadmap",
+          "kind": "research",
+          "url": "https://arxiv.org/html/2607.00527v2",
+          "difference": "Names the generate-and-verify pipeline as a direction the field should pursue and lists the three checks almost exactly; it does not build one. Dead State is an implementation of the direction this survey describes as open, which is also the strongest available answer to a reviewer asking whether this is novel."
+        },
+        {
+          "name": "Unreal Data Validation",
+          "kind": "platform",
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/data-validation-in-unreal-engine",
+          "difference": "Validates a UObject against scripted rules at editor and CI time - naming conventions, budgets, dependencies. Its unit of analysis is an asset pointer; Dead State's is a reachable state space. Epic ships the hook and no gameplay-logic rule, so Dead State could in principle be delivered through this very plugin."
+        },
+        {
+          "name": "Manual playthrough and accepted probabilistic validity",
+          "kind": "workaround",
+          "url": "",
+          "difference": "A designer plays the generated content, or nobody checks and the developer accepts that levels are beatable 'practically always'. Dead State replaces a sampling process with a proof: a playthrough finds the failures it happens to walk into, while a reachability search finds whether any completion exists at all."
+        },
+        {
+          "name": "G-KMS (Systems 14(2):175)",
+          "kind": "research",
+          "url": "https://www.mdpi.com/2079-8954/14/2/175",
+          "difference": "The closest prior art, and it removes the novelty of the category. It already validates LLM quest output for 'schema compliance, state reachability, and consistency of world references', reports zero dead ends and counts reachable endings. What it does not do: it has no precondition-effect model, no planner, no PDDL and no BFS - the words do not appear in the paper. Its reachability is over a dialogue and choice graph, so a quest graph that terminates correctly still passes even when the item it requires is unobtainable. It is also schema-governed generation that repairs its own output, i.e. valid-by-construction for its own generator, whereas this is a gate over content from any generator."
+        },
+        {
+          "name": "STORY2GAME",
+          "kind": "research",
+          "url": "https://arxiv.org/abs/2505.03547",
+          "difference": "Publishes the extraction half outright: LLM-generated preconditions and effects as guides for what game state to track. So typing prose into a precondition-effect model is not novel. What its abstract does not claim is a reachability verdict over that model, a counterexample trace, or a pipeline gate - which is what is left."
+        },
+        {
+          "name": "PDDL_LLM",
+          "kind": "oss",
+          "url": "https://github.com/PaoloPangallo/PDDL_LLM",
+          "difference": "Lore to PDDL to Fast Downward with a reflection loop, by one student, not quest-oriented. Weak as competition but strong evidence the approach is buildable solo, which also means the GitHub query that returned zero results for 'dungeon solvability checker' was too literal to support any absence claim."
+        }
+      ],
+      "wedge": "Cross-quest world-fact dependency, which the published work does not cover: G-KMS checks reachability over a dialogue and choice graph and reports zero dead ends, but a quest graph can terminate perfectly while the item it requires is never obtainable because the only merchant who sells it dies in an earlier mandatory quest. That failure lives in the world-fact state space, not the narrative graph. And it is positioned where no AI game-QA vendor sits: all five found play a finished build, so nothing reads a content specification before a build exists.",
+      "card": {
+        "concept": "A pre-ship gate for machine-generated quests and items. A model types the content into a precondition-effect model over named world facts; a reachability search then reports whether any ordering of available actions completes every quest, and when none does, returns the dead state and the trace that reaches it. The build step exits non-zero, and every content version is kept with its verdict so a regression can be re-run.",
+        "problem": "A general model asked for a quest chain writes prose that reads perfectly and is sometimes impossible to finish: the item a quest requires is never obtainable, the merchant who sells it dies in an earlier mandatory quest, the gate guarding a region can only be opened from the far side. Nobody catches these cheaply. A designer finds them by playing, which samples the failures they happen to walk into rather than establishing whether any completion exists.",
+        "user": "A developer shipping machine-generated quests, items and regions, at the moment a generated batch comes back and before it enters the build. In the GDC survey this is the procedural-generation slice: 10% of the 36% of 2,300+ professionals who use generative AI.",
+        "why_it_matters": "Not because the capability is absent - it partly exists. G-KMS validates LLM quest output for state reachability over a narrative graph and STORY2GAME extracts preconditions and effects from prose. The reason this is still worth building is narrower and sturdier: prose-generating models are exactly the class that cannot be made valid by construction, because the generator is not a constraint solver, so content from an arbitrary general model arrives untyped and unchecked. And the failure that bites is cross-quest: an item that is never obtainable sits in the world-fact state space, which a dialogue-graph dead-end check passes.",
+        "core_workflow": "A generated batch arrives as whatever the generator emits, prose included. Step 1, type it: every quest step becomes an action with preconditions and effects over named world facts such as has(sunstone), alive(merchant_oren), north_gate_open and standing(ironhand) at or above 2, and every item gets the actions that can produce it. Step 2, search: a reachability search from the starting state asks whether some ordering of available actions satisfies every quest's preconditions, and whether any required fact is unreachable or destroyed before it is needed. Step 3, report: either a completion order exists, or no completion path exists in the extracted model - reported as the dead state, the trace that reaches it, and the specific fact that can never hold. Step 4, gate: the build step exits non-zero on a proof of failure, and the content version, its verdict and its trace are kept so a later generator change that reintroduces the same failure is caught against the stored corpus. Step 5, only once a region passes, Rodin generates its 3D asset, so mesh generation is the visible reward for passing.",
+        "ai_role": "Extraction and normalization, confined to one step. The model turns free-form generated prose into typed preconditions and effects over named facts, which plain code cannot do because the content is written differently every run, renames things freely, and often implies a requirement in a sentence rather than stating it in a field. The model never issues the verdict. A reachability search over the extracted model does, which is why the output is a counterexample rather than an opinion, and why the same content always yields the same answer.",
+        "non_ai_product": "The action-model schema, the reachability search, the counterexample-trace format, the build-step gate with its non-zero exit, the stored corpus of content versions with their verdicts, and the regression check against it. Remove the model and this is a quest-dependency checker that consumes a typed specification - narrower, because a human or the generator must emit the typed form, but a working and useful tool.",
+        "data_loop": "Every verified content version is kept with its proof trace, which becomes a regression set: a generator change that reintroduces a past failure is caught against stored cases rather than rediscovered by a player. And when a developer marks an extraction wrong, that content becomes a fixture with a known-correct typing, which is the only thing that measures whether the extractor is sound.",
+        "hard_part": "Whoever writes the premises decides the conclusion, and that is stated rather than hidden. The search is sound over the extracted model, so everything rests on the typing: a single mistyped precondition makes the system confidently report the wrong thing, and a false 'no completion path' on good content is worse than no gate at all. The demo therefore shows the extracted model beside the source prose so the typing is checkable by eye, and shows a deliberately mistyped case and how the system surfaces it. The second hard part is that reporting no completion exists is a stronger claim than failing to find one, and the trace is the evidence.",
+        "technical_implementation": "A single service behind one public URL, since the submission form has exactly one project link slot. Content in, as prose or JSON. An extraction pass over a hosted model emits a typed action set against a fixed schema, validated against that schema before anything else runs, so a malformed extraction is reported rather than silently proved. A breadth-first reachability search over world-fact states issues the verdict and records the trace. Verdicts, traces and content versions persist so the regression check works. Rodin is called only on a passing region, asynchronously and ahead of time, with results cached - its own client example enforces a 20-minute deadline, so nothing waits on it during a demo. A seeded corpus of deliberately broken content with known-correct verdicts produces the caught-versus-missed table.",
+        "mvp_scope": "In: one content schema, the extraction pass with schema validation, the reachability search, the counterexample trace, the report, the stored corpus with the regression check, a paste-your-own box with three one-click samples, and the caught-versus-missed table over the seeded corpus. Also in, because it is cheap and it is the prize condition: Rodin generating one asset for one region that passed. Out: engine plugins, multiple content schemas, the balance and difficulty-curve heuristics entirely, structural tile-map reachability as a headline feature, any runtime mode, accounts, and any claim to validate anything beyond quest and item dependencies.",
+        "differentiation": "Against G-KMS, the closest prior art: it validates reachability over a dialogue and choice graph and repairs its own generator's output; this reasons over world facts and gates content from any generator, and catches the unobtainable-item case its dead-end metric passes. Against STORY2GAME: it publishes the extraction, not a verdict, a trace or a gate. Against the FDG 2025 benchmark: that compares generators over fixed research domains. Against modl.ai, nunu.ai, ManaMind, Regression Games and Razer: all play a finished build, none reads a specification. Against valid-by-construction generators, which is the objection that actually bites: where a constraint was expressible at generation time they win outright, and the honest scope is content from prose-generating models, where no constraint was expressible.",
+        "risks": [
+          "The mechanism family is published. G-KMS validates reachability on LLM quest output and STORY2GAME extracts preconditions and effects, so Innovation at 20% rests on a narrow distinction - world-fact dependency versus narrative-graph reachability, plus the gate positioning. That distinction is true but it is subtle, and a reviewer has minutes.",
+          "Whoever writes the premises decides the conclusion. A mistyped precondition produces a confident wrong answer, and a false negative on good content is worse than no gate. This is the central mechanical risk and must be on screen rather than argued away.",
+          "The population is small: procedural generation is 10% of the 36% of 2,300+ surveyed professionals, which is about 3.6% of them. Leading with 36% would misrepresent it.",
+          "The problem is a hypothesis. The one developer found answering this question publicly reports no verifier and no felt pain, accepting that levels are beatable 'practically always'.",
+          "Valid-by-construction removes the need wherever a constraint was expressible at generation time, and G-KMS is itself an instance of that architecture for LLM quests.",
+          "A reviewer will pattern-match to 'AI playtesting bot', a pre-registered default, in the first few seconds. The distinction - it reads the spec not the build, and it refuses content rather than generating it - has to be stated immediately.",
+          "A verifier demo has no partial credit: if the gate passes what it should block, or blocks what it should pass, on camera, the thesis is gone.",
+          "Unresolved submission risk: the shared form renders an Arcade Game Link as required and this has no Arcade presence."
+        ],
+        "buildable_in_event": "Fits about 27 hours with the overnight break, for a small team, because the three pieces are independent and the risky one is first. Saturday before the venue shuts: the content schema, the seeded corpus of deliberately broken content, and the reachability search with its trace - all deterministic and testable without a model. Saturday night online: the extraction pass and its schema validation, which is the only part that can fail in an interesting way, plus the caught-versus-missed table. Sunday morning: the single public URL with paste-your-own and three samples, the stored-corpus regression check, one cached Rodin asset for a passing region, and the video. Seeded from content a general model actually generated, with the broken cases produced by generation rather than hand-written, so the failures are real. Nothing is mocked in the core loop; if extraction proves too unreliable overnight, the fallback is to accept a typed specification directly and show the extraction as a second, labelled mode - the proof and the trace, which are the contribution, do not depend on it."
+      },
+      "wrapper_test": {
+        "product_is": "A gate in a game's content pipeline that holds a formal precondition-effect model of the quest and item graph, proves whether the content can be completed from the starting state, refuses content that reaches a dead state with the failing trace attached, and keeps every verdict as a regression corpus.",
+        "ai_in_loop": true,
+        "reduction": {
+          "sentence": "The user gives generated quest content to a model and gets a list of problems back",
+          "fair": false
+        },
+        "ai_leverage": {
+          "kinds": [
+            "extraction",
+            "normalization",
+            "reasoning over messy inputs"
+          ],
+          "why_not_deterministic": "The content is free-form prose emitted differently on every run by a general model: it renames the same item three ways, states a requirement in a sentence rather than a field, and implies a precondition by narrative order. No parser, template or schema survives that, because the generator is not bound by one. Typing it is the step that needs a model; deciding whether the typed model admits a completion does not, and must not, because an opinion cannot be a proof."
+        },
+        "without_model": {
+          "what": "The action-model schema, the reachability search, the counterexample-trace format, the build-step gate and its non-zero exit, the stored corpus of content versions with their verdicts, and the regression check against that corpus",
+          "survives": "substantial"
+        },
+        "archetype": {
+          "matches": "none",
+          "differs": ""
+        },
+        "smell": {
+          "q1_one_api_call": false,
+          "q2_textbox_ui": false,
+          "q3_prompt_differentiator": false,
+          "q4_workflow_outside_model": true,
+          "q5_touches_real_systems": true,
+          "q6_improves_with_use": true,
+          "q7_pays_after_novelty": true,
+          "q8_chatgpt_would_suggest": false
+        }
+      },
+      "authenticity": [
+        {
+          "signal": "narrow_persona",
+          "how": "A developer shipping machine-generated quests and items, at the moment a generated batch returns and before it enters the build - the procedural-generation slice the GDC survey measures at 10% of the 36%",
+          "basis": "evidence"
+        },
+        {
+          "signal": "integration",
+          "how": "Runs as a build step that consumes the generator's own output shape and exits non-zero on a proof of failure, so it sits where the content already passes rather than asking anyone to visit a new tool",
+          "basis": "commitment"
+        },
+        {
+          "signal": "automation_changes_workflow",
+          "how": "Replaces a designer sampling generated content by playing it with a gate that establishes whether any completion exists and names the failing step, which is a different claim rather than a faster version of the same one",
+          "basis": "commitment"
+        },
+        {
+          "signal": "domain_logic",
+          "how": "The schema encodes notions no general checker carries: item obtainability, quest prerequisite ordering, whether an NPC who sells a required item survives an earlier mandatory quest, which side a gate opens from, and faction standing thresholds",
+          "basis": "commitment"
+        },
+        {
+          "signal": "accumulated_history",
+          "how": "Every content version is stored with its verdict and trace, so a generator change that reintroduces a previously proved failure is caught against stored cases instead of being rediscovered by a player",
+          "basis": "commitment"
+        },
+        {
+          "signal": "feedback_loop",
+          "how": "A developer marking an extraction wrong turns that content into a fixture with a known-correct typing, which is the only thing that measures whether the extractor is sound and the only way the measurement improves",
+          "basis": "commitment"
+        },
+        {
+          "signal": "deterministic_core",
+          "how": "The verdict is a reachability search over the typed model, not the model's judgement, so the same content always returns the same answer and the output is a counterexample trace rather than an opinion",
+          "basis": "commitment"
+        },
+        {
+          "signal": "eval_infrastructure",
+          "how": "A seeded corpus of deliberately broken generated content with known-correct verdicts yields a caught-versus-missed table, which is the number that says whether any of this works and is shown in the demo",
+          "basis": "commitment"
+        },
+        {
+          "signal": "hard_implementation",
+          "how": "Typing free-form prose into a model sound enough to prove a negative, and keeping the search tractable as the item graph grows, where proving no completion exists is harder than failing to find one",
+          "basis": "commitment"
+        }
+      ],
+      "moat": {
+        "mechanism": [
+          "eval infrastructure",
+          "domain model",
+          "accumulated history"
+        ],
+        "why_not_copyable": "Calling a model API gets an opinion about a quest; it does not get a sound typed model or a proof. The part that resists copying is the corpus of real generator failures with known-correct verdicts, because that corpus is the only instrument that says whether an extractor is sound, and it accumulates only by running against content real generators actually produced. A competitor can copy the schema in an afternoon and still have no way to know whether their typing is right.",
+        "mechanism_note": ""
+      },
+      "alternatives": [
+        {
+          "alternative": "manual process",
+          "today": "A designer plays through the generated content looking for breaks, which samples the failures they happen to walk into and does not scale with the volume a generator produces",
+          "better": "A search establishes whether any completion exists at all, and names the dead state when none does"
+        },
+        {
+          "alternative": "scripts",
+          "today": "Hand-written inline validity rules per project - a flood fill for reachability, an assertion that a required item exists somewhere - rewritten from scratch for every game",
+          "better": "Dependency and obtainability reasoning comes from a typed model rather than per-project assertions, and covers orderings nobody thought to assert"
+        },
+        {
+          "alternative": "in-house tool",
+          "today": "A studio with a release-engineering function builds its own content checks against its own schema, which is why no open-source verifier has stars",
+          "better": "Works on content that was never typed in the first place, which is exactly what a general model emits"
+        },
+        {
+          "alternative": "doing nothing",
+          "today": "Accepting probabilistic validity, as the Dungeon Squire developer states: levels are beatable 'practically always' and 'the game doesn't explicitly guarantee beatable levels'",
+          "better": "Turns an assumption about the content into a checked property, at the cost of typing it"
+        }
+      ],
+      "why_now": {
+        "kind": "behavior",
+        "date": "2026-02",
+        "change": "Prose-generating models entered real game pipelines, which creates a class of content that cannot be made valid by construction: the generator is not a constraint solver, so quest and item content arrives untyped and with no constraint expressible at generation time",
+        "threshold": "About 3.6% of surveyed game professionals - 10% of the 36% of 2,300+ respondents who use generative tooling - now use it for procedural generation, and about 1.8% for player-facing features. Small, and stated at the figure that matters rather than at the 36% headline",
+        "who_couldnt_before": "Studios whose generated content came from constraint, wave-function-collapse or reinforcement-learning generators, all of which can embed playability at generation time and therefore need no gate; the gap only opens for content written as free prose by a general model",
+        "sentence": "Since 2026-02 survey data has measured generative tooling in real pipelines, with procedural generation at about 3.6% of surveyed professionals, and the content those prose-generating models emit is precisely the class that cannot be generated valid-by-construction, because no constraint is expressible at generation time; earlier approaches did not need a gate because their generators carried the constraint themselves.",
+        "opening": ""
+      },
+      "sponsors": [
+        {
+          "sponsor": "Hyper3D",
+          "product": "Rodin (text and image to 3D), via the api.hyper3d.com/api/v2 REST API",
+          "capability": "Asynchronous text- and image-to-3D mesh generation returning .obj, .fbx or .glb, with tier, mesh-mode and quality controls",
+          "why_needed": "It makes passing the gate visible. A region that has been proved completable gets its 3D asset generated; a region that failed does not. That turns an abstract verdict into something a reviewer sees on screen, and it places the project on the 'production pipelines' bullet rather than leaving it a text report.",
+          "without_it": "The gate still works and the demo still lands on the proof and the trace; the report stays textual and the pipeline framing weakens. Also forfeits the $1,152 Hyper3D Business Subscription, which is conditional on using Hyper3D.",
+          "component": "The post-gate asset step: Rodin is called only on content that passed, asynchronously and ahead of the demo, with results cached",
+          "depth": "meaningful",
+          "sponsor_goal": "Shows Rodin inside a production pipeline with a quality gate in front of it, which is a stronger story for Hyper3D than another prompt-to-mesh demo: it positions mesh generation as the step that happens once the content is known to be sound."
+        }
+      ],
+      "criteria_alignment": [
+        {
+          "criterion": "Innovation & Originality",
+          "how": "Narrow and stated as narrow. The category is published - G-KMS validates LLM quest output for state reachability, STORY2GAME extracts preconditions and effects - so the claim is not that this is new but that the published work checks a different graph. G-KMS's reachability runs over a dialogue and choice graph and reports zero dead ends; a quest graph can terminate correctly while the item it requires is never obtainable, because that failure lives in the world-fact state space. The remaining contributions are that distinction, the generator-agnostic pipeline position, and the counterexample trace as a developer artefact.",
+          "basis": "inference",
+          "source": "https://www.mdpi.com/2079-8954/14/2/175",
+          "gap": "This is now the weakest line. The distinction between world-fact and narrative-graph reachability is real but subtle, and a reviewer scoring 1-5 in minutes may not register it; a reviewer who knows G-KMS or STORY2GAME could reasonably score this as packaging. Any claim that the capability is absent must be dropped from the pitch."
+        },
+        {
+          "criterion": "Execution & Functionality",
+          "how": "One public URL a reviewer opens and pastes their own content into, which runs the real extraction and the real search and returns a trace. Scoring is 1-5 from a video plus one opened link, and the whole thing is deterministic after extraction, so it behaves the same on a reviewer's input as in the video. The caught-versus-missed table over the seeded corpus is the functionality claim stated as a number.",
+          "basis": "official",
+          "source": "https://about.tryarcade.com/hackathon",
+          "gap": "A false verdict on a reviewer's own pasted content is the worst failure available and is the one thing that cannot be rehearsed. Reporting 'could not type this content' instead of guessing limits the damage but costs a little of the wow."
+        },
+        {
+          "criterion": "AI × Gaming Relevance",
+          "how": "The model does the one thing no rule can - turning prose that names things differently every run into typed preconditions and effects - and the demo shows the extracted model beside the source text, so what the model contributed is legible rather than asserted. Remove the model and the demo visibly changes: the tool would need a typed specification handed to it.",
+          "basis": "inference",
+          "source": "",
+          "gap": "This is a tool for making games rather than a game, so a reviewer weighing 'gaming' as 'a thing I play' may score it lower. The track's own bullets name dev tools and production pipelines, which is the answer, but it is an argument rather than a given."
+        },
+        {
+          "criterion": "Track fit",
+          "how": "Lands on two of the five Game Tech bullets by name - 'Dev tools' and 'Production pipelines' - and touches a third, 'World generation', as the content it verifies. The track blurb carries no exclusivity language, and the Luma page states participants may create 'any innovative projects for Arcade and Game Tech Tracks'.",
+          "basis": "official",
+          "source": "https://about.tryarcade.com/hackathon",
+          "gap": "'Track fit' is 25% of the score with no published definition anywhere, so the bullet match is a proxy rather than the rubric. Worse, the shared submission form renders 'Arcade Game Link' as required, and whether a Game Tech entry needs one is unresolved - this is the single largest open risk and a Discord question, not an assumption to build on."
+        },
+        {
+          "criterion": "Potential & Impact",
+          "how": "The addressable group is named with a number rather than asserted - the procedural-generation slice the GDC survey measures at 10% of the 36% of 2,300+ professionals - and the absence is sourced from both engine vendors' own documentation plus five QA vendors who all play builds instead. The honest framing, which is also the more credible one, is that this is a gap with a small current user base rather than a large market.",
+          "basis": "inference",
+          "source": "https://www.gamedeveloper.com/business/one-third-of-game-workers-use-generative-ai-but-half-think-it-s-bad-for-the-industry",
+          "gap": "No spend signal in games at all. The honest figure is about 3.6% of surveyed professionals, not 36%, and the problem is a hypothesis: the one developer found answering this question publicly reports no pain. The growth argument is that prose generators cannot be made valid by construction, which is an argument rather than a measurement."
+        },
+        {
+          "criterion": "Demo & Clarity",
+          "how": "The opening claim is legible to anyone in one sentence - this quest chain reads perfectly and cannot be finished, here is the step where it dies - and needs no game-development knowledge. The event publishes a 'Never judged' list naming 'English fluency', 'Slides' and 'Public speaking', so the build is a captioned screen capture of the artefact working with no deck and no narration, which is fully compliant and removes the presentation-skill tax.",
+          "basis": "official",
+          "source": "https://about.tryarcade.com/hackathon",
+          "gap": "The proof is the payoff and a trace is text, so the visual interest has to come from the content and the located failure rather than from motion. There is no measured saturation data for this track, because Devpost refused, so how distinctive this looks against the field is unknown."
+        }
+      ],
+      "demo": {
+        "first_10s": "On screen: a generated four-step quest chain, readable, nothing obviously wrong. One line: 'A model wrote this quest. A dialogue-graph check passes it. It still cannot be finished.' Then the dead state appears.",
+        "first_minute": "The report names the failure in the content's own words: the chain requires the Sunstone; the only action producing it is buying from Oren; the Ironhand Purge sets Oren dead and is forced earlier by the north gate opening; dead state at step 4. The extracted action model sits beside the source prose so the typing is checkable. One suggested change is applied, the gate re-runs, and it passes - and only then does the region's Rodin mesh appear, because assets are generated for content that passed. Under a minute, real run, no cuts.",
+        "wow_moment": "Two things visible at once: the quest graph terminates correctly - so the standard dead-end check passes it - and the search still reports that no completion path exists, because the Sunstone can only be bought from a merchant who dies in an earlier forced quest. The contrast is between checking the narrative graph and checking the world facts, and it is shown rather than asserted.",
+        "technical_depth": "Four inspectable things: the extracted precondition-effect model beside the prose it came from, so the typing can be checked by eye; the trace, which is the evidence that no completion path exists in that model; the caught-versus-missed table over a seeded corpus of deliberately broken content with known-correct verdicts; and the deliberately mistyped case, which is the failure mode a sharp reviewer will probe. Plus a paste box running the real pipeline on input the team never saw.",
+        "story": "Sourced rather than invented. A July 2026 survey of AI-native games states that 'Persistent memory, world-state tracking, and long-term consequence management remain fragile' and proposes a generate-and-verify pipeline asking 'does the required object exist? Can the player reach the location? Does the outcome contradict prior narrative or world state?' - and no engine ships it: Unreal's PCG documentation has eight child topics and none is validation, its Data Validation plugin checks asset naming conventions and performance budgets, and Unity's AI surface is editor-time only. This is that missing check, built.",
+        "unhappy_path": "Three refusals shown deliberately. Valid content is passed, with the trace showing a real completion order, because a checker that always finds something is worthless. Content the extractor cannot type confidently is reported as 'could not type this content' with the sentence that defeated it, rather than guessed at. And a deliberately mistyped extraction is shown, with the point said out loud: whoever writes the premises decides the conclusion, so the extracted model is always displayed beside its source for checking.",
+        "judge_touches": "One public URL, the single link slot the form allows, with a paste-your-own box and three one-click samples beside it. No login. The repo is linked from the page and from the description, since there is no repo field. Everything runs server-side with no local setup, and the stored corpus means a reviewer's own content is still there if they come back - the dashboard says scores can be updated until judging closes.",
+        "moments": [
+          {
+            "criterion": "Innovation & Originality",
+            "moment": "The same quest passing a narrative-graph dead-end check and failing the world-fact search, side by side - the one distinction the published work does not cover."
+          },
+          {
+            "criterion": "Execution & Functionality",
+            "moment": "A reviewer's own pasted quest content running the real pipeline, plus the caught-versus-missed table and the mistyped-extraction case."
+          },
+          {
+            "criterion": "AI × Gaming Relevance",
+            "moment": "The side-by-side of prose and typed model, which shows exactly what the model contributed and that it contributed nothing to the verdict."
+          },
+          {
+            "criterion": "Track fit",
+            "moment": "The gate running as a build step and exiting non-zero, then Rodin generating the asset only for the region that passed - a production pipeline with a quality gate in it."
+          },
+          {
+            "criterion": "Potential & Impact",
+            "moment": "One line naming who uses it next week and the sourced absence behind it: no engine ships gameplay-logic validation, and every AI QA vendor plays a finished build instead."
+          },
+          {
+            "criterion": "Demo & Clarity",
+            "moment": "The opening ten seconds: a readable quest chain, the claim that it cannot be finished, and the dead state appearing - comprehensible without any game-development knowledge."
+          }
+        ]
+      },
+      "closest_past_winner": {
+        "name": "none found",
+        "searches": [
+          "Devpost project search for level validation, procedural generation QA and AI game testing (refused: HTTP 202 bot challenge on seven URLs, not retried)",
+          "devpost hackathon project 'level validation' OR 'procedural generation' QA AI game testing winner dungeon solvability checker",
+          "GitHub repository search: procedural generation validation game (10 results, none above 5 stars); dungeon solvability checker (0 results)",
+          "Searches for prior editions of this event: none exists, and there is no winner archive or project gallery"
+        ],
+        "difference": "The nearest artefacts found are three Devpost games that each describe running a solver to check their own levels' solvability as one feature among many, and none is a verification product or identified as a winner. Scoped honestly: Devpost's own search was refused, so this absence covers reachable results rather than Devpost's full index."
+      },
+      "outsider": "Thirty-second script to try on one person outside the team, ideally someone who has judged a hackathon: 'A model wrote this four-step quest. Read it - does it look finishable? [let them read] It isn't. The item step three needs can only be bought from a merchant who dies in step two, and step two is forced first. This tool found that without playing the game, and it shows you the exact step where it becomes impossible. Would you use it?' It lands if they ask about their own content, ask to try it, or retell it correctly. A polite nod, 'cool', or questions only about the stack mean it did not. NOT YET RUN - no outsider test has been performed, by a person or a proxy, so the demo-wish claim is by design only.",
+      "anti_patterns": {
+        "no_clear_user": {
+          "hit": false,
+          "why": "A developer shipping machine-generated quests and items, at the moment a generated batch returns and before it enters the build. The moment is what makes it a gate rather than a dashboard."
+        },
+        "nonexistent_problem": {
+          "hit": "unknown",
+          "why": "The absence of the capability is sourced four ways, but that developers feel it acutely today is not established, and one developer answering this exact question publicly reports no verifier and no pain. The pre-registered test settles it: ask ten developers shipping generated quest content whether they have shipped an uncompletable quest and how they found out."
+        },
+        "technology_first": {
+          "hit": false,
+          "why": "The mechanism was changed twice to fit the problem rather than the reverse: the structural layer was demoted after the literature showed it standard, and the model-issues-the-verdict version was killed at the wrapper filter and rebuilt with the model confined to typing."
+        },
+        "clone": {
+          "hit": false,
+          "why": "Closest is G-KMS, which validates reachability over a dialogue and choice graph and repairs its own generator's output; this reasons over world facts and gates content from any generator, and catches the unobtainable-item case a dead-end metric passes. Different graph, different pipeline position. Disclosed as a narrow distinction rather than a clear gap."
+        },
+        "recycled_generic": {
+          "hit": false,
+          "why": "Not a recycled category. The nearest is an AI playtesting bot, which needs a running build and samples play; this never runs the game and proves a property of the content."
+        },
+        "default_match": {
+          "hit": false,
+          "why": "Declared against the nearest pre-registered default, the AI playtesting bot, with the distinction being proof-from-a-typed-model versus discovery-by-playing."
+        },
+        "ledger_repeat": {
+          "hit": false,
+          "why": "No prior ledger exists; this is the first run in this working directory."
+        },
+        "chatgpt_wrapper": {
+          "hit": false,
+          "why": "Remove the model and the schema, search, trace format, build gate and stored corpus remain, which is a quest-dependency checker over a typed specification. The verdict never comes from the model."
+        },
+        "generic_rag": {
+          "hit": false,
+          "why": "Nothing is retrieved and no document is queried. The model performs a single typing pass over content supplied in the request."
+        },
+        "generic_agent": {
+          "hit": false,
+          "why": "No agent and no tool loop. One extraction call followed by a deterministic search, with a named user, a bounded input, a verification step that is the product, and an observable binary outcome."
+        },
+        "generic_dashboard": {
+          "hit": false,
+          "why": "The output changes a decision and blocks an action: the build step exits non-zero on a proof of failure. It is a gate, not a view."
+        },
+        "llm_wrapper": {
+          "hit": false,
+          "why": "The reduction sentence - generated content to a model, problems back - is not a fair summary, because the model issues no verdict and the output is a counterexample trace from a search over a typed model."
+        },
+        "no_product_without_model": {
+          "hit": false,
+          "why": "Substantial: the typed schema, the reachability search, the trace, the gate, the stored corpus and the regression check all survive, with the cost that someone else must supply the typed form."
+        },
+        "prompt_moat": {
+          "hit": false,
+          "why": "The defence named is the corpus of real generator failures with known-correct verdicts, which measures extractor soundness, plus the domain schema and the stored history. Not the prompt, the model choice or fine-tuning."
+        },
+        "textbox_ui": {
+          "hit": false,
+          "why": "There is a paste box, but the interface is a report containing a located dead state, a trace, the extracted model beside its source, and a caught-versus-missed table - not a generated response."
+        },
+        "chatgpt_obvious": {
+          "hit": false,
+          "why": "The category - check AI-generated levels - is chatbot-obvious and must be assumed present in the field. The mechanism is not: confining the model to typing and having a reachability search issue a counterexample is the direction a July 2026 survey names as open rather than built. The pitch therefore has to lead with the mechanism, which is recorded as a demo risk."
+        },
+        "sponsor_first": {
+          "hit": false,
+          "why": "The problem and mechanism were settled before sponsor documentation was opened. Hyper3D was then mapped to a step that already existed in the workflow, and Tencent Cloud and TiMi were rejected as non-fitting rather than forced in."
+        },
+        "default_entry": {
+          "hit": false,
+          "why": "The modal responses to this brief are an AI NPC, a prompt-to-game generator and an asset generator, all pre-registered defaults and all killed. But perception overlap with the 'AI playtesting bot' default is real and recorded as a demo risk: a reviewer will pattern-match unless told immediately that this reads the specification rather than playing the build."
+        },
+        "wrong_brief": {
+          "hit": false,
+          "why": "Lands on two named Game Tech bullets, 'Dev tools' and 'Production pipelines', and the theme is AI x Gaming. The track blurb carries no exclusivity language."
+        },
+        "impossible_demo": {
+          "hit": false,
+          "why": "The value shows in one run on one input in under a minute, with no users, no scale and no elapsed time required, which suits async review from a video plus one link."
+        },
+        "unrealistic_data": {
+          "hit": false,
+          "why": "The seeded corpus is content a general model actually generated, with the broken cases produced by generation rather than hand-written, so the failures are real rather than planted."
+        },
+        "forced_blockchain": {
+          "hit": false,
+          "why": "No blockchain anywhere."
+        },
+        "forced_ar_vr": {
+          "hit": false,
+          "why": "No AR or VR anywhere."
+        },
+        "forced_iot": {
+          "hit": false,
+          "why": "No devices or sensors."
+        },
+        "forced_multi_agent": {
+          "hit": false,
+          "why": "One extraction call and one deterministic search. Deliberately not an agent architecture, because a second model reviewing the first would reintroduce the opinion this design exists to remove."
+        },
+        "superficial_sponsor": {
+          "hit": false,
+          "why": "Hyper3D is at meaningful depth: Rodin runs only on content that passed the gate, which is a real ordering constraint in the pipeline rather than decoration, and it is latency-safe because generation happens ahead of the demo."
+        },
+        "platformmaxxing": {
+          "hit": false,
+          "why": "One sponsor product is used, at one step. Tencent Cloud and TiMi are explicitly declined rather than included to look integrated."
+        },
+        "weekend_clone": {
+          "hit": true,
+          "why": "A model API plus a frontend reproduces a first version in a weekend, which is expected since a weekend build is the point - and a solo student pipeline doing lore to PDDL to a planner already exists. What is not reproducible in a weekend is the named defence: the corpus of real generator failures with known-correct verdicts that measures whether the extraction is sound, which only accumulates by running against real generated content. The demo must show the caught-versus-missed table and the mistyped-extraction case, not one impressive catch."
+        },
+        "resume_first": {
+          "hit": false,
+          "why": "No information about the requester was used to choose or shape this idea; the problem came from the stated ideas and the evidence."
+        },
+        "prior_project_variation": {
+          "hit": false,
+          "why": "No past-project information was consulted at the time of writing, and no prior ledger exists. To be re-checked at Stage 9 before the reply is final."
+        }
+      }
+    }
+  ],
+  "tradeoffs": [
+    {
+      "dimension": "What the evidence supports",
+      "by_idea": {
+        "Dead State": "Problem is a hypothesis, not validated. The absence is well sourced at the product layer - five AI game-QA vendors all play finished builds, neither engine ships a solvability checker for generated gameplay content - but the mechanism family is published, and the population is about 3.6% of surveyed professionals.",
+        "doing nothing": "The one developer on record answering this exact question reports no verifier and no felt pain, accepting that levels are beatable 'practically always'. Doing nothing is a defensible position today for most of that 3.6%.",
+        "the best existing alternative (G-KMS, schema-governed generation that repairs its own output)": "Published, evaluated on a Unity RPG benchmark, with zero dead ends reported. Strictly better than this where you control the generator."
+      }
+    },
+    {
+      "dimension": "What it catches that the alternative does not",
+      "by_idea": {
+        "Dead State": "Cross-quest world-fact dependency: the item quest three requires is only sold by a merchant who dies in quest two, which is forced earlier. That lives in the world-fact state space.",
+        "doing nothing": "Nothing, until a player finds it.",
+        "the best existing alternative (G-KMS, schema-governed generation that repairs its own output)": "Reachability over a dialogue and choice graph. A quest graph that terminates correctly passes, even when the required item is unobtainable - so this specific failure slips through."
+      }
+    },
+    {
+      "dimension": "Where it applies",
+      "by_idea": {
+        "Dead State": "Content from a prose-generating general model, where no constraint was expressible at generation time and the output arrives untyped.",
+        "doing nothing": "Everywhere, at the cost of shipping the occasional uncompletable quest.",
+        "the best existing alternative (G-KMS, schema-governed generation that repairs its own output)": "Only where you own and can govern the generator. It cannot gate a batch that arrived from someone else's model."
+      }
+    },
+    {
+      "dimension": "What has to go right in about 27 hours",
+      "by_idea": {
+        "Dead State": "One risky component, the extraction pass, isolated behind a fixed schema with a labelled typed-input fallback. The search, trace and gate are deterministic and testable on Saturday without a model.",
+        "doing nothing": "n/a",
+        "the best existing alternative (G-KMS, schema-governed generation that repairs its own output)": "n/a - it is a published system, not a build option here."
+      }
+    },
+    {
+      "dimension": "The strongest argument against building it",
+      "by_idea": {
+        "Dead State": "Innovation at 20% now rests on a subtle distinction between two kinds of reachability, which a reviewer has minutes to register and may reasonably score as packaging. And whoever writes the premises decides the conclusion: one mistyped precondition yields a confident wrong answer.",
+        "doing nothing": "If the pain is genuinely as low as the one practitioner on record suggests, a gate nobody wants is worse than no gate.",
+        "the best existing alternative (G-KMS, schema-governed generation that repairs its own output)": "Where the generator can be governed, governing it is the better engineering answer and this is the weaker one."
+      }
+    },
+    {
+      "dimension": "What would change the picture",
+      "by_idea": {
+        "Dead State": "Running the outsider test, which has not been run: show a non-developer the quest that passes a dead-end check and still cannot be finished, and see whether they retell it correctly. If they cannot, the distinction carrying Innovation is not legible and the idea should not be built.",
+        "doing nothing": "Ten developers shipping generated quest content asked whether they have shipped an uncompletable quest and how they found out. Three or more saying a player told them moves this off hypothesis.",
+        "the best existing alternative (G-KMS, schema-governed generation that repairs its own output)": "If the Arcade-link submission question resolves badly, none of this matters and the track choice has to be revisited first."
+      }
+    }
+  ],
+  "shortfall_note": "One idea survived of the three pressure-tested, and the replacement drawn from blind discovery was also killed. Living World Multiplayer died on competition: Travian shipped the persistent browser multiplayer strategy MMO with asynchronous short sessions and raidable NPC faction villages in June 2004 and peaked above 5 million players, Mythora and Altworld shipped the LLM version in 2026 with Altworld stating the identical world-database-then-narrate architecture, and the a16z AI/Virtual Worlds hackathon grand prize in July 2023 was already a persistent multiplayer world with Claude-generated narrative; its claimed player complaint appears on no opened page and the Arcade capability it depends on is undocumented. World Coherence Verifier died as specified because its primary structural layer is standard practice that the 2024 PCG survey calls effective, and was regenerated as Dead State. Narrative Drift Guard was cut at the shortlist, not killed, and is recorded as the noted alternative: its memory half is shipped by Convai and NVIDIA ACE, 147 Devpost projects match 'npc memory', and its user group is the smallest measured at 5% of the 36%. Asset Passport, the strongest candidate from blind discovery and the only properly validated problem in that run, was killed by the critic pass on two checkable errors: EU AI Act Article 50 binds providers of generative systems rather than the platform or the importing creator and carves games out as artistic works needing only a notice, and glTF's KHR_xmp_json_ld already carries attribution and creation-date provenance semantics while C2PA already supports external hash-bound manifests - so neither its forcing function nor its central gap survived. Nothing was padded to reach a number."
+}

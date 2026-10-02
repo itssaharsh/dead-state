@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-02T22:31:48.069Z",
+  "total": 6,
+  "caught": 6,
+  "missed": 0,
+  "good_total": 5,
+  "false_positives": 0,
+  "narrative_disagreements": 6,
+  "rows": [
+    {
+      "name": "single producer destroyed by an earlier forced step",
+      "broken": true,
+      "flagged": true,
+      "by": "no completion path",
+      "narrative": true,
+      "verdict": "caught"
+    },
+    {
+      "name": "required fact has no producer at all",
+      "broken": true,
+      "flagged": true,
+      "by": "no completion path",
+      "narrative": true,
+      "verdict": "caught"
+    },
+    {
+      "name": "gate can only be opened from the far side",
+      "broken": true,
+      "flagged": true,
+      "by": "no completion path",
+      "narrative": true,
+      "verdict": "caught"
+    },
+    {
+      "name": "two quests share one consumable; one consumes it",
+      "broken": true,
+      "flagged": true,
+      "by": "softlock",
+      "narrative": true,
+      "verdict": "caught"
+    },
+    {
+      "name": "NPC dies in one quest, another needs to trade with them",
+      "broken": true,
+      "flagged": true,
+      "by": "softlock",
+      "narrative": true,
+      "verdict": "caught"
+    },
+    {
+      "name": "escort consumed before its second use",
+      "broken": true,
+      "flagged": true,
+      "by": "softlock",
+      "narrative": true,
+      "verdict": "caught"
+    },
+    {
+      "name": "plain linear chain",
+      "broken": false,
+      "flagged": false,
+      "by": "—",
+      "narrative": true,
+      "verdict": "ok"
+    },
+    {
+      "name": "two independent quests, no shared state",
+      "broken": false,
+      "flagged": false,
+      "by": "—",
+      "narrative": true,
+      "verdict": "ok"
+    },
+    {
+      "name": "shared NPC, nobody kills them",
+      "broken": false,
+      "flagged": false,
+      "by": "—",
+      "narrative": true,
+      "verdict": "ok"
+    },
+    {
+      "name": "consumable with a repeatable (unnumbered) producer",
+      "broken": false,
+      "flagged": false,
+      "by": "—",
+      "narrative": true,
+      "verdict": "ok"
+    },
+    {
+      "name": "optional branch that dead-ends but does not block the goal",
+      "broken": false,
+      "flagged": false,
+      "by": "—",
+      "narrative": true,
+      "verdict": "ok"
+    }
+  ]
+}

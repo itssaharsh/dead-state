@@ -1,0 +1,16 @@
+{
+  "name": "dead-state",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Finds orderings of ordinary play that permanently block a generated quest.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "corpus": "node eval/corpus.mjs",
+    "qa": "node eval/qa.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "playwright": "^1.63.0"
+  }
+}

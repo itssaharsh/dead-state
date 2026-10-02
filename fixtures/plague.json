@@ -1,0 +1,128 @@
+{
+  "slug": "plague",
+  "title": "The Pale-Vein Prescription",
+  "prose": "1. Speak with Master Alistair Vance at the quarantine border.\nThe city of Oakhaven has sealed the Iron Ward to contain the weeping plague, but the local herbalist believes a cure is within reach if someone dares to cross the barricades. Alistair Vance waits near the southern gate, clutching a list of rare botanical reagents.\n\n2. Infiltrate the sealed Iron Ward through the old sewer grate.\nCity guards turn away all travelers, forcing you to find a subterranean path into the quarantined district. The air grows thick with the scent of vinegar and decay as you slip past the rusted iron bars of the canal.\n\n3. Harvest three clusters of Pale-vein Lichen from the weeping willow in the plague cemetery.\nThe cure requires a rare fungus that only thrives on decaying wood within the heart of the infection. Avoid the wandering, fever-mad citizens as you scrape the glowing lichen from the bark of the ancient cemetery tree.\n\n4. Deliver the Pale-vein Lichen to Alistair Vance at his makeshift laboratory.\nWith the volatile ingredients secured, you must escape the sealed district before the quarantine patrols spot you. Alistair waits in his hidden cellar, ready to brew the elixir that could save Oakhaven from devastation.",
+  "generated": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:18:35.605Z",
+    "brief": "a four-step quest line about sourcing a cure during a quarantine, involving a herbalist and a sealed district"
+  },
+  "typed": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:18:35.605Z",
+    "ms": 12312
+  },
+  "model": {
+    "facts": {
+      "alive_alistair_vance": true,
+      "spoke_to_alistair": false,
+      "has_reagent_list": false,
+      "in_iron_ward": false,
+      "has_pale_vein_lichen": false,
+      "delivered_lichen": false
+    },
+    "actions": [
+      {
+        "id": "speak_to_alistair",
+        "label": "Speak with Master Alistair Vance",
+        "step": 1,
+        "quote": "Speak with Master Alistair Vance at the quarantine border.",
+        "pre": {
+          "alive_alistair_vance": true
+        },
+        "post": {
+          "spoke_to_alistair": true,
+          "has_reagent_list": true
+        }
+      },
+      {
+        "id": "infiltrate_iron_ward",
+        "label": "Infiltrate the sealed Iron Ward",
+        "step": 2,
+        "quote": "Infiltrate the sealed Iron Ward through the old sewer grate.",
+        "pre": {
+          "spoke_to_alistair": true
+        },
+        "post": {
+          "in_iron_ward": true
+        }
+      },
+      {
+        "id": "harvest_lichen",
+        "label": "Harvest Pale-vein Lichen",
+        "step": 3,
+        "quote": "Harvest three clusters of Pale-vein Lichen from the weeping willow in the plague cemetery.",
+        "pre": {
+          "in_iron_ward": true
+        },
+        "post": {
+          "has_pale_vein_lichen": true
+        }
+      },
+      {
+        "id": "deliver_lichen",
+        "label": "Deliver the Pale-vein Lichen",
+        "step": 4,
+        "quote": "Deliver the Pale-vein Lichen to Alistair Vance at his makeshift laboratory.",
+        "pre": {
+          "has_pale_vein_lichen": true,
+          "alive_alistair_vance": true
+        },
+        "post": {
+          "has_pale_vein_lichen": false,
+          "delivered_lichen": true
+        }
+      }
+    ],
+    "goals": [
+      {
+        "id": "deliver_lichen_goal",
+        "label": "Deliver the Pale-vein Lichen to Alistair Vance",
+        "needs": {
+          "delivered_lichen": true
+        }
+      }
+    ]
+  },
+  "verdict": {
+    "narrative": true,
+    "world": true,
+    "disagree": false
+  },
+  "kind": "single",
+  "baked": {
+    "at": "2026-10-02T22:27:18.428Z",
+    "narrative": {
+      "ok": true,
+      "status": "terminates",
+      "steps": 4,
+      "deadEnds": 0,
+      "unreachable": 0,
+      "terminals": 1,
+      "detail": "4 steps, 0 dead ends, all branches terminate."
+    },
+    "world": {
+      "ok": true,
+      "status": "completable",
+      "order": [
+        "speak_to_alistair",
+        "infiltrate_iron_ward",
+        "harvest_lichen",
+        "deliver_lichen"
+      ],
+      "states": 5,
+      "detail": "A completion order exists. 5 reachable world states explored."
+    },
+    "softlock": {
+      "ok": true,
+      "status": "safe-in-every-order",
+      "traps": [],
+      "states": 5,
+      "truncated": false,
+      "detail": "No reachable state blocks any goal. 5 states explored."
+    },
+    "ms": 1
+  }
+}

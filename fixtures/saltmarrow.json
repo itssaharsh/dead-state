@@ -1,0 +1,382 @@
+{
+  "slug": "saltmarrow",
+  "kind": "batch",
+  "title": "Saltmarrow — four quests for one city",
+  "provenance": {
+    "note": "Four quest lines generated INDEPENDENTLY against a shared world bible. No brief asked for a flaw of any kind.",
+    "generator": "gemini/gemini-3.5-flash",
+    "generated_at": "2026-10-02T22:24:05.289Z",
+    "typed_by": "gemini/gemini-3.5-flash",
+    "briefs": [
+      {
+        "slug": "pawn",
+        "brief": "a 4-step quest about recovering the Sunburst Astrolabe from Oren Vask"
+      },
+      {
+        "slug": "purge",
+        "brief": "a 4-step quest in which the player helps Captain Hallowell carry out a purge of the lower slips against the contraband traders"
+      },
+      {
+        "slug": "ledger",
+        "brief": "a 3-step quest about obtaining the almshouse ledger from Sister Dunmore to expose a fraud"
+      },
+      {
+        "slug": "ring",
+        "brief": "a 4-step quest about stealing the Watch seal ring from inside the Watch barracks"
+      }
+    ]
+  },
+  "bible": "WORLD: the harbour city of Saltmarrow.\n\nCHARACTERS (canonical fact name for \"is alive and reachable\"):\n- Oren Vask, pawnbroker on Fishmonger's Pier   -> alive_oren_vask\n- Captain Hallowell, commands the Iron Watch    -> alive_hallowell\n- Sister Dunmore, keeps the almshouse ledger    -> alive_dunmore\n\nITEMS (canonical fact name for \"the player holds it\"):\n- the Sunburst Astrolabe -> has_astrolabe\n- the Watch seal ring    -> has_seal_ring\n- the almshouse ledger   -> has_ledger\n\nPLACES (canonical fact name for \"the player can enter\"):\n- the Old Customs Yard -> customs_yard_open\n- the Watch barracks   -> barracks_open\n\nUse these exact fact names. All start false except alive_oren_vask, alive_hallowell and alive_dunmore, which start true.",
+  "quests": [
+    {
+      "slug": "pawn",
+      "title": "The Pawnbroker's Price",
+      "prose": "1. Infiltrate the Watch barracks and secure Captain Hallowell's authority.\nYou must gain entry to the Watch barracks to find a leverage point against Saltmarrow's most stubborn fence. Search the captain's quarters to obtain the Watch seal ring, which will grant you the official backing of the Iron Watch.\n\n2. Retrieve the almshouse ledger from Sister Dunmore.\nSeek out Sister Dunmore at the parish house and convince her to hand over the almshouse ledger. This book contains the damning record of Oren Vask's predatory debts, but she will only trust you once you show her the Watch seal ring.\n\n3. Gain entry to the Old Customs Yard to locate Oren's hidden cache.\nWith the law on your side, force open the gates to the Old Customs Yard where the pawnbroker stores his smuggled goods. Search the salt-crusted warehouses to find the manifest detailing his latest acquisitions.\n\n4. Confront Oren Vask on Fishmonger's Pier to reclaim the Sunburst Astrolabe.\nCorner the greedy pawnbroker at his shop on Fishmonger's Pier and present the ledger and the seal ring. Faced with the threat of Captain Hallowell's dungeons, Oren Vask will have no choice but to yield the Sunburst Astrolabe.",
+      "alone": {
+        "narrative": true,
+        "world": true
+      }
+    },
+    {
+      "slug": "purge",
+      "title": "The Iron Purge of Saltmarrow",
+      "prose": "1. Gain entry to the Watch barracks and speak with Captain Hallowell to secure your commission. The commander of the Iron Watch requires an outsider to bypass the bureaucratic rot of Saltmarrow and initiate a purge of the lower slips.\n\n2. Confront Oren Vask on Fishmonger's Pier and seize the Sunburst Astrolabe. This rare, forbidden navigational instrument is being used by contraband traders to guide illicit cargo vessels through the treacherous coastal reefs.\n\n3. Obtain the almshouse ledger from Sister Dunmore to trace the smugglers' black-market funding. Though she maintains a pious facade, her records hold the secret accounts that keep the criminal enterprise afloat.\n\n4. Unlock the Old Customs Yard using the Watch seal ring and eliminate the remaining syndicate leaders. Clearing this fortified hideout will break the smugglers' grip on Saltmarrow once and for all.",
+      "alone": {
+        "narrative": true,
+        "world": true
+      }
+    },
+    {
+      "slug": "ledger",
+      "title": "The Ledger of Lies",
+      "prose": "1. Speak with Oren Vask at Fishmonger's Pier to learn of the corruption hidden within the city's charity records. Oren suspects that the almshouse is being used to launder stolen coin, but he needs proof to convince the authorities. 2. Infiltrate the almshouse and secure the almshouse ledger from Sister Dunmore, who guards the records with suspicious fervor. You must retrieve the book without alerting the Iron Watch to your presence. 3. Present the incriminating ledger to Captain Hallowell at the Watch barracks to expose the fraud. With the evidence in hand, the Captain will be forced to dismantle the illicit operation and restore order to Saltmarrow.",
+      "alone": {
+        "narrative": true,
+        "world": true
+      }
+    },
+    {
+      "slug": "ring",
+      "title": "The Seal of Saltmarrow",
+      "prose": "1. Search the Old Customs Yard for the Sunburst Astrolabe.\nOren Vask claims this priceless relic lies forgotten in the locked yard. Slip past the rusted gates of the Old Customs Yard and recover the astrolabe before the port authority notices.\n\n2. Trade the Sunburst Astrolabe to Sister Dunmore for the almshouse ledger.\nSister Dunmore keeps the ledger under lock and key, but her obsession with celestial navigation makes her weak to bribery. Offer her the astrolabe in exchange for the ledger containing the Watch's blackmail secrets.\n\n3. Use the ledger's secrets to gain entry to the Watch barracks.\nThe ledger details the illicit debts of Captain Hallowell's gate-guards. Confront the sentry with this evidence to secure passage into the heavily guarded Watch barracks.\n\n4. Steal the Watch seal ring from Captain Hallowell's chambers.\nWith the barracks open, slip into the inner sanctum while the Captain is away. Snatch the Watch seal ring from his writing desk and escape into the Saltmarrow fog.",
+      "alone": {
+        "narrative": true,
+        "world": true
+      }
+    }
+  ],
+  "model": {
+    "facts": {
+      "alive_oren_vask": true,
+      "alive_hallowell": true,
+      "alive_dunmore": true,
+      "has_astrolabe": false,
+      "has_seal_ring": false,
+      "has_ledger": false,
+      "customs_yard_open": false,
+      "barracks_open": false,
+      "has_manifest": false,
+      "commission_secured": false,
+      "syndicate_leaders_defeated": false,
+      "corruption_exposed": false
+    },
+    "actions": [
+      {
+        "id": "pawn_get_seal_ring",
+        "label": "[pawn] Search the captain's quarters to obtain the Watch seal ring",
+        "step": 1,
+        "quote": "Search the captain's quarters to obtain the Watch seal ring",
+        "pre": {
+          "alive_hallowell": true
+        },
+        "post": {
+          "has_seal_ring": true,
+          "barracks_open": true
+        }
+      },
+      {
+        "id": "pawn_get_ledger",
+        "label": "[pawn] Convince Sister Dunmore to hand over the almshouse ledger",
+        "step": 2,
+        "quote": "convince her to hand over the almshouse ledger... she will only trust you once you show her the Watch seal ring",
+        "pre": {
+          "alive_dunmore": true,
+          "has_seal_ring": true
+        },
+        "post": {
+          "has_ledger": true
+        }
+      },
+      {
+        "id": "pawn_open_customs_yard",
+        "label": "[pawn] Force open the gates to the Old Customs Yard",
+        "step": 3,
+        "quote": "With the law on your side, force open the gates to the Old Customs Yard",
+        "pre": {
+          "has_seal_ring": true
+        },
+        "post": {
+          "customs_yard_open": true,
+          "has_manifest": true
+        }
+      },
+      {
+        "id": "pawn_confront_oren",
+        "label": "[pawn] Confront Oren Vask to reclaim the Sunburst Astrolabe",
+        "step": 4,
+        "quote": "Corner the greedy pawnbroker at his shop on Fishmonger's Pier and present the ledger and the seal ring.",
+        "pre": {
+          "alive_oren_vask": true,
+          "has_ledger": true,
+          "has_seal_ring": true
+        },
+        "post": {
+          "has_astrolabe": true
+        }
+      },
+      {
+        "id": "purge_speak_hallowell",
+        "label": "[purge] Speak with Captain Hallowell to secure commission",
+        "step": 1,
+        "quote": "Gain entry to the Watch barracks and speak with Captain Hallowell to secure your commission.",
+        "pre": {
+          "alive_hallowell": true
+        },
+        "post": {
+          "barracks_open": true,
+          "commission_secured": true,
+          "has_seal_ring": true
+        }
+      },
+      {
+        "id": "purge_seize_astrolabe",
+        "label": "[purge] Seize the Sunburst Astrolabe from Oren Vask",
+        "step": 2,
+        "quote": "Confront Oren Vask on Fishmonger's Pier and seize the Sunburst Astrolabe.",
+        "pre": {
+          "alive_oren_vask": true
+        },
+        "post": {
+          "has_astrolabe": true
+        }
+      },
+      {
+        "id": "purge_obtain_ledger",
+        "label": "[purge] Obtain the almshouse ledger from Sister Dunmore",
+        "step": 3,
+        "quote": "Obtain the almshouse ledger from Sister Dunmore to trace the smugglers' black-market funding.",
+        "pre": {
+          "alive_dunmore": true
+        },
+        "post": {
+          "has_ledger": true
+        }
+      },
+      {
+        "id": "purge_clear_customs_yard",
+        "label": "[purge] Unlock the Old Customs Yard and eliminate syndicate leaders",
+        "step": 4,
+        "quote": "Unlock the Old Customs Yard using the Watch seal ring and eliminate the remaining syndicate leaders.",
+        "pre": {
+          "has_seal_ring": true,
+          "commission_secured": true
+        },
+        "post": {
+          "customs_yard_open": true,
+          "syndicate_leaders_defeated": true
+        }
+      },
+      {
+        "id": "ledger_speak_to_oren",
+        "label": "[ledger] Speak with Oren Vask",
+        "step": 1,
+        "quote": "Speak with Oren Vask at Fishmonger's Pier to learn of the corruption hidden within the city's charity records.",
+        "pre": {
+          "alive_oren_vask": true
+        },
+        "post": {}
+      },
+      {
+        "id": "ledger_steal_ledger",
+        "label": "[ledger] Secure the almshouse ledger",
+        "step": 2,
+        "quote": "Infiltrate the almshouse and secure the almshouse ledger from Sister Dunmore",
+        "pre": {
+          "alive_dunmore": true
+        },
+        "post": {
+          "has_ledger": true
+        }
+      },
+      {
+        "id": "ledger_present_ledger",
+        "label": "[ledger] Present the ledger to Captain Hallowell",
+        "step": 3,
+        "quote": "Present the incriminating ledger to Captain Hallowell at the Watch barracks to expose the fraud.",
+        "pre": {
+          "alive_hallowell": true,
+          "has_ledger": true
+        },
+        "post": {
+          "has_ledger": false,
+          "corruption_exposed": true
+        }
+      },
+      {
+        "id": "ring_search_customs_yard",
+        "label": "[ring] Search the Old Customs Yard for the Sunburst Astrolabe",
+        "step": 1,
+        "quote": "Slip past the rusted gates of the Old Customs Yard and recover the astrolabe",
+        "pre": {
+          "alive_oren_vask": true
+        },
+        "post": {
+          "customs_yard_open": true,
+          "has_astrolabe": true
+        }
+      },
+      {
+        "id": "ring_trade_astrolabe",
+        "label": "[ring] Trade the Sunburst Astrolabe to Sister Dunmore for the almshouse ledger",
+        "step": 2,
+        "quote": "Offer her the astrolabe in exchange for the ledger",
+        "pre": {
+          "alive_dunmore": true,
+          "has_astrolabe": true
+        },
+        "post": {
+          "has_astrolabe": false,
+          "has_ledger": true
+        }
+      },
+      {
+        "id": "ring_gain_barracks_entry",
+        "label": "[ring] Use the ledger's secrets to gain entry to the Watch barracks",
+        "step": 3,
+        "quote": "Confront the sentry with this evidence to secure passage into the heavily guarded Watch barracks.",
+        "pre": {
+          "has_ledger": true
+        },
+        "post": {
+          "barracks_open": true
+        }
+      },
+      {
+        "id": "ring_steal_seal_ring",
+        "label": "[ring] Steal the Watch seal ring from Captain Hallowell's chambers",
+        "step": 4,
+        "quote": "Snatch the Watch seal ring from his writing desk",
+        "pre": {
+          "barracks_open": true,
+          "alive_hallowell": true
+        },
+        "post": {
+          "has_seal_ring": true
+        }
+      }
+    ],
+    "goals": [
+      {
+        "id": "pawn_reclaim_astrolabe",
+        "label": "[pawn] Reclaim the Sunburst Astrolabe",
+        "needs": {
+          "has_astrolabe": true
+        }
+      },
+      {
+        "id": "purge_complete_purge",
+        "label": "[purge] Break the smugglers' grip on Saltmarrow",
+        "needs": {
+          "syndicate_leaders_defeated": true,
+          "has_astrolabe": true,
+          "has_ledger": true
+        }
+      },
+      {
+        "id": "ledger_expose_fraud",
+        "label": "[ledger] Expose the fraud in Saltmarrow",
+        "needs": {
+          "corruption_exposed": true
+        }
+      },
+      {
+        "id": "ring_obtain_seal_ring",
+        "label": "[ring] Obtain the Watch seal ring",
+        "needs": {
+          "has_seal_ring": true
+        }
+      }
+    ]
+  },
+  "baked": {
+    "at": "2026-10-02T22:27:18.339Z",
+    "ms": 5712,
+    "narrative": {
+      "ok": true,
+      "status": "terminates",
+      "steps": 15,
+      "deadEnds": 0,
+      "unreachable": 0,
+      "terminals": 1,
+      "detail": "15 steps, 0 dead ends, all branches terminate."
+    },
+    "world": {
+      "ok": true,
+      "status": "completable",
+      "order": [
+        "purge_speak_hallowell",
+        "pawn_get_ledger",
+        "pawn_confront_oren",
+        "purge_clear_customs_yard",
+        "ledger_present_ledger",
+        "purge_obtain_ledger"
+      ],
+      "states": 8051,
+      "detail": "A completion order exists. 8051 reachable world states explored."
+    },
+    "softlock": {
+      "ok": false,
+      "status": "softlockable",
+      "traps": [
+        {
+          "goal": "pawn_reclaim_astrolabe",
+          "goalLabel": "[pawn] Reclaim the Sunburst Astrolabe",
+          "by": "ring_trade_astrolabe",
+          "byLabel": "[ring] Trade the Sunburst Astrolabe to Sister Dunmore for the almshouse ledger",
+          "path": [
+            "pawn_get_seal_ring",
+            "pawn_get_ledger",
+            "pawn_confront_oren",
+            "purge_seize_astrolabe",
+            "ring_search_customs_yard",
+            "ring_trade_astrolabe"
+          ],
+          "blocked": [
+            "has_astrolabe"
+          ]
+        },
+        {
+          "goal": "purge_complete_purge",
+          "goalLabel": "[purge] Break the smugglers' grip on Saltmarrow",
+          "by": "ring_trade_astrolabe",
+          "byLabel": "[ring] Trade the Sunburst Astrolabe to Sister Dunmore for the almshouse ledger",
+          "path": [
+            "pawn_get_seal_ring",
+            "pawn_get_ledger",
+            "pawn_confront_oren",
+            "purge_seize_astrolabe",
+            "ring_search_customs_yard",
+            "ring_trade_astrolabe"
+          ],
+          "blocked": [
+            "syndicate_leaders_defeated",
+            "has_astrolabe"
+          ]
+        }
+      ],
+      "states": 33020,
+      "truncated": false,
+      "detail": "2 goal(s) can be permanently blocked by ordinary play. 33020 states explored."
+    }
+  }
+}

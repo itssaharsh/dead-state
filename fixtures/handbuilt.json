@@ -1,0 +1,147 @@
+{
+  "slug": "handbuilt",
+  "kind": "single",
+  "title": "The Sunstone Debt",
+  "provenance": {
+    "note": "HAND-BUILT BY THE AUTHOR, not generated. It exists to exercise the single-quest case where a required item has exactly one producer and an earlier forced step destroys that producer's precondition. Ten model-generated quests did NOT produce this shape, which is itself a finding — see the README.",
+    "generator": "none — written by hand",
+    "generated_at": "2026-10-02"
+  },
+  "quests": [
+    {
+      "slug": "sunstone",
+      "title": "The Sunstone Debt",
+      "prose": "1. Speak to Oren at the Quay. The pawnbroker still holds your family's Sunstone against a debt long since paid.\n2. Join the Ironhand Purge. The Watch is sweeping the lower slips tonight, and Captain Hallowell wants an outsider at the front.\n3. Buy the Sunstone back from Oren. With the purge behind you and coin in hand, the stall should open to you.\n4. Return the Sunstone to the Archivist."
+    }
+  ],
+  "model": {
+    "facts": {
+      "alive_oren": true,
+      "met_oren": false,
+      "purge_done": false,
+      "has_sunstone": false
+    },
+    "actions": [
+      {
+        "id": "speak_oren",
+        "label": "Speak to Oren at the Quay",
+        "step": 1,
+        "quote": "Speak to Oren at the Quay.",
+        "pre": {
+          "alive_oren": true
+        },
+        "post": {
+          "met_oren": true
+        }
+      },
+      {
+        "id": "join_purge",
+        "label": "Join the Ironhand Purge",
+        "step": 2,
+        "quote": "The Watch is sweeping the lower slips tonight",
+        "pre": {
+          "met_oren": true
+        },
+        "post": {
+          "purge_done": true,
+          "alive_oren": false
+        }
+      },
+      {
+        "id": "buy_sunstone",
+        "label": "Buy the Sunstone back from Oren",
+        "step": 3,
+        "quote": "the stall should open to you",
+        "pre": {
+          "alive_oren": true,
+          "purge_done": true
+        },
+        "post": {
+          "has_sunstone": true
+        }
+      },
+      {
+        "id": "return_stone",
+        "label": "Return the Sunstone to the Archivist",
+        "step": 4,
+        "quote": "Return the Sunstone to the Archivist.",
+        "pre": {
+          "has_sunstone": true
+        },
+        "post": {}
+      }
+    ],
+    "goals": [
+      {
+        "id": "g_sunstone",
+        "label": "Return the Sunstone to the Archivist",
+        "needs": {
+          "has_sunstone": true
+        }
+      }
+    ]
+  },
+  "baked": {
+    "at": "2026-10-02T22:29:26.076Z",
+    "narrative": {
+      "ok": true,
+      "status": "terminates",
+      "steps": 4,
+      "deadEnds": 0,
+      "unreachable": 0,
+      "terminals": 1,
+      "detail": "4 steps, 0 dead ends, all branches terminate."
+    },
+    "world": {
+      "ok": false,
+      "status": "no-completion-path",
+      "states": 3,
+      "chain": [
+        {
+          "depth": 0,
+          "kind": "goal",
+          "text": "Return the Sunstone to the Archivist needs has_sunstone"
+        },
+        {
+          "depth": 1,
+          "kind": "producer",
+          "text": "only producer: Buy the Sunstone back from Oren"
+        },
+        {
+          "depth": 2,
+          "kind": "severed",
+          "severed": true,
+          "text": "Buy the Sunstone back from Oren requires alive_oren, and alive_oren is false in every reachable state where it is otherwise applicable"
+        },
+        {
+          "depth": 3,
+          "kind": "killer",
+          "text": "Join the Ironhand Purge sets not alive_oren"
+        }
+      ],
+      "detail": "No completion path exists in the extracted model. 3 reachable world states explored."
+    },
+    "softlock": {
+      "ok": false,
+      "status": "softlockable",
+      "traps": [
+        {
+          "goal": "g_sunstone",
+          "goalLabel": "Return the Sunstone to the Archivist",
+          "by": "speak_oren",
+          "byLabel": "Speak to Oren at the Quay",
+          "path": [
+            "speak_oren"
+          ],
+          "blocked": [
+            "has_sunstone"
+          ]
+        }
+      ],
+      "states": 2,
+      "truncated": false,
+      "detail": "1 goal(s) can be permanently blocked by ordinary play. 2 states explored."
+    },
+    "ms": 8
+  }
+}

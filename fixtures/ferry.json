@@ -1,0 +1,116 @@
+{
+  "slug": "ferry",
+  "title": "The Whispering Ferry of Siltwater",
+  "prose": "1. Speak with Kaelen the Ferryman at Siltwater Crossing.\nThe rushing waters of the Siltwater River bar the path forward, and only Kaelen's sturdy raft can brave the current. However, the old ferryman refuses to budge until his steep toll is paid in full.\n\n2. Retrieve the Sunken Silver from the Drowned Grotto.\nKaelen demands a rare coin pouch lost to the river beasts in the nearby Drowned Grotto. Brave the flooded caverns and wrest the Sunken Silver from the clutches of the Mire-Gnasher.\n\n3. Deliver the toll to Kaelen and board the raft.\nWith the heavy pouch of Sunken Silver in hand, return to Siltwater Crossing before the tide rises. Present the toll to Kaelen to secure safe passage to the eastern shore.",
+  "generated": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:17:23.130Z",
+    "brief": "a three-step quest line about securing passage across a river, involving a ferryman and a toll"
+  },
+  "typed": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "at": "2026-10-02T22:17:23.130Z",
+    "ms": 10089
+  },
+  "model": {
+    "facts": {
+      "alive_kaelen": true,
+      "spoken_to_kaelen": false,
+      "alive_mire_gnasher": true,
+      "has_sunken_silver": false,
+      "secured_passage": false
+    },
+    "actions": [
+      {
+        "id": "speak_to_kaelen",
+        "label": "Speak with Kaelen the Ferryman",
+        "step": 1,
+        "quote": "Speak with Kaelen the Ferryman at Siltwater Crossing.",
+        "pre": {
+          "alive_kaelen": true,
+          "spoken_to_kaelen": false
+        },
+        "post": {
+          "spoken_to_kaelen": true
+        }
+      },
+      {
+        "id": "retrieve_sunken_silver",
+        "label": "Retrieve the Sunken Silver",
+        "step": 2,
+        "quote": "Retrieve the Sunken Silver from the Drowned Grotto.",
+        "pre": {
+          "spoken_to_kaelen": true,
+          "alive_mire_gnasher": true
+        },
+        "post": {
+          "has_sunken_silver": true,
+          "alive_mire_gnasher": false
+        }
+      },
+      {
+        "id": "deliver_toll",
+        "label": "Deliver the toll to Kaelen and board the raft",
+        "step": 3,
+        "quote": "Deliver the toll to Kaelen and board the raft.",
+        "pre": {
+          "has_sunken_silver": true,
+          "alive_kaelen": true
+        },
+        "post": {
+          "has_sunken_silver": false,
+          "secured_passage": true
+        }
+      }
+    ],
+    "goals": [
+      {
+        "id": "secure_passage_to_eastern_shore",
+        "label": "Secure safe passage to the eastern shore",
+        "needs": {
+          "secured_passage": true
+        }
+      }
+    ]
+  },
+  "verdict": {
+    "narrative": true,
+    "world": true,
+    "disagree": false
+  },
+  "kind": "single",
+  "baked": {
+    "at": "2026-10-02T22:27:18.427Z",
+    "narrative": {
+      "ok": true,
+      "status": "terminates",
+      "steps": 3,
+      "deadEnds": 0,
+      "unreachable": 0,
+      "terminals": 1,
+      "detail": "3 steps, 0 dead ends, all branches terminate."
+    },
+    "world": {
+      "ok": true,
+      "status": "completable",
+      "order": [
+        "speak_to_kaelen",
+        "retrieve_sunken_silver",
+        "deliver_toll"
+      ],
+      "states": 4,
+      "detail": "A completion order exists. 4 reachable world states explored."
+    },
+    "softlock": {
+      "ok": true,
+      "status": "safe-in-every-order",
+      "traps": [],
+      "states": 4,
+      "truncated": false,
+      "detail": "No reachable state blocks any goal. 4 states explored."
+    },
+    "ms": 0
+  }
+}
