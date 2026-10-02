@@ -5,7 +5,7 @@ import { extname, join, normalize } from 'node:path';
 import handler from './api/extract.js';
 
 const PORT = Number(process.env.PORT) || 3017;
-const ROOT = new URL('.', import.meta.url).pathname;
+const ROOT = new URL('./public/', import.meta.url).pathname;
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript',
   '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.md': 'text/plain' };
 

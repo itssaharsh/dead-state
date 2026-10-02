@@ -1,7 +1,7 @@
 /* Seeded corpus with known-correct verdicts. "caught" = flagged broken when it IS
    broken. "false positive" = flagged broken when it is fine. A checker that always
    finds something is worthless, so both numbers are reported. */
-import { narrativeCheck, worldFactCheck, softlockCheck } from '../solver.js';
+import { narrativeCheck, worldFactCheck, softlockCheck } from '../public/solver.js';
 import { writeFileSync } from 'node:fs';
 
 const A = (id, label, step, pre, post) => ({ id, label, step, pre, post });

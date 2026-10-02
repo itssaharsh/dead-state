@@ -2,7 +2,7 @@
    gates each, and reports the real hit rate. Honest sample data with a real receipt. */
 import { complete } from '../lib/providers.js';
 import { extract } from '../lib/extract.js';
-import { gate } from '../solver.js';
+import { gate } from '../public/solver.js';
 import { writeFileSync, mkdirSync } from 'node:fs';
 
 const BRIEFS = [
@@ -19,7 +19,7 @@ For each step give a numbered objective line and one or two sentences of flavour
 Name characters, items and places concretely. Do NOT comment on structure or solvability.
 Return JSON: {"title": string, "prose": string}.`;
 
-mkdirSync(new URL('../fixtures/', import.meta.url), { recursive: true });
+mkdirSync(new URL('../public/fixtures/', import.meta.url), { recursive: true });
 const results = [];
 
 for (const [slug, brief] of BRIEFS) {
@@ -51,7 +51,7 @@ const broken = results.filter(r => !r.verdict.world);
 const disagree = results.filter(r => r.verdict.disagree);
 console.log(`\n--- real hit rate on neutral briefs ---`);
 console.log(`${results.length} chains typed · ${broken.length} had no completion path · ${disagree.length} passed a narrative-graph check while having none`);
-writeFileSync(new URL('../fixtures/_run.json', import.meta.url), JSON.stringify({
+writeFileSync(new URL('../public/fixtures/_run.json', import.meta.url), JSON.stringify({
   at: new Date().toISOString(), briefs: BRIEFS.length, typed: results.length,
   no_completion_path: broken.length, disagreements: disagree.length,
   slugs: results.map(r => ({ slug: r.slug, ...r.verdict }))

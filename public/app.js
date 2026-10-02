@@ -314,7 +314,7 @@ const stick = () => { $('#stick').hidden = !mq.matches; };
 mq.addEventListener('change', stick); stick();
 
 /* corpus line + boot */
-fetch('/eval/corpus-result.json').then(r => r.ok ? r.json() : null).then(d => {
+fetch('/corpus-result.json').then(r => r.ok ? r.json() : null).then(d => {
   if (d) $('#corpus').innerHTML = `Seeded corpus: <b>${d.caught}/${d.total}</b> known-broken cases caught, <b>${d.false_positives}</b> false positives on known-good, run ${esc(d.at.slice(0, 10))}.`;
 }).catch(() => {});
 

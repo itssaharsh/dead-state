@@ -4,7 +4,7 @@
    A per-quest dead-end check cannot see across that boundary. This can. */
 import { complete } from '../lib/providers.js';
 import { extract } from '../lib/extract.js';
-import { gate } from '../solver.js';
+import { gate } from '../public/solver.js';
 import { writeFileSync } from 'node:fs';
 
 /* The shared world bible a studio would already have — including the canonical
@@ -88,7 +88,7 @@ for (const b of broken) {
   console.log(`\nWHY: ${b.goal}`);
   (b.chain || []).forEach(l => console.log('  ' + '  '.repeat(l.depth) + (l.severed ? '✗ ' : '└ ') + l.text));
 }
-writeFileSync(new URL('../fixtures/_world.json', import.meta.url), JSON.stringify({
+writeFileSync(new URL('../public/fixtures/_world.json', import.meta.url), JSON.stringify({
   at: new Date().toISOString(), bible: BIBLE, quests, merged,
   result: { all_together: all.world.ok, per_goal: perGoal.map(p => ({ goal: p.goal, world: p.world })) ,
             broken: broken.length, total: merged.goals.length }
