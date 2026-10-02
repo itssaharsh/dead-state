@@ -184,6 +184,7 @@ function renderChecks(pending) {
 
 function renderAll(pending) {
   renderBand(); renderPath(); renderQuests(); renderModel(); renderChecks(pending);
+  if (typeof renderAssets === 'function') renderAssets();
 }
 
 /* ---------------- data ---------------- */
@@ -312,6 +313,25 @@ addEventListener('keydown', e => {
 const mq = matchMedia('(max-width:640px)');
 const stick = () => { $('#stick').hidden = !mq.matches; };
 mq.addEventListener('change', stick); stick();
+
+/* asset gate: a consequence of the verdict, not a fourth check */
+fetch('/assets/manifest.json').then(r => r.ok ? r.json() : null).then(d => {
+  if (!d) return;
+  window.__assets = d;
+  renderAssets();
+}).catch(() => {});
+
+function renderAssets() {
+  const d = window.__assets; if (!d || !cur) return;
+  const e = d.entries.find(x => x.slug === cur.slug); if (!e) { $('#assets').textContent = ''; return; }
+  const t = e.generated ? `Asset generated for “${e.hero}” after this batch passed.`
+    : e.reason === 'blocked-by-gate'
+      ? 'Asset generation skipped: this batch did not pass, so no mesh-generation credits were spent on it.'
+      : e.reason === 'not-configured'
+        ? `This batch passed, so the asset step would run for “${e.hero}”. No Hyper3D key is configured on this deployment, so it was skipped rather than faked.`
+        : `Asset step did not run (${e.reason}).`;
+  $('#assets').textContent = t;
+}
 
 /* corpus line + boot */
 fetch('/corpus-result.json').then(r => r.ok ? r.json() : null).then(d => {

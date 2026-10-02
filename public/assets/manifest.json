@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-02T22:45:39.094Z",
+  "configured": false,
+  "entries": [
+    {
+      "slug": "saltmarrow",
+      "passed": false,
+      "generated": false,
+      "reason": "blocked-by-gate",
+      "detail": "The batch did not pass, so no mesh-generation credits were spent on it."
+    },
+    {
+      "slug": "ferry",
+      "passed": true,
+      "generated": false,
+      "reason": "not-configured",
+      "hero": "sunken silver",
+      "prompt": "a sunken silver, a single hand-held fantasy RPG quest item, neutral studio lighting, game-ready"
+    }
+  ]
+}
