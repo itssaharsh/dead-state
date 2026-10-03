@@ -14,6 +14,7 @@ Deadline **Sunday 4 Oct, 14:00 Cambridge time**. Form: https://about.tryarcade.c
 | **Game Description** | the 1000-char text below |
 | **Arcade Game Link** ⚠️ | **UNRESOLVED — ask Discord first.** If Game Tech genuinely requires it, see the fallback below. |
 | **Demo Video URL** | the YouTube/Loom unlisted link (video plan below) |
+| *(not a field, but required for the Hyper3D prize)* | ship one Hyper3D-generated asset in the repo and name Hyper3D in the description — see below |
 | **Team Contact Email** | saharsh7002@gmail.com |
 | **Checkbox** | "I confirm that this game was built during the hackathon" — true; first commit is during the window |
 
@@ -51,6 +52,32 @@ softlockable quests present. The game *is* the demonstration: a player can walk 
 Then the Arcade link and the tool link are the same story, and the demo gains a beat it does
 not currently have — you see the quest break in a game, not only in a report.
 Do NOT do this unless Discord says it is required; it is 3 hours against a 25% Execution line.
+
+## Hyper3D — what is actually possible (checked 2026-10-03)
+
+The conditional prize says *"projects **using** Hyper3D"*, not "using the Rodin API". That
+distinction matters, because the API is gated above the free offer:
+
+| Route | Cost | API access | Status |
+|---|---|---|---|
+| The participant "$30 Hyper3D Membership" | free, **but no published way to claim it** | Creator tier = **none** | nobody answered Discord |
+| Published code `bnaRodinEdit` (14 days Creator) | free | **none** | untested |
+| Public demo key `vibecoding` (Deemos's own X post + GitHub) | free | yes in principle | **dead — `{"balance":0}`, `API_INSUFFICIENT_FUNDS`** (verified) |
+| Business tier | $120/mo | full | **do not buy — it is the prize** |
+| **Web app at hyper3d.ai/workspace** | **free to generate, pay to download** | n/a | **the cheapest legitimate route** |
+| **MCP server** (`https://api.hyper3d.com/api/mcp`) | free, **OAuth — no API key** | bypasses the key gate; billing follows the workspace plan | untested |
+
+**Recommended, ~20 minutes, $0:** sign up free, generate one asset in the web UI, screenshot
+the workspace, commit the asset, and name Hyper3D/Rodin in the description and the video. That
+is the unambiguous reading of "using Hyper3D". If export is blocked on Free, redeem
+`bnaRodinEdit` for 14 days of Creator.
+
+**Worth one message:** Joel Wang is Head of Global Strategy & Operations and a Partner at
+Hyper3D **and is on the judging panel**. Hyper3D also runs its own Discord. Ask one precise
+question: *is the participant membership Creator or Business — does it include API access?*
+
+**Also:** the two published Discord invites differ — the event page links `discord.gg/aWdeDJhDyk`,
+Luma links `discord.gg/72bxnpv4C8`. If nobody replied, you may be in the wrong server.
 
 ## Demo video plan
 

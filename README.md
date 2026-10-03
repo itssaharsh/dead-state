@@ -78,7 +78,7 @@ and stay quiet on the wrong ones; it is not a generalisation claim.
 | Typing pasted content into the model | **Live.** Server-side, provider-rotated. |
 | The shipped samples | **Real generated content** with the provider, model and timestamp recorded on each fixture. Pre-typed so the page works with zero API keys. |
 | `fixtures/handbuilt.json` | **Hand-written by the author**, labelled in the UI and in its own provenance field. |
-| Rodin / Hyper3D asset step | Asset-time only, pre-generated and cached. The checks never call it. |
+| Rodin / Hyper3D asset step | Asset-time only, pre-generated and cached. The checks never call it. **Not executed:** Rodin API access requires the Business tier (hyper3d.ai/pricing, 2026-10-03 — Free and Creator both show `—` for API access), and the public demo key `vibecoding` that Deemos publishes returns `{"balance":0}` then `API_INSUFFICIENT_FUNDS`. The code path reports this rather than faking an asset. |
 | Anything else | Nothing is stubbed, mocked or simulated in the loop. |
 
 **The honest limit:** the search is sound over the *extracted* model, not over the prose.
@@ -117,6 +117,17 @@ content from a prose-generating model, where no constraint was expressible at ge
 time.
 
 ---
+
+## The Hyper3D asset gate
+
+`eval/gen-assets.mjs` generates a mesh for a batch's hero item **only if that batch passed
+the gate** — mesh generation costs credits and minutes, so a pipeline should not spend
+either on content a player cannot finish. On the Saltmarrow batch, which fails, it spends
+nothing and says so.
+
+Verified 2026-10-03: the documented balance path `/check-balance` 404s; the live API answers
+`/check_balance`. There is now a balance preflight, so a zero-credit key fails in 300 ms with
+a readable reason instead of after a full submit.
 
 ## Run it
 

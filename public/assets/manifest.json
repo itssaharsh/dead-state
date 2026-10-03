@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-02T22:45:39.094Z",
-  "configured": false,
+  "at": "2026-10-03T09:26:10.325Z",
+  "configured": true,
   "entries": [
     {
       "slug": "saltmarrow",
@@ -13,9 +13,10 @@
       "slug": "ferry",
       "passed": true,
       "generated": false,
-      "reason": "not-configured",
       "hero": "sunken silver",
-      "prompt": "a sunken silver, a single hand-held fantasy RPG quest item, neutral studio lighting, game-ready"
+      "prompt": "a sunken silver, a single hand-held fantasy RPG quest item, neutral studio lighting, game-ready",
+      "reason": "no-credits",
+      "detail": "The key has 0 credits. Rodin API access needs the Business tier; Free and Creator have none."
     }
   ]
 }
