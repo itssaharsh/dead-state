@@ -5,3 +5,10 @@ node_modules
 qa/
 .env*
 video/out
+demo/rec/
+demo/build/
+demo/probe/
+demo/recon/
+demo/voice/
+demo/*.log
+demo/design_shot.png
