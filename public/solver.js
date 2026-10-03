@@ -193,14 +193,19 @@ export function narrativeCheck(model) {
   };
 }
 
+/* All three checks in one call. The UI runs them individually in a worker so it can
+   report progress; everything else should use this, so a caller can never accidentally
+   act on two checks out of three. */
 export function gate(model) {
   const narrative = narrativeCheck(model);
   const world = worldFactCheck(model);
+  const softlock = softlockCheck(model);
+  const ok = world.ok && softlock.ok;
   return {
-    narrative, world,
-    verdict: world.ok ? 'pass' : 'blocked',
-    disagree: narrative.ok && !world.ok,
-    exit: world.ok ? 0 : 1
+    narrative, world, softlock,
+    verdict: ok ? 'pass' : 'blocked',
+    disagree: narrative.ok && !ok,
+    exit: ok ? 0 : 1
   };
 }
 
