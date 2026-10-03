@@ -378,7 +378,9 @@ mq.addEventListener('change', stick); stick();
 fetch('/assets/manifest.json').then(r => r.ok ? r.json() : null).then(d => {
   if (!d) return;
   window.__assets = d;
-  renderAssets();
+  /* The figure lives in renderPath(), which may already have run before this
+     resolved. Re-render so a fast load still shows the asset. */
+  if (cur) renderAll(false); else renderAssets();
 }).catch(() => {});
 
 function renderAssets() {

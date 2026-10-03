@@ -1,0 +1,783 @@
+{
+ "geom": {
+  "cw": 1314,
+  "ch": 739,
+  "bar": 0,
+  "wx": 303,
+  "wy": 86,
+  "r": 8,
+  "mode": "window",
+  "chrome": "none"
+ },
+ "geoms": {
+  "full": {
+   "cw": 1920,
+   "ch": 1080,
+   "bar": 0,
+   "wx": 0,
+   "wy": 0,
+   "r": 0,
+   "mode": "full",
+   "chrome": "none"
+  },
+  "window": {
+   "cw": 1314,
+   "ch": 739,
+   "bar": 0,
+   "wx": 303,
+   "wy": 86,
+   "r": 8,
+   "mode": "window",
+   "chrome": "none"
+  }
+ },
+ "palette": {
+  "bg": [
+   "#0D1118",
+   "#1A1F2B",
+   "#2A1A14"
+  ],
+  "accent": "#FF6A3D",
+  "accent2": "#D9A94C",
+  "text": "#ECE7DD",
+  "muted": "#9AA3B2",
+  "chrome": "dark",
+  "surface": "#232A38",
+  "site_bg": "#1A1F2B",
+  "font": "Rethink Sans",
+  "display_font": "Young Serif",
+  "canvas": "#121620",
+  "field": "#2A1A14",
+  "field_text": "#ECE7DD"
+ },
+ "shape": {
+  "radius": 4,
+  "window_radius": 8,
+  "shadow": "flat",
+  "pill": false,
+  "hairline": "rgba(255,255,255,.14)"
+ },
+ "card": {
+  "chrome": "none",
+  "inset_pct": 8.0,
+  "backdrop": "flat",
+  "shadow_css": "0 20px 70px rgba(0,0,0,.45),0 4px 14px rgba(0,0,0,.30)"
+ },
+ "look": "editorial",
+ "design": {
+  "source": {
+   "url": "https://dead-state.vercel.app",
+   "title": "Dead State \u2014 find quests a model wrote that cannot be finished",
+   "h1": null,
+   "tokens_found": 29,
+   "fonts_loaded": [
+    "Rethink Sans",
+    "Rethink Sans",
+    "Rethink Sans",
+    "Rethink Sans",
+    "Spline Sans Mono",
+    "Spline Sans Mono",
+    "Young Serif"
+   ]
+  },
+  "theme": "dark",
+  "personality": "editorial",
+  "palette": {
+   "site_bg": "#1A1F2B",
+   "surface": "#232A38",
+   "text": "#ECE7DD",
+   "muted": "#9AA3B2",
+   "accent": "#FF6A3D",
+   "accent2": "#D9A94C",
+   "bg": [
+    "#0D1118",
+    "#1A1F2B",
+    "#2A1A14"
+   ],
+   "canvas": "#121620",
+   "field": "#2A1A14",
+   "field_text": "#ECE7DD",
+   "chrome": "dark",
+   "font": "Rethink Sans",
+   "display_font": "Young Serif"
+  },
+  "look": "editorial",
+  "shape": {
+   "radius": 4,
+   "window_radius": 8,
+   "pill": false,
+   "shadow": "flat",
+   "hairline": "rgba(255,255,255,.14)"
+  },
+  "card": {
+   "chrome": "none",
+   "inset_pct": 8.0,
+   "backdrop": "flat",
+   "shadow_css": "0 20px 70px rgba(0,0,0,.45),0 4px 14px rgba(0,0,0,.30)"
+  },
+  "type": {
+   "body_px": 14,
+   "scale": "compact"
+  },
+  "motion": {
+   "transition": "wipe",
+   "zoom_style": "calm",
+   "spotlight_dim": 0.52
+  },
+  "sound": {
+   "music": "auto",
+   "bpm": 76,
+   "brief": "restrained, taut, low piano and pad; one cold swell on the failing check; no triumphal resolve",
+   "sfx": "soft",
+   "loudness": "loud"
+  },
+  "grade": {
+   "saturation": 1.0,
+   "contrast": 1.0,
+   "vignette": 0.06
+  },
+  "evidence": {
+   "accents": [
+    [
+     "rgb(26, 14, 8)",
+     5208
+    ],
+    [
+     "rgb(255, 106, 61)",
+     4960
+    ],
+    [
+     "rgb(35, 42, 56)",
+     4420
+    ]
+   ],
+   "radii": [
+    [
+     "6",
+     1104562.421875
+    ],
+    [
+     "4",
+     4960
+    ]
+   ],
+   "shadows": [],
+   "screen_colours": [
+    {
+     "hex": "#1a1f2b",
+     "share": 0.8929
+    },
+    {
+     "hex": "#2a1a14",
+     "share": 0.0604
+    },
+    {
+     "hex": "#9aa3b2",
+     "share": 0.0119
+    },
+    {
+     "hex": "#ece7dd",
+     "share": 0.009
+    },
+    {
+     "hex": "#ff6a3d",
+     "share": 0.0087
+    },
+    {
+     "hex": "#626d80",
+     "share": 0.0061
+    }
+   ],
+   "named_tokens": {
+    "--accent-container": "#02010e",
+    "--accent-ink": "#010008"
+   }
+  }
+ },
+ "cards": {
+  "hook": [
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_hook_00_kicker.png",
+    "x": 817.78125,
+    "y": 5.46875,
+    "w": 282.4375,
+    "h": 119,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 186.4375,
+    "ih": 23,
+    "name": "kicker",
+    "idx": 0,
+    "at": null,
+    "reveal": "fade",
+    "words": []
+   },
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_hook_01_title.png",
+    "x": 47,
+    "y": 54.46875,
+    "w": 1824,
+    "h": 1018.0625,
+    "ix": 48,
+    "iy": 48.0,
+    "iw": 1728,
+    "ih": 922.0625,
+    "name": "title",
+    "idx": 1,
+    "at": null,
+    "reveal": "write",
+    "words": [
+     {
+      "x": 237.953125,
+      "y": 3.0,
+      "w": 520.03125,
+      "h": 319
+     },
+     {
+      "x": 811.765625,
+      "y": 3.0,
+      "w": 774.28125,
+      "h": 319
+     },
+     {
+      "x": 460.4375,
+      "y": 233.515625,
+      "w": 903.109375,
+      "h": 319
+     },
+     {
+      "x": 267.4375,
+      "y": 464.03125,
+      "w": 712.8125,
+      "h": 319
+     },
+     {
+      "x": 1034.015625,
+      "y": 464.03125,
+      "w": 522.53125,
+      "h": 319
+     },
+     {
+      "x": 225.40625,
+      "y": 694.546875,
+      "w": 405,
+      "h": 319
+     },
+     {
+      "x": 684.171875,
+      "y": 694.546875,
+      "w": 212.921875,
+      "h": 319
+     },
+     {
+      "x": 950.859375,
+      "y": 694.546875,
+      "w": 647.734375,
+      "h": 319
+     }
+    ]
+   }
+  ],
+  "problem": [
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_problem_00_kicker.png",
+    "x": 553.9375,
+    "y": 301.34375,
+    "w": 810.125,
+    "h": 119,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 714.125,
+    "ih": 23,
+    "name": "kicker",
+    "idx": 0,
+    "at": null,
+    "reveal": "fade",
+    "words": []
+   },
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_problem_01_value.png",
+    "x": 852.5,
+    "y": 340.34375,
+    "w": 212.984375,
+    "h": 301.796875,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 116.984375,
+    "ih": 205.796875,
+    "name": "value",
+    "idx": 1,
+    "at": null,
+    "reveal": "pop",
+    "words": []
+   },
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_problem_02_label.png",
+    "x": 802.59375,
+    "y": 562.140625,
+    "w": 312.8125,
+    "h": 150.265625,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 216.8125,
+    "ih": 54.265625,
+    "name": "label",
+    "idx": 2,
+    "at": null,
+    "reveal": "rise",
+    "words": []
+   },
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_problem_03_sub.png",
+    "x": 644.078125,
+    "y": 632.40625,
+    "w": 629.828125,
+    "h": 144.234375,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 533.828125,
+    "ih": 48.234375,
+    "name": "sub",
+    "idx": 3,
+    "at": null,
+    "reveal": "rise",
+    "words": []
+   }
+  ],
+  "turn": [
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_turn_00_title.png",
+    "x": 573.515625,
+    "y": 451.78125,
+    "w": 770.96875,
+    "h": 174.4375,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 674.96875,
+    "ih": 78.4375,
+    "name": "title",
+    "idx": 0,
+    "at": null,
+    "reveal": "mask",
+    "words": []
+   }
+  ],
+  "end": [
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_end_00_title.png",
+    "x": 638.203125,
+    "y": 321.171875,
+    "w": 641.59375,
+    "h": 206.234375,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 545.59375,
+    "ih": 110.234375,
+    "name": "title",
+    "idx": 0,
+    "at": null,
+    "reveal": "mask",
+    "words": []
+   },
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_end_01_sub.png",
+    "x": 299.34375,
+    "y": 459.40625,
+    "w": 1319.3125,
+    "h": 144.234375,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 1223.3125,
+    "ih": 48.234375,
+    "name": "sub",
+    "idx": 1,
+    "at": null,
+    "reveal": "rise",
+    "words": []
+   },
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_end_02_url.png",
+    "x": 735.59375,
+    "y": 535.640625,
+    "w": 446.796875,
+    "h": 161,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 350.796875,
+    "ih": 65,
+    "name": "url",
+    "idx": 2,
+    "at": null,
+    "reveal": "rise",
+    "words": []
+   },
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/card_end_03_meta.png",
+    "x": 558.703125,
+    "y": 628.640625,
+    "w": 800.59375,
+    "h": 128.1875,
+    "ix": 48.0,
+    "iy": 48.0,
+    "iw": 704.59375,
+    "ih": 32.1875,
+    "name": "meta",
+    "idx": 3,
+    "at": null,
+    "reveal": "fade",
+    "words": []
+   }
+  ]
+ },
+ "captions": {
+  "hook": [
+   {
+    "text": "A model wrote four quests for one city",
+    "start": 0.194,
+    "end": 3.469,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_hook_00.png",
+    "w": 704.390625,
+    "h": 73.59375
+   },
+   {
+    "text": "Every check you would normally run says",
+    "start": 3.719,
+    "end": 6.29,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_hook_01.png",
+    "w": 751.328125,
+    "h": 73.59375
+   },
+   {
+    "text": "they are fine",
+    "start": 6.29,
+    "end": 7.147,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_hook_02.png",
+    "w": 266.296875,
+    "h": 73.59375
+   }
+  ],
+  "problem": [
+   {
+    "text": "A dead-end check walks the quest graph",
+    "start": 0.14,
+    "end": 2.49,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_problem_00.png",
+    "w": 751.59375,
+    "h": 73.59375
+   },
+   {
+    "text": "Fifteen steps",
+    "start": 2.665,
+    "end": 3.69,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_problem_01.png",
+    "w": 274.421875,
+    "h": 73.59375
+   },
+   {
+    "text": "Zero dead ends",
+    "start": 3.915,
+    "end": 5.115,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_problem_02.png",
+    "w": 320.46875,
+    "h": 73.59375
+   },
+   {
+    "text": "Every branch terminates",
+    "start": 5.29,
+    "end": 6.663,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_problem_03.png",
+    "w": 471.578125,
+    "h": 73.59375
+   }
+  ],
+  "checks": [
+   {
+    "text": "A completability check goes further",
+    "start": 0.14,
+    "end": 2.434,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_checks_00.png",
+    "w": 660.9375,
+    "h": 73.59375
+   },
+   {
+    "text": "and asks whether any order of play",
+    "start": 2.434,
+    "end": 4.506,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_checks_01.png",
+    "w": 648.25,
+    "h": 73.59375
+   },
+   {
+    "text": "finishes all four",
+    "start": 4.506,
+    "end": 5.615,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_checks_02.png",
+    "w": 307.296875,
+    "h": 73.59375
+   },
+   {
+    "text": "One does",
+    "start": 5.865,
+    "end": 6.592,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_checks_03.png",
+    "w": 221.265625,
+    "h": 73.59375
+   }
+  ],
+  "fail": [
+   {
+    "text": "The third check asks something else entirely",
+    "start": 0.144,
+    "end": 3.469,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_fail_00.png",
+    "w": 804.90625,
+    "h": 73.59375
+   },
+   {
+    "text": "Can ordinary play reach a state where",
+    "start": 3.669,
+    "end": 5.897,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_fail_01.png",
+    "w": 699.03125,
+    "h": 73.59375
+   },
+   {
+    "text": "a quest can never be completed?",
+    "start": 5.897,
+    "end": 7.694,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_fail_02.png",
+    "w": 624.734375,
+    "h": 73.59375
+   },
+   {
+    "text": "Two of the four can",
+    "start": 7.919,
+    "end": 9.152,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_fail_03.png",
+    "w": 381.4375,
+    "h": 73.59375
+   }
+  ],
+  "trap": [
+   {
+    "text": "This is how a player gets there",
+    "start": 0.169,
+    "end": 2.269,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_trap_00.png",
+    "w": 562.65625,
+    "h": 73.59375
+   },
+   {
+    "text": "Six ordinary actions",
+    "start": 2.544,
+    "end": 4.694,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_trap_01.png",
+    "w": 389.25,
+    "h": 73.59375
+   },
+   {
+    "text": "The sixth trades away an item that two",
+    "start": 4.869,
+    "end": 7.516,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_trap_02.png",
+    "w": 710.78125,
+    "h": 73.59375
+   },
+   {
+    "text": "other quests need",
+    "start": 7.516,
+    "end": 8.797,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_trap_03.png",
+    "w": 364.8125,
+    "h": 73.59375
+   },
+   {
+    "text": "and a quest step cannot be repeated",
+    "start": 8.797,
+    "end": 11.274,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_trap_04.png",
+    "w": 685.625,
+    "h": 73.59375
+   },
+   {
+    "text": "Those two can never be finished",
+    "start": 11.499,
+    "end": 13.325,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_trap_05.png",
+    "w": 602.71875,
+    "h": 73.59375
+   },
+   {
+    "text": "and nothing in the content says so",
+    "start": 13.325,
+    "end": 15.291,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_trap_06.png",
+    "w": 637.1875,
+    "h": 73.59375
+   }
+  ],
+  "honesty": [
+   {
+    "text": "A model did the typing",
+    "start": 0.194,
+    "end": 2.172,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_honesty_00.png",
+    "w": 441.5625,
+    "h": 73.59375
+   },
+   {
+    "text": "so the model can be wrong",
+    "start": 2.172,
+    "end": 4.369,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_honesty_01.png",
+    "w": 515.90625,
+    "h": 73.59375
+   },
+   {
+    "text": "Every row sits beside the sentence",
+    "start": 4.644,
+    "end": 7.139,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_honesty_02.png",
+    "w": 643.34375,
+    "h": 73.59375
+   },
+   {
+    "text": "it came from",
+    "start": 7.139,
+    "end": 8.0,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_honesty_03.png",
+    "w": 273.859375,
+    "h": 73.59375
+   }
+  ],
+  "paste": [
+   {
+    "text": "Paste anything",
+    "start": 0.069,
+    "end": 0.969,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_paste_00.png",
+    "w": 304.890625,
+    "h": 73.59375
+   },
+   {
+    "text": "Real extraction",
+    "start": 1.144,
+    "end": 2.219,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_paste_01.png",
+    "w": 307.765625,
+    "h": 73.59375
+   },
+   {
+    "text": "real search",
+    "start": 2.219,
+    "end": 2.987,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_paste_02.png",
+    "w": 242.390625,
+    "h": 73.59375
+   }
+  ],
+  "result": [
+   {
+    "text": "Four seconds, and a softlock in content",
+    "start": 0.173,
+    "end": 2.857,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_result_00.png",
+    "w": 722.75,
+    "h": 73.59375
+   },
+   {
+    "text": "it had never seen",
+    "start": 2.857,
+    "end": 4.032,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_result_01.png",
+    "w": 345.8125,
+    "h": 73.59375
+   }
+  ],
+  "asset": [
+   {
+    "text": "Content that passes earns its asset",
+    "start": 0.098,
+    "end": 2.423,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_asset_00.png",
+    "w": 654.890625,
+    "h": 73.59375
+   },
+   {
+    "text": "Content that fails spends nothing",
+    "start": 2.598,
+    "end": 4.544,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_asset_01.png",
+    "w": 618.921875,
+    "h": 73.59375
+   }
+  ],
+  "end": [
+   {
+    "text": "Eleven regression cases",
+    "start": 0.119,
+    "end": 1.919,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_end_00.png",
+    "w": 458.03125,
+    "h": 73.59375
+   },
+   {
+    "text": "Six of six broken caught",
+    "start": 2.119,
+    "end": 3.644,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_end_01.png",
+    "w": 454.65625,
+    "h": 73.59375
+   },
+   {
+    "text": "Zero false positives",
+    "start": 3.819,
+    "end": 5.333,
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/cap_end_02.png",
+    "w": 380.765625,
+    "h": 73.59375
+   }
+  ]
+ },
+ "callouts": {
+  "trap": [
+   {
+    "png": "/home/saharsh/contri/cambridge/demo/build/overlays/co_trap_00.png",
+    "w": 289.09375,
+    "h": 51,
+    "i": 2,
+    "at": "sixth",
+    "ms": 2.4,
+    "side": "auto",
+    "text": "consumes the item"
+   }
+  ]
+ },
+ "backdrops": {
+  "full": "/home/saharsh/contri/cambridge/demo/build/overlays/backdrop_full.png",
+  "window": "/home/saharsh/contri/cambridge/demo/build/overlays/backdrop_window.png"
+ },
+ "masks": {
+  "full": "/home/saharsh/contri/cambridge/demo/build/overlays/winmask_full.png",
+  "window": "/home/saharsh/contri/cambridge/demo/build/overlays/winmask_window.png"
+ },
+ "modes": [
+  "full",
+  "window"
+ ],
+ "motion": {
+  "transition": "wipe",
+  "zoom_style": "calm",
+  "spotlight_dim": 0.52
+ },
+ "grade": {
+  "saturation": 1.0,
+  "contrast": 1.0,
+  "vignette": 0.06
+ },
+ "field_png": "/home/saharsh/contri/cambridge/demo/build/overlays/field.png",
+ "cursor_hotspot": [
+  40,
+  44
+ ]
+}

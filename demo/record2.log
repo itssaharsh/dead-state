@@ -1,0 +1,26 @@
+[asset #1 wait] FAILED: wait for '.asset img' timed out
+scene checks           4.61s of footage, 125 frames so far
+scene fail             4.31s of footage, 253 frames so far
+scene trap             7.08s of footage, 460 frames so far
+scene honesty          5.46s of footage, 623 frames so far
+scene paste            8.62s of footage, 850 frames so far
+scene result           2.44s of footage, 924 frames so far
+Traceback (most recent call last):
+  File "/home/saharsh/.claude/skills/synced/2aed9540-0336-45f7-a465-5b4a22af8e75_644037e8-d800-4f00-aeb2-b7ecb8482342/product-demo-video/scripts/run.py", line 516, in <module>
+    asyncio.run(Rec(sb, os.path.dirname(os.path.abspath(o.storyboard)), o.probe).main())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/saharsh/.claude/skills/synced/2aed9540-0336-45f7-a465-5b4a22af8e75_644037e8-d800-4f00-aeb2-b7ecb8482342/product-demo-video/scripts/run.py", line 486, in main
+    await s.run_actions(main_acts, sc["id"])
+  File "/home/saharsh/.claude/skills/synced/2aed9540-0336-45f7-a465-5b4a22af8e75_644037e8-d800-4f00-aeb2-b7ecb8482342/product-demo-video/scripts/run.py", line 437, in run_actions
+    await s.act(a, ev)
+  File "/home/saharsh/.claude/skills/synced/2aed9540-0336-45f7-a465-5b4a22af8e75_644037e8-d800-4f00-aeb2-b7ecb8482342/product-demo-video/scripts/run.py", line 398, in act
+    raise TimeoutError("wait for %r timed out" % f)
+TimeoutError: wait for '.asset img' timed out
