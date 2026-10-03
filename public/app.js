@@ -10,6 +10,14 @@ const PICKS = {
 };
 let cur = null, pasted = null, live = null, worker = null, token = 0;
 
+/* Start the manifest fetch immediately and hand out a promise. load() awaits it before
+   rendering, so the asset figure can never lose a race with the fixture fetch. Two
+   earlier attempts at this failed because they depended on which fetch resolved first. */
+const assetsReady = fetch('/assets/manifest.json')
+  .then(r => (r.ok ? r.json() : null))
+  .then(d => { window.__assets = d; return d; })
+  .catch(() => null);
+
 /* ---------------- rendering ---------------- */
 function result() { return live || cur?.baked; }
 
@@ -240,7 +248,8 @@ async function load(pick) {
   if (pick === 'paste') return showPaste();
   const f = PICKS[pick]; if (!f) return;
   const mine = token;
-  const res = await fetch(f.file); const data = await res.json();
+  const [res] = await Promise.all([fetch(f.file), assetsReady]);
+  const data = await res.json();
   if (mine !== token) return;                    // a newer pick won
   cur = data; live = null; pasted = null;
   if (!cur.quests) cur.quests = [{ slug: cur.slug, title: cur.title, prose: cur.prose || '' }];
@@ -375,13 +384,7 @@ const stick = () => { $('#stick').hidden = !mq.matches; };
 mq.addEventListener('change', stick); stick();
 
 /* asset gate: a consequence of the verdict, not a fourth check */
-fetch('/assets/manifest.json').then(r => r.ok ? r.json() : null).then(d => {
-  if (!d) return;
-  window.__assets = d;
-  /* The figure lives in renderPath(), which may already have run before this
-     resolved. Re-render so a fast load still shows the asset. */
-  if (cur) renderAll(false); else renderAssets();
-}).catch(() => {});
+
 
 function renderAssets() {
   const d = window.__assets; if (!d || !cur) return;
