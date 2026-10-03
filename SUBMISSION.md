@@ -13,7 +13,7 @@ Deadline **Sunday 4 Oct, 14:00 Cambridge time**. Form: https://about.tryarcade.c
 | **Game Name** | `Dead State` |
 | **Game Description** | the 1000-char text below |
 | **Arcade Game Link** ⚠️ | **UNRESOLVED — ask Discord first.** If Game Tech genuinely requires it, see the fallback below. |
-| **Demo Video URL** | the YouTube/Loom unlisted link (video plan below) |
+| **Demo Video URL** | upload `dead-state-demo.mp4` (76s, 720p, 4.5MB, in the repo root) to YouTube **unlisted** or Loom, paste that link |
 | *(not a field, but required for the Hyper3D prize)* | ship one Hyper3D-generated asset in the repo and name Hyper3D in the description — see below |
 | **Team Contact Email** | saharsh7002@gmail.com |
 | **Checkbox** | "I confirm that this game was built during the hackathon" — true; first commit is during the window |
@@ -79,7 +79,23 @@ question: *is the participant membership Creator or Business — does it include
 **Also:** the two published Discord invites differ — the event page links `discord.gg/aWdeDJhDyk`,
 Luma links `discord.gg/72bxnpv4C8`. If nobody replied, you may be in the wrong server.
 
-## Demo video plan
+## The video — already made
+
+**`dead-state-demo.mp4`** in the repo root. 76 seconds, 720p, 4.5MB, captions burned in,
+no narration. Recorded by driving a real browser against the live deployment, so every
+verdict on screen is a real check result and the paste beat is a real extraction that took
+5.5s on camera. Nothing staged.
+
+Upload it **unlisted** to YouTube (or Loom) and paste that URL. Keep it online until judging
+closes — the form says so explicitly.
+
+`node video/record.mjs` re-records it in one command if you change the site.
+
+Why captions and no voice: the event publishes *"Never judged: English fluency / Slides /
+Public speaking."* A silent captioned capture is fully compliant, removes the
+presentation-skill tax entirely, and works for a reviewer scrolling with sound off.
+
+## Demo video plan (what the cut actually does)
 
 The event publishes **"Never judged: English fluency / Slides / Public speaking."** So: no deck,
 no talking head, no narration required. A captioned screen capture is fully compliant and removes
