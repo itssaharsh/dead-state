@@ -229,9 +229,15 @@ function showPaste() {
   const v = $('#v-path'); v.replaceChildren();
   v.append(Object.assign(el('h3', null, 'Paste generated quest content')));
   v.firstChild.style.cssText = 'font:500 12px/1 var(--ff-body);letter-spacing:.09em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px';
-  const ta = el('textarea'); ta.id = 'paste'; ta.placeholder = '1. Speak to the pawnbroker…\n2. Join the purge…\n3. Buy the heirloom back…';
+  const ta = el('textarea'); ta.id = 'paste';
   ta.setAttribute('aria-label', 'Generated quest content');
-  v.append(ta, Object.assign(el('p', 'hint'), { textContent: 'Numbered objective lines work best. It will be typed into a precondition-effect model, then checked. Nothing is guessed: content that will not type is reported as such.' }));
+  /* Prefilled with a short example so a reviewer can see a live run in two clicks
+     instead of having to invent quest prose. Replace it with anything. */
+  ta.value = '1. Speak to Mara the ferrywoman at the north landing.\n'
+    + '2. Raid the toll house with the Reeve\u2019s men; the ferrywoman is driven off and does not return.\n'
+    + '3. Pay Mara the toll and cross the river.\n'
+    + '4. Deliver the sealed writ to the abbey on the far bank.';
+  v.append(ta, Object.assign(el('p', 'hint'), { textContent: 'An example is filled in — replace it with your own. Numbered objective lines work best. It is typed into a precondition-effect model by a model, then checked by the search. Nothing is guessed: content that will not type is reported as such.' }));
   const b = el('button', 'btn'); b.textContent = 'Type and check'; b.style.marginTop = '14px';
   b.onclick = () => runPaste(ta.value.trim());
   v.append(b);
