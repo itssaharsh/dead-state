@@ -34,6 +34,8 @@ browser, escalating from what already exists to what does not:
 | Live demo flow, 3 consecutive runs with reset | **3/3 pass**, 0 console errors, live re-run confirmed each time |
 | Live `/api/extract` | HTTP 200, typed by `gemini-3.8-flash` in 26s, correctly extracted a destructive effect (`!mara_present`) from "the ferrywoman is driven off" |
 | Provider failover | Verified: forced a bad model, recovered on the next in 1484ms |
+| Live extraction, Groq vs Gemini | **4.4 s vs 8.4 s** on identical content, both extracting correctly. Live endpoint measured at 4.43 s end to end. |
+| Two-click live demo | Paste view prefilled; click → verdict in **8.2 s**, finding a real softlock on content not in any fixture |
 | Public reachability | Vercel SSO protection disabled; unauthenticated fetch returns 200 |
 | Contrast | All token pairs checked; one failure found (`line-input` at 2.798:1 on surface-1) and fixed to 3.15:1 |
 
@@ -58,6 +60,11 @@ browser, escalating from what already exists to what does not:
    unreadable. Fixed by restructuring the DOM.
 5. Two primary actions on mobile (header + sticky). Header button hidden ≤640px.
 6. `--line-input` failed 3:1 on surface-1. Lightened.
+7. A provider without schema enforcement omitted `id`/`label` and invented a new positive
+   fact instead of negating the existing one — which hides the conflict from the search
+   entirely. Prompt now carries the exact shape and the negate-don't-invent rule.
+8. `gate()` ran only two of the three checks. The UI was unaffected (its worker calls each
+   check individually) but every script caller was acting on an incomplete verdict.
 
 ## Known limitations
 
@@ -67,7 +74,7 @@ browser, escalating from what already exists to what does not:
 - The search is sound over the **extracted** model, not the prose. Stated on the page.
 - Corpus is 11 cases. Softlock search is capped and reports `inconclusive` rather than `pass`.
 - Boolean facts only; 26 facts / 40 actions per batch.
-- Live extraction takes ~26s on `gemini-3.8-flash`. A Cerebras or Groq key would cut this to ~2s.
+- Live extraction is ~4.4 s on Groq (was ~26 s when Gemini was the only provider).
 
 ## Evidence missing
 

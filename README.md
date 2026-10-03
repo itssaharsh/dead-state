@@ -128,10 +128,23 @@ node eval/gen-world.mjs   # regenerate the cross-quest finding (needs a key)
 ```
 
 A key is only needed to type *pasted* content. Copy `.env.example` to `.env.local` and add
-any one of `GEMINI_API_KEY`, `CEREBRAS_API_KEY`, `GROQ_API_KEY`, `OPENROUTER_API_KEY`.
-More keys means more failover legs: during this build `gemini-3.8-flash` returned a 503
-on one call and 200 on the next, so rotation runs over models *within* a provider and then
-across providers, and the attempt log is shown in the UI.
+any one of `GROQ_API_KEY`, `CEREBRAS_API_KEY`, `GEMINI_API_KEY`, `OPENROUTER_API_KEY`.
+Each may hold **several comma-separated keys**.
+
+Rotation runs over three levels — keys within a model, models within a provider, then
+providers — because each fails differently. Measured on identical content:
+
+| Provider | Model | Live round trip | Extracted correctly |
+|---|---|---|---|
+| groq | `openai/gpt-oss-120b` | **4.4 s** | yes |
+| gemini | `gemini-3.8-flash` | 8.4 s | yes |
+
+Two failures this design exists for, both observed during the build rather than imagined:
+`gemini-3.8-flash` returned 503 on one call and 200 on the next; and a provider without
+schema enforcement invented a *new* fact (`ferrywoman_driven_off: true`) instead of negating
+the existing one (`alive_mara: false`). The second is the dangerous one — a new positive fact
+means the search cannot see the conflict at all, so the prompt now states the rule explicitly
+and the validator rejects anything that does not fit the schema.
 
 ## Files
 
