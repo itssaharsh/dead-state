@@ -1,22 +1,22 @@
 {
-  "at": "2026-10-03T09:26:10.325Z",
-  "configured": true,
+  "at": "2026-10-03T14:02:16.748Z",
+  "configured": false,
   "entries": [
+    {
+      "slug": "sunstone",
+      "passed": true,
+      "generated": false,
+      "reason": "awaiting-asset",
+      "hero": "sunburst astrolabe",
+      "prompt": "a sunburst astrolabe, a single hand-held fantasy RPG quest item, ornate metal and glass, neutral studio lighting, game-ready, plain background",
+      "detail": "Rodin API access requires the Business tier; the Creator membership issues no API key. Generate in the web app and drop the .glb here."
+    },
     {
       "slug": "saltmarrow",
       "passed": false,
       "generated": false,
       "reason": "blocked-by-gate",
       "detail": "The batch did not pass, so no mesh-generation credits were spent on it."
-    },
-    {
-      "slug": "ferry",
-      "passed": true,
-      "generated": false,
-      "hero": "sunken silver",
-      "prompt": "a sunken silver, a single hand-held fantasy RPG quest item, neutral studio lighting, game-ready",
-      "reason": "no-credits",
-      "detail": "The key has 0 credits. Rodin API access needs the Business tier; Free and Creator have none."
     }
   ]
 }
