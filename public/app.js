@@ -52,7 +52,18 @@ function renderPath() {
         li.className = 'consumes';
         txt.querySelector('.q')?.after(Object.assign(el('span', 'what'), { textContent: m ? m[2] : (a?.label || id) }));
         if (m) txt.childNodes.forEach(n => { if (n.nodeType === 3) n.remove(); });
-        txt.append(el('span', 'note', `↳ this consumes ${trap.blocked.join(' and ')} — and a quest step cannot be repeated`));
+        /* Only say "consumes" when the action really sets that fact false. Otherwise it
+           blocks by destroying something the producer needed, which is a different claim. */
+        const act = cur.model.actions.find(x => x.id === trap.by) || {};
+        const consumed = trap.blocked.filter(f => (act.post || {})[f] === false);
+        const removed = Object.entries(act.post || {}).filter(([, v]) => v === false).map(([k]) => k)
+          .filter(f => !trap.blocked.includes(f));
+        const note = consumed.length
+          ? `↳ this consumes ${consumed.join(' and ')} — and a quest step cannot be repeated`
+          : removed.length
+            ? `↳ this sets ${removed.join(' and ')} false, which is the only way to reach ${trap.blocked.join(' and ')}`
+            : `↳ after this, ${trap.blocked.join(' and ')} can never hold again`;
+        txt.append(el('span', 'note', note));
       }
       li.append(txt); ol.append(li);
     });
@@ -185,8 +196,13 @@ function renderChecks(pending) {
     });
     else traps.forEach(t => {
       const a = el('li'); a.textContent = `└ ${t.goalLabel} needs ${t.blocked.join(' and ')}`; ol.append(a);
+      const act = cur.model.actions.find(x => x.id === t.by) || {};
+      const consumed = t.blocked.some(f => (act.post || {})[f] === false);
       const b = el('li', 'sev'); b.style.paddingLeft = '14px';
-      b.textContent = `✗ ${t.byLabel} consumes it, and a quest step cannot be repeated`; ol.append(b);
+      b.textContent = consumed
+        ? `✗ ${t.byLabel} consumes it, and a quest step cannot be repeated`
+        : `✗ ${t.byLabel} removes what produces it, and a quest step cannot be repeated`;
+      ol.append(b);
     });
     why.append(ol);
   } else why.hidden = true;

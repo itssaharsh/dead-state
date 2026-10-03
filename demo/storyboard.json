@@ -1,0 +1,104 @@
+{
+ "project": {"name": "Dead State", "url": "https://dead-state.vercel.app",
+             "target_seconds": 100, "max_seconds": 180},
+ "style": {
+   "design": "design.json",
+   "voice": "af_heart", "speed": 0.95, "captions": true,
+   "music": "auto", "sfx": true,
+   "viewport": [1280, 720], "dsf": 2, "fps": 30,
+   "mode": "window", "transition": "wipe", "loudness": "loud"
+ },
+ "pronounce": {
+   "softlock": "soft lock",
+   "softlocks": "soft locks",
+   "Saltmarrow": "Salt marrow",
+   "glTF": "gee ell tee eff",
+   "astrolabe": "AST-roh-layb"
+ },
+ "scenes": [
+  {"id": "hook", "type": "clip", "from": "aha", "offset": -1.0, "dur": 9.0, "title_hold": 3.2,
+   "say": "A model wrote four quests for one city. Every check you would normally run says they are fine.",
+   "card": {"layout": "title", "scale": "hero", "reveal": "write",
+            "kicker": "Dead State",
+            "title": "Four quests. Nothing wrong with any of them."}},
+
+  {"id": "problem", "type": "card", "dur": 6.0,
+   "say": "A dead-end check walks the quest graph. Fifteen steps. Zero dead ends. Every branch terminates.",
+   "card": {"layout": "stat", "kicker": "Check one — the one that already exists",
+            "value": "0", "label": "dead ends", "sub": "15 steps · all branches terminate"}},
+
+  {"id": "checks", "type": "live", "mode": "window",
+   "say": "A completability check goes further, and asks whether any order of play finishes all four. One does.",
+   "actions": [
+     {"do": "camera", "focus": ".check:has-text('Narrative graph')", "zoom": 1.55, "move": "push", "at": "dead-end"},
+     {"do": "pause", "ms": 900},
+     {"do": "camera", "focus": ".check:has-text('World facts')", "zoom": 1.55, "move": "pan", "at": "completability",
+      "spotlight": true, "sfx": "confirm"},
+     {"do": "pause", "ms": 1400}]},
+
+  {"id": "turn", "type": "field", "dur": 2.6,
+   "card": {"layout": "field", "scale": "quiet", "title": "Both of those pass."}},
+
+  {"id": "fail", "type": "live", "mode": "window",
+   "say": "The third check asks something else entirely. Can ordinary play reach a state where a quest can never be completed? Two of the four can.",
+   "actions": [
+     {"do": "camera", "focus": ".check:has-text('Order-dependent softlock')", "zoom": 1.7, "move": "snap",
+      "at": "third", "spotlight": true, "sfx": "impact"},
+     {"do": "pause", "ms": 1600},
+     {"do": "mark", "name": "aha"},
+     {"do": "camera", "zoom": "out", "move": "pull", "at": "four"},
+     {"do": "pause", "ms": 800}]},
+
+  {"id": "trap", "type": "live", "mode": "full",
+   "say": "This is how a player gets there. Six ordinary actions. The sixth trades away an item that two other quests need, and a quest step cannot be repeated. Those two can never be finished, and nothing in the content says so.",
+   "actions": [
+     {"do": "camera", "focus": ".path", "zoom": "fit", "move": "pull", "at": "This"},
+     {"do": "pause", "ms": 1500},
+     {"do": "move", "sel": ".path li.consumes", "at": "sixth", "zoom": 1.75, "focus": ".path li.consumes",
+      "move": "push", "spotlight": true, "callout": {"text": "consumes the item"}, "sfx": "tick"},
+     {"do": "pause", "ms": 2200},
+     {"do": "camera", "focus": ".dead", "zoom": 1.45, "move": "pan", "at": "never"},
+     {"do": "mark", "name": "dead"},
+     {"do": "pause", "ms": 1600}]},
+
+  {"id": "honesty", "type": "live", "mode": "window",
+   "say": "A model did the typing, so the model can be wrong. Every row sits beside the sentence it came from.",
+   "actions": [
+     {"do": "click", "sel": "#t-model", "at": "typing", "zoom": 1.15, "sfx": "click"},
+     {"do": "pause", "ms": 900},
+     {"do": "camera", "focus": ".model-tbl", "zoom": 1.5, "move": "push", "at": "row"},
+     {"do": "pause", "ms": 1800}]},
+
+  {"id": "paste", "type": "live", "mode": "window",
+   "say": "Paste anything. Real extraction, real search.",
+   "actions": [
+     {"do": "click", "sel": "text=Paste your own", "at": "Paste", "sfx": "click"},
+     {"do": "pause", "ms": 700},
+     {"do": "camera", "focus": "#paste", "zoom": 1.35, "move": "push"},
+     {"do": "pause", "ms": 900},
+     {"do": "click", "sel": "#v-path button.btn", "at": "search", "spotlight": true, "sfx": "riser"},
+     {"do": "wait", "for": ".check .g.fail", "timeout": 90000}]},
+
+  {"id": "result", "type": "live", "mode": "window",
+   "say": "Four seconds, and a softlock in content it had never seen.",
+   "actions": [
+     {"do": "camera", "focus": "#checks", "zoom": 1.5, "move": "pull", "at": "Four", "sfx": "confirm"},
+     {"do": "mark", "name": "live"},
+     {"do": "pause", "ms": 2000}]},
+
+  {"id": "asset", "type": "live", "mode": "window",
+   "say": "Content that passes earns its asset. Content that fails spends nothing.",
+   "actions": [
+     {"do": "goto", "url": "https://dead-state.vercel.app/?pick=sunstone"},
+     {"do": "wait", "for": ".asset img", "timeout": 30000},
+     {"do": "camera", "focus": ".asset", "zoom": 1.5, "move": "push", "at": "passes", "spotlight": true},
+     {"do": "pause", "ms": 2400}]},
+
+  {"id": "end", "type": "card", "dur": 7.0,
+   "say": "Eleven regression cases. Six of six broken caught. Zero false positives.",
+   "card": {"layout": "end", "title": "Dead State",
+            "sub": "Finds orderings of ordinary play that permanently block a generated quest.",
+            "url": "dead-state.vercel.app",
+            "meta": "6/6 broken caught · 0 false positives · checks run in your browser"}}
+ ]
+}
