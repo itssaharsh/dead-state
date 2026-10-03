@@ -1,15 +1,16 @@
 {
-  "at": "2026-10-03T14:02:16.748Z",
+  "at": "2026-10-03T14:26:59.575Z",
   "configured": false,
   "entries": [
     {
       "slug": "sunstone",
       "passed": true,
-      "generated": false,
-      "reason": "awaiting-asset",
+      "generated": true,
+      "source": "hyper3d-web-app",
       "hero": "sunburst astrolabe",
       "prompt": "a sunburst astrolabe, a single hand-held fantasy RPG quest item, ornate metal and glass, neutral studio lighting, game-ready, plain background",
-      "detail": "Rodin API access requires the Business tier; the Creator membership issues no API key. Generate in the web app and drop the .glb here."
+      "glb": "/assets/sunstone.glb",
+      "bytes": 3293496
     },
     {
       "slug": "saltmarrow",

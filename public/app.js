@@ -91,6 +91,17 @@ function renderPath() {
   });
   v.append(ol);
   v.append(Object.assign(el('p', 'hint'), { textContent: 'Every other ordering the search reached also leaves every quest completable.' }));
+  const a = (window.__assets?.entries || []).find(x => x.slug === cur.slug && x.generated);
+  if (a) {
+    const fig = el('figure', 'asset');
+    const img = el('img'); img.src = `/assets/${cur.slug}.png`; img.alt = `3D model of the ${a.hero}, generated after this batch passed the gate`;
+    img.width = 360; img.height = 360; img.loading = 'lazy';
+    const cap = el('figcaption');
+    cap.innerHTML = `<b>${esc(a.hero)}</b> — generated <em>after</em> this batch passed. ` +
+      `A blocked batch spends no mesh-generation credits. ` +
+      `<a href="/assets/${cur.slug}.glb" download>download the .glb</a> · Hyper3D Rodin`;
+    fig.append(img, cap); v.append(fig);
+  }
 }
 
 function renderQuests() {

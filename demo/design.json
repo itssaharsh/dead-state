@@ -1,0 +1,130 @@
+{
+ "source": {
+  "url": "https://dead-state.vercel.app",
+  "title": "Dead State \u2014 find quests a model wrote that cannot be finished",
+  "h1": null,
+  "tokens_found": 29,
+  "fonts_loaded": [
+   "Rethink Sans",
+   "Rethink Sans",
+   "Rethink Sans",
+   "Rethink Sans",
+   "Spline Sans Mono",
+   "Spline Sans Mono",
+   "Young Serif"
+  ]
+ },
+ "theme": "dark",
+ "personality": "editorial",
+ "palette": {
+  "site_bg": "#1A1F2B",
+  "surface": "#232A38",
+  "text": "#ECE7DD",
+  "muted": "#9AA3B2",
+  "accent": "#FF6A3D",
+  "accent2": "#D9A94C",
+  "bg": [
+   "#0D1118",
+   "#1A1F2B",
+   "#2A1A14"
+  ],
+  "canvas": "#121620",
+  "field": "#2A1A14",
+  "field_text": "#ECE7DD",
+  "chrome": "dark",
+  "font": "Rethink Sans",
+  "display_font": "Young Serif"
+ },
+ "look": "editorial",
+ "shape": {
+  "radius": 4,
+  "window_radius": 8,
+  "pill": false,
+  "shadow": "flat",
+  "hairline": "rgba(255,255,255,.14)"
+ },
+ "card": {
+  "chrome": "none",
+  "inset_pct": 8.0,
+  "backdrop": "flat",
+  "shadow_css": "0 20px 70px rgba(0,0,0,.45),0 4px 14px rgba(0,0,0,.30)"
+ },
+ "type": {
+  "body_px": 14,
+  "scale": "compact"
+ },
+ "motion": {
+  "transition": "wipe",
+  "zoom_style": "calm",
+  "spotlight_dim": 0.52
+ },
+ "sound": {
+  "music": "auto",
+  "bpm": 76,
+  "brief": "restrained, taut, low piano and pad; one cold swell on the failing check; no triumphal resolve",
+  "sfx": "soft",
+  "loudness": "loud"
+ },
+ "grade": {
+  "saturation": 1.0,
+  "contrast": 1.0,
+  "vignette": 0.06
+ },
+ "evidence": {
+  "accents": [
+   [
+    "rgb(26, 14, 8)",
+    5208
+   ],
+   [
+    "rgb(255, 106, 61)",
+    4960
+   ],
+   [
+    "rgb(35, 42, 56)",
+    4420
+   ]
+  ],
+  "radii": [
+   [
+    "6",
+    1104562.421875
+   ],
+   [
+    "4",
+    4960
+   ]
+  ],
+  "shadows": [],
+  "screen_colours": [
+   {
+    "hex": "#1a1f2b",
+    "share": 0.8929
+   },
+   {
+    "hex": "#2a1a14",
+    "share": 0.0604
+   },
+   {
+    "hex": "#9aa3b2",
+    "share": 0.0119
+   },
+   {
+    "hex": "#ece7dd",
+    "share": 0.009
+   },
+   {
+    "hex": "#ff6a3d",
+    "share": 0.0087
+   },
+   {
+    "hex": "#626d80",
+    "share": 0.0061
+   }
+  ],
+  "named_tokens": {
+   "--accent-container": "#02010e",
+   "--accent-ink": "#010008"
+  }
+ }
+}
